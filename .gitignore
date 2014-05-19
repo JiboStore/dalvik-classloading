@@ -3,7 +3,7 @@
 #################
 
 *.pydevproject
-.project
+# .project
 .metadata
 bin/
 tmp/
@@ -11,8 +11,8 @@ tmp/
 *.bak
 *.swp
 *~.nib
-local.properties
-.classpath
+# local.properties
+# .classpath
 .settings/
 .loadpath
 
@@ -23,7 +23,7 @@ local.properties
 *.launch
 
 # CDT-specific
-.cproject
+# .cproject
 
 # PDT-specific
 .buildpath

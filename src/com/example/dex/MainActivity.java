@@ -28,12 +28,15 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import dalvik.system.DexClassLoader;
 
 public class MainActivity extends Activity {
     private static final String SECONDARY_DEX_NAME = "secondary_dex.jar";
+    
+    public static final String TAG = "primary_dex";
     
     // Buffer size for file copying.  While 8kb is used in this sample, you
     // may want to tweak it based on actual size of the secondary dex file involved.
@@ -66,6 +69,9 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 // Internal storage where the DexClassLoader writes the optimized dex file to.
                 final File optimizedDexOutputPath = getDir("outdex", Context.MODE_PRIVATE);
+                
+                Log.d(TAG, "MainActivity.onClick: " + dexInternalStoragePath.getAbsolutePath() + " >> " +
+                		optimizedDexOutputPath.getAbsolutePath());
                 
                 // Initialize the class loader with the secondary dex file.
                 DexClassLoader cl = new DexClassLoader(dexInternalStoragePath.getAbsolutePath(),

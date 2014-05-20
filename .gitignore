@@ -5,10 +5,14 @@
 *.pydevproject
 # .project
 .metadata
+apps/
+assets/
 bin/
 gen/
 tmp/
 annotations-*.jar
+files.ab
+files.tar
 *.tmp
 *.bak
 *.swp

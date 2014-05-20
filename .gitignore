@@ -6,7 +6,9 @@
 # .project
 .metadata
 bin/
+gen/
 tmp/
+annotations-*.jar
 *.tmp
 *.bak
 *.swp

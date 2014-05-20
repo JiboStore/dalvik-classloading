@@ -22,6 +22,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
+import java.util.HashMap;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -33,6 +36,12 @@ import android.view.View;
 import android.widget.Button;
 import dalvik.system.DexClassLoader;
 
+/**
+ * 
+ * @author 	hakim
+ * @date	20 May 2014
+ * @ref		https://gist.github.com/marshall/839003
+ */
 public class MainActivity extends Activity {
     private static final String SECONDARY_DEX_NAME = "secondary_dex.jar";
     
@@ -67,6 +76,7 @@ public class MainActivity extends Activity {
         
         mToastButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+            	
                 // Internal storage where the DexClassLoader writes the optimized dex file to.
                 final File optimizedDexOutputPath = getDir("outdex", Context.MODE_PRIVATE);
                 
@@ -79,11 +89,15 @@ public class MainActivity extends Activity {
                         null,
                         getClassLoader());
                 Class libProviderClazz = null;
+                Class activityClass = null;
+                
+                setAPKClassLoader(cl);
                 
                 try {
                     // Load the library class from the class loader.
                     libProviderClazz =
                             cl.loadClass("com.example.dex.lib.LibraryProvider");
+                    activityClass = cl.loadClass("com.example.dex.lib.LibActivity");
                     
                     // Cast the return object to the library interface so that the
                     // caller can directly invoke methods in the interface.
@@ -93,6 +107,15 @@ public class MainActivity extends Activity {
                     
                     // Display the toast!
                     lib.showAwesomeToast(view.getContext(), "hello");
+                    
+                	boolean bLaunchActivity = true;
+                	if ( bLaunchActivity ) {
+                		lib.showLibActivity(view.getContext(), activityClass);
+                	} else {
+                        // Display the toast!
+                        lib.showAwesomeToast(view.getContext(), "hello");
+                	}
+                	
                 } catch (Exception exception) {
                     // Handle exception gracefully here.
                     exception.printStackTrace();
@@ -156,4 +179,40 @@ public class MainActivity extends Activity {
             return null;
         }
     }
+    
+    // https://gist.github.com/marshall/839003
+    private void setAPKClassLoader(ClassLoader classLoader) {
+    	try {
+    		Field mMainThread = getField(Activity.class, "mMainThread");
+    		Object mainThread = mMainThread.get(this);
+    		Class threadClass = mainThread.getClass();
+    		Field mPackages = getField(threadClass, "mPackages");
+    		 
+    		HashMap<String,?> map = (HashMap<String,?>) mPackages.get(mainThread);
+    		WeakReference<?> ref = (WeakReference<?>) map.get(getPackageName());
+    		Object apk = ref.get();
+    		Class apkClass = apk.getClass();
+    		Field mClassLoader = getField(apkClass, "mClassLoader");
+    		 
+    		mClassLoader.set(apk, classLoader);
+    		} catch (IllegalArgumentException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    		} catch (IllegalAccessException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
+    }
+    
+	private Field getField(Class<?> cls, String name) {
+		for (Field field: cls.getDeclaredFields()) {
+			if (!field.isAccessible()) {
+				field.setAccessible(true);
+			}
+			if (field.getName().equals(name)) {
+				return field;
+			}
+		}
+		return null;
+	}
 }

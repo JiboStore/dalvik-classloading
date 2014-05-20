@@ -27,5 +27,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+       	
+        <activity android:name="com.example.dex.lib.LibActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="secdex" android:host="com.example.dex"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.example.dex.AnotherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="secdex" android:host="com.example.dexUNUSED"/>
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

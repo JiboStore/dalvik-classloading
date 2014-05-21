@@ -17,6 +17,8 @@
 package com.example.dex.lib;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.widget.Toast;
 
 import com.example.dex.LibraryInterface;
@@ -29,5 +31,12 @@ public class LibraryProvider implements LibraryInterface {
         Toast.makeText(context,
                        String.format("++ %s ++", message),
                        Toast.LENGTH_LONG).show();
+    }
+    
+    public void showLibActivity(Context context, Class activity) {
+    	Intent intent = new Intent(context, activity);
+    	context.startActivity(intent);
+//    	Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("secdex://com.example.dex"));
+//    	context.startActivity(intent);
     }
 }

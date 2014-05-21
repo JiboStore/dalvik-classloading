@@ -16,10 +16,16 @@
 
 package com.example.dex;
 
-import android.content.Context;
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 
-public interface LibraryInterface {
-    public void showAwesomeToast(Context context, String message);
+public class AnotherActivity extends Activity {
+	public static final String TAG = "secondary_dex";
     
-    public void showLibActivity(Context context, Class activity);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d(TAG, "AnotherActivity.onCreate");
+    }
 }

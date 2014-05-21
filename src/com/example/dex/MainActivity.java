@@ -29,6 +29,7 @@ import java.util.HashMap;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,6 +53,7 @@ public class MainActivity extends Activity {
     private static final int BUF_SIZE = 8 * 1024;
     
     private Button mToastButton = null;
+    private Button mLaunchButton = null;
     private ProgressDialog mProgressDialog = null;
     
     @Override
@@ -83,6 +85,12 @@ public class MainActivity extends Activity {
                 Log.d(TAG, "MainActivity.onClick: " + dexInternalStoragePath.getAbsolutePath() + " >> " +
                 		optimizedDexOutputPath.getAbsolutePath());
                 
+//                05-21 12:31:06.867: D/primary_dex(30649): MainActivity.onClick: default classloader
+//                05-21 12:31:06.867: D/primary_dex(30649): ClassLoader: java.lang.BootClassLoader@417c6748
+//                05-21 12:31:06.867: D/primary_dex(30649): ClassLoader: dalvik.system.PathClassLoader[DexPathList[[zip file "/data/app/com.example.dex-1.apk"],nativeLibraryDirectories=[/data/app-lib/com.example.dex-1, /vendor/lib, /system/lib]]]
+                Log.d(TAG, "MainActivity.onClick: default classloader");
+                debugClassloader( getClassLoader() );
+                
                 // Initialize the class loader with the secondary dex file.
                 DexClassLoader cl = new DexClassLoader(dexInternalStoragePath.getAbsolutePath(),
                         optimizedDexOutputPath.getAbsolutePath(),
@@ -90,6 +98,13 @@ public class MainActivity extends Activity {
                         getClassLoader());
                 Class libProviderClazz = null;
                 Class activityClass = null;
+                
+//                05-21 12:31:06.958: D/primary_dex(30649): MainActivity.onClick: custom classloader
+//                05-21 12:31:06.958: D/primary_dex(30649): ClassLoader: java.lang.BootClassLoader@417c6748
+//                05-21 12:31:06.958: D/primary_dex(30649): ClassLoader: dalvik.system.PathClassLoader[DexPathList[[zip file "/data/app/com.example.dex-1.apk"],nativeLibraryDirectories=[/data/app-lib/com.example.dex-1, /vendor/lib, /system/lib]]]
+//                05-21 12:31:06.958: D/primary_dex(30649): ClassLoader: dalvik.system.DexClassLoader[DexPathList[[zip file "/data/data/com.example.dex/app_dex/secondary_dex.jar"],nativeLibraryDirectories=[/vendor/lib, /system/lib]]]
+                Log.d(TAG, "MainActivity.onClick: custom classloader");
+                debugClassloader(cl);
                 
                 setAPKClassLoader(cl);
                 
@@ -122,6 +137,18 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        
+        // launch_activity
+        mLaunchButton = (Button) findViewById(R.id.launch_button);
+        mLaunchButton.setOnClickListener( new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Context context = v.getContext();
+		    	Intent intent = new Intent(context, AnotherActivity.class);
+		    	context.startActivity(intent);
+			}
+		});
     }
     
     // File I/O code to copy the secondary dex file from asset resource to internal storage.
@@ -180,6 +207,15 @@ public class MainActivity extends Activity {
         }
     }
     
+    private static void debugClassloader(ClassLoader cl) {
+    	if ( cl == null ) {
+    		return;
+    	}
+    	ClassLoader pParent = cl.getParent();
+    	debugClassloader(pParent);
+    	Log.d(TAG, "ClassLoader: " + cl.toString());
+    }
+    
     // https://gist.github.com/marshall/839003
     private void setAPKClassLoader(ClassLoader classLoader) {
     	try {
@@ -195,13 +231,18 @@ public class MainActivity extends Activity {
     		Field mClassLoader = getField(apkClass, "mClassLoader");
     		 
     		mClassLoader.set(apk, classLoader);
-    		} catch (IllegalArgumentException e) {
-    		// TODO Auto-generated catch block
-    		e.printStackTrace();
-    		} catch (IllegalAccessException e) {
-    		// TODO Auto-generated catch block
-    		e.printStackTrace();
-    	}
+    		
+    		// Log.d(TAG, "MainActivity.setAPKClassLoader > activity classloader");
+    		// java.lang.IllegalArgumentException: expected receiver of type android.app.LoadedApk, but got com.example.dex.MainActivity
+    		// debugClassloader((ClassLoader)mClassLoader.get(this));
+    		
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
 	private Field getField(Class<?> cls, String name) {

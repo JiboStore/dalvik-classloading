@@ -20,4 +20,5 @@
     <string name="diag_message">Processing dex file...</string>
     <string name="message">Press button to generate an awesome Toast!\n(Method in the secondary dex file is executed)</string>
     <string name="toast">Toast!</string>
+    <string name="launch">Launch Activity!</string>
 </resources>

@@ -1,22 +1,73 @@
-apply plugin: 'android-library'
+import org.apache.tools.ant.taskdefs.condition.Os
 
-android {
-    compileSdkVersion 18
-    buildToolsVersion "19.0.3"
+apply plugin: 'java'
 
-    defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 16
-        versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-        }
-    }
+ext.androidSdkDir = System.getenv()['ANDROID_HOME']
+ext.buildToolsVersion = '19.1.0'
+ext.compileSdkVersion = 19
+
+println System.getenv()['ANDROID_HOME']
+println ("${androidSdkDir}\\platforms\\android-${compileSdkVersion}\\android.jar")
+
+dependencies {
+    compile files("${androidSdkDir}\\platforms\\android-${compileSdkVersion}\\android.jar")
 }
+
+configure(jar) {
+    include 'classes.dex'
+}
+
+task dexClasses(dependsOn: classes, type:Exec) {
+    String cmdExt = Os.isFamily(Os.FAMILY_WINDOWS) ? '.bat' : ''
+
+//    println ("${androidSdkDir}/platforms/android-${compileSdkVersion}/android.jar")
+    println ("${buildDir}")
+    println ("${androidSdkDir}\\build-tools\\${buildToolsVersion}\\dx${cmdExt} --dex --output=${buildDir}\\classes\\main\\classes.dex ${buildDir}\\classes\\main")
+//    commandLine 'cmd', '/c', '${androidSdkDir}/build-tools/${buildToolsVersion}/dx${cmdExt} --dex --output=${buildDir}/classes/main/classes.dex ${buildDir}/classes/main'
+//    exec {
+//        commandLine 'cmd', '/c', '${androidSdkDir}\\build-tools\\${buildToolsVersion}\\dx${cmdExt} --dex --output=${buildDir}\\classes\\main\\classes.dex ${buildDir}\\classes\\main'
+        commandLine "cmd", "/c", "${androidSdkDir}\\build-tools\\${buildToolsVersion}\\dx${cmdExt} --dex --output=${buildDir}\\classes\\main\\classes.dex ${buildDir}\\classes\\main"
+//    }
+
+//    exec {
+////        commandLine 'cmd', 'echo %PATH%'
+//        commandLine "cmd", "echo %PATH%"
+//    }
+
+//    exec {
+//        commandLine "${androidSdkDir}/build-tools/${buildToolsVersion}/dx${cmdExt} --dex",
+//                "--output=${buildDir}/classes/main/classes.dex",
+//                "${buildDir}/classes/main"
+//    }
+
+//    exec {
+//        commandLine 'cmd', '/c', '${androidSdkDir}/build-tools/${buildToolsVersion}/dx${cmdExt} --dex --output=${buildDir}/classes/main/classes.dex ${buildDir}/classes/main'
+////        commandLine 'cmd', '/c', 'echo Hello world'
+////        commandLine 'cmd', '/c', 'C:/eclipse/sdk/build-tools/19.1.0/dx.bat --dex --output=${buildDir}/classes/main/classes.dex ${buildDir}/classes/main'
+//    }
+}
+
+jar.dependsOn(dexClasses)
+
+//apply plugin: 'android-library'
+//
+//android {
+//    compileSdkVersion 18
+//    buildToolsVersion "19.0.3"
+//
+//    defaultConfig {
+//        minSdkVersion 8
+//        targetSdkVersion 16
+//        versionCode 1
+//        versionName "1.0"
+//    }
+//    buildTypes {
+//        release {
+//            runProguard false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+//        }
+//    }
+//}
 
 //dependencies {
 //    compile 'com.android.support:appcompat-v7:19.+'

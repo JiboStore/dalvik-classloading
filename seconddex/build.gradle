@@ -1,13 +1,8 @@
-apply plugin: 'android'
-
-dependencies {
-    compile project(path: ':seconddex')
-}
+apply plugin: 'android-library'
 
 android {
     compileSdkVersion 18
     buildToolsVersion "19.0.3"
-    enforceUniquePackageName = false
 
     defaultConfig {
         minSdkVersion 8
@@ -15,7 +10,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
     buildTypes {
         release {
             runProguard false
@@ -23,3 +17,8 @@ android {
         }
     }
 }
+
+//dependencies {
+//    compile 'com.android.support:appcompat-v7:19.+'
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+//}

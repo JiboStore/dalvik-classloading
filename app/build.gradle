@@ -1,8 +1,14 @@
 apply plugin: 'android'
 
-dependencies {
-    compile project(path: ':seconddex')
-}
+//dependencies {
+//    compile project(path: ':seconddex')
+//}
+
+//sourceSets {
+//    main {
+//        assets.srcDir 'src/main/trydex'
+//    }
+//}
 
 android {
     compileSdkVersion 18

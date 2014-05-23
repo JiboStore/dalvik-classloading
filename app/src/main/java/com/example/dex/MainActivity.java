@@ -16,16 +16,6 @@
 
 package com.example.dex;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.Field;
-import java.util.HashMap;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -35,6 +25,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+
 import dalvik.system.DexClassLoader;
 
 /**
@@ -114,22 +116,31 @@ public class MainActivity extends Activity {
                             cl.loadClass("com.example.dex.lib.LibraryProvider");
                     activityClass = cl.loadClass("com.example.dex.lib.LibActivity");
                     
-                    // Cast the return object to the library interface so that the
-                    // caller can directly invoke methods in the interface.
-                    // Alternatively, the caller can invoke methods through reflection,
-                    // which is more verbose and slow.
-                    LibraryInterface lib = (LibraryInterface) libProviderClazz.newInstance();
-                    
-                    // Display the toast!
-                    lib.showAwesomeToast(view.getContext(), "hello");
-                    
-                	boolean bLaunchActivity = true;
-                	if ( bLaunchActivity ) {
-                		lib.showLibActivity(view.getContext(), activityClass);
-                	} else {
-                        // Display the toast!
-                        lib.showAwesomeToast(view.getContext(), "hello");
-                	}
+//                    // Cast the return object to the library interface so that the
+//                    // caller can directly invoke methods in the interface.
+//                    // Alternatively, the caller can invoke methods through reflection,
+//                    // which is more verbose and slow.
+//                    LibraryInterface lib = (LibraryInterface) libProviderClazz.newInstance();
+//
+//                    // Display the toast!
+//                    lib.showAwesomeToast(view.getContext(), "hello");
+//
+//                	boolean bLaunchActivity = true;
+//                	if ( bLaunchActivity ) {
+//                		lib.showLibActivity(view.getContext(), activityClass);
+//                	} else {
+//                        // Display the toast!
+//                        lib.showAwesomeToast(view.getContext(), "hello");
+//                	}
+
+                    // call a method
+                    Object lib = libProviderClazz.newInstance();
+
+                    Class[] param = new Class[2];
+                    param[0] = Context.class;
+                    param[1] = String.class;
+                    Method method = libProviderClazz.getDeclaredMethod("showAwesomeToast", param);
+                    method.invoke(lib, view.getContext(), "Hello WORLD!");
                 	
                 } catch (Exception exception) {
                     // Handle exception gracefully here.

@@ -46,7 +46,8 @@ import dalvik.system.DexClassLoader;
  * @ref		https://gist.github.com/marshall/839003
  */
 public class MainActivity extends Activity {
-    private static final String SECONDARY_DEX_NAME = "secondary_dex.jar";
+//    private static final String SECONDARY_DEX_NAME = "secondary_dex.jar";
+private static final String SECONDARY_DEX_NAME = "seconddex.jar";
     
     public static final String TAG = "primary_dex";
     

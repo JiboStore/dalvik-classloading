@@ -19,5 +19,7 @@ evaluationDependsOn ":seconddex"
 evaluationDependsOn ":app"
 
 project(':app') {
-    build.dependsOn(':seconddex:jar')
+//    build.dependsOn(':seconddex:jar')
+//    build.dependsOn(':seconddex:dexCopy')
+    assemble.dependsOn(':seconddex:dexCopy')
 }

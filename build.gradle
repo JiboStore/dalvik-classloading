@@ -13,3 +13,11 @@ allprojects {
         mavenCentral()
     }
 }
+
+// http://gradle.1045684.n5.nabble.com/Access-subproject-tasks-in-root-build-gradle-td4991765.html
+evaluationDependsOn ":seconddex"
+evaluationDependsOn ":app"
+
+project(':app') {
+    build.dependsOn(':seconddex:jar')
+}

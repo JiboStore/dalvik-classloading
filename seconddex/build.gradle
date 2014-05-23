@@ -47,7 +47,38 @@ task dexClasses(dependsOn: classes, type:Exec) {
 //    }
 }
 
+//task tryCopy(type: Copy) {
+//    from './'
+////    from 'seconddex.iml'
+//    into 'src'
+//}
+
+//task oneCopy(type: Copy) {
+//    from 'seconddex.iml'
+//    into 'build'
+//}
+//
+//task twoCopy(type: Copy) {
+//    from 'build.gradle'
+//    into 'build'
+//}
+//
+//twoCopy.dependsOn(oneCopy)
+//oneCopy.dependsOn(jar)
+
+task dexCopy(type: Copy) {
+    from 'build/libs'
+    into '../app/src/main/assets'
+//    include '*.jar'
+}
+
 jar.dependsOn(dexClasses)
+
+//jar.dependsOn dexCopy
+//jar.mustRunAfter dexCopy
+
+dexCopy.dependsOn jar
+dexCopy.mustRunAfter jar
 
 //apply plugin: 'android-library'
 //

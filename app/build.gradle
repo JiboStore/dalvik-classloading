@@ -1,0 +1,31 @@
+apply plugin: 'android'
+
+//dependencies {
+//    compile project(path: ':seconddex')
+//}
+
+//sourceSets {
+//    main {
+//        assets.srcDir 'src/main/trydex'
+//    }
+//}
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "19.0.3"
+    enforceUniquePackageName = false
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 16
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}

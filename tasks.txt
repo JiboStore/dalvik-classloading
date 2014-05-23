@@ -1,0 +1,439 @@
+WARNING: support for libraries with same package name is deprecated and will be removed in 1.0
+:tasks
+
+------------------------------------------------------------
+All tasks runnable from root project
+------------------------------------------------------------
+
+Android tasks
+-------------
+app:androidDependencies - Displays the Android dependencies of the project
+seconddex:androidDependencies - Displays the Android dependencies of the project
+app:signingReport - Displays the signing info for each variant
+seconddex:signingReport - Displays the signing info for each variant
+
+Build tasks
+-----------
+app:assemble - Assembles all variants of all applications and secondary packages. [app:assembleDebug, app:assembleRelease]
+seconddex:assemble - Assembles all variants of all applications and secondary packages. [seconddex:assembleDebug, seconddex:assembleRelease]
+app:assembleDebug - Assembles all Debug builds [seconddex:bundleRelease]
+    app:checkDebugManifest
+    app:compileDebugAidl
+    app:compileDebugJava
+    app:compileDebugNdk
+    app:compileDebugRenderscript
+    app:dexDebug
+    app:generateDebugBuildConfig
+    app:generateDebugResValues
+    app:generateDebugResources
+    app:generateDebugSources
+    app:mergeDebugAssets
+    app:mergeDebugResources
+    app:packageDebug
+    app:preBuild
+    app:preDebugBuild
+    app:preDexDebug
+    app:preReleaseBuild
+    app:prepareDalvikClassloadingSeconddexUnspecifiedLibrary - Prepare dalvik-classloading:seconddex:unspecified
+    app:prepareDebugDependencies
+    app:processDebugJavaRes
+    app:processDebugManifest
+    app:processDebugResources
+    app:validateDebugSigning
+seconddex:assembleDebug - Assembles all Debug builds
+    seconddex:bundleDebug - Assembles a bundle containing the library in Debug.
+    seconddex:checkDebugManifest
+    seconddex:compileDebugAidl
+    seconddex:compileDebugJava
+    seconddex:compileDebugNdk
+    seconddex:compileDebugRenderscript
+    seconddex:compileLint
+    seconddex:copyDebugLint
+    seconddex:generateDebugBuildConfig
+    seconddex:generateDebugResValues
+    seconddex:generateDebugResources
+    seconddex:generateDebugSources
+    seconddex:mergeDebugAssets
+    seconddex:mergeDebugProguardFiles
+    seconddex:packageDebugAidl
+    seconddex:packageDebugJar
+    seconddex:packageDebugJniLibs
+    seconddex:packageDebugLocalJar
+    seconddex:packageDebugRenderscript
+    seconddex:packageDebugResources
+    seconddex:preBuild
+    seconddex:preDebugBuild
+    seconddex:prepareDebugDependencies
+    seconddex:processDebugJavaRes
+    seconddex:processDebugManifest
+    seconddex:processDebugResources
+app:assembleDebugTest - Assembles the Test build for the Debug build [seconddex:bundleRelease]
+    app:checkDebugManifest
+    app:compileDebugAidl
+    app:compileDebugJava
+    app:compileDebugRenderscript
+    app:compileDebugTestAidl
+    app:compileDebugTestJava
+    app:compileDebugTestNdk
+    app:compileDebugTestRenderscript
+    app:dexDebugTest
+    app:generateDebugBuildConfig
+    app:generateDebugResValues
+    app:generateDebugResources
+    app:generateDebugSources
+    app:generateDebugTestBuildConfig
+    app:generateDebugTestResValues
+    app:generateDebugTestResources
+    app:generateDebugTestSources
+    app:mergeDebugAssets
+    app:mergeDebugResources
+    app:mergeDebugTestAssets
+    app:mergeDebugTestResources
+    app:packageDebugTest
+    app:preBuild
+    app:preDebugBuild
+    app:preDebugTestBuild
+    app:preDexDebugTest
+    app:preReleaseBuild
+    app:prepareDalvikClassloadingSeconddexUnspecifiedLibrary - Prepare dalvik-classloading:seconddex:unspecified
+    app:prepareDebugDependencies
+    app:prepareDebugTestDependencies
+    app:processDebugManifest
+    app:processDebugResources
+    app:processDebugTestJavaRes
+    app:processDebugTestManifest
+    app:processDebugTestResources
+    app:validateDebugSigning
+seconddex:assembleDebugTest - Assembles the Test build for the Debug build [seconddex:assembleDebug]
+    seconddex:compileDebugTestAidl
+    seconddex:compileDebugTestJava
+    seconddex:compileDebugTestNdk
+    seconddex:compileDebugTestRenderscript
+    seconddex:dexDebugTest
+    seconddex:generateDebugTestBuildConfig
+    seconddex:generateDebugTestResValues
+    seconddex:generateDebugTestResources
+    seconddex:generateDebugTestSources
+    seconddex:mergeDebugTestAssets
+    seconddex:mergeDebugTestResources
+    seconddex:packageDebugTest
+    seconddex:preDebugTestBuild
+    seconddex:preDexDebugTest
+    seconddex:prepareDebugTestDependencies
+    seconddex:processDebugTestJavaRes
+    seconddex:processDebugTestManifest
+    seconddex:processDebugTestResources
+    seconddex:validateDebugSigning
+app:assembleRelease - Assembles all Release builds [seconddex:bundleRelease]
+    app:checkReleaseManifest
+    app:compileReleaseAidl
+    app:compileReleaseJava
+    app:compileReleaseNdk
+    app:compileReleaseRenderscript
+    app:dexRelease
+    app:generateReleaseBuildConfig
+    app:generateReleaseResValues
+    app:generateReleaseResources
+    app:generateReleaseSources
+    app:lintVitalRelease - Runs lint on just the fatal issues in the Release build
+    app:mergeReleaseAssets
+    app:mergeReleaseResources
+    app:packageRelease
+    app:preBuild
+    app:preDebugBuild
+    app:preDexRelease
+    app:preReleaseBuild
+    app:prepareDalvikClassloadingSeconddexUnspecifiedLibrary - Prepare dalvik-classloading:seconddex:unspecified
+    app:prepareReleaseDependencies
+    app:processReleaseJavaRes
+    app:processReleaseManifest
+    app:processReleaseResources
+seconddex:assembleRelease - Assembles all Release builds
+    seconddex:bundleRelease - Assembles a bundle containing the library in Release.
+    seconddex:checkReleaseManifest
+    seconddex:compileLint
+    seconddex:compileReleaseAidl
+    seconddex:compileReleaseJava
+    seconddex:compileReleaseNdk
+    seconddex:compileReleaseRenderscript
+    seconddex:copyReleaseLint
+    seconddex:generateReleaseBuildConfig
+    seconddex:generateReleaseResValues
+    seconddex:generateReleaseResources
+    seconddex:generateReleaseSources
+    seconddex:mergeReleaseAssets
+    seconddex:mergeReleaseProguardFiles
+    seconddex:packageReleaseAidl
+    seconddex:packageReleaseJar
+    seconddex:packageReleaseJniLibs
+    seconddex:packageReleaseLocalJar
+    seconddex:packageReleaseRenderscript
+    seconddex:packageReleaseResources
+    seconddex:preBuild
+    seconddex:preReleaseBuild
+    seconddex:prepareReleaseDependencies
+    seconddex:processReleaseJavaRes
+    seconddex:processReleaseManifest
+    seconddex:processReleaseResources
+app:build - Assembles and tests this project. [app:assemble, app:check]
+seconddex:build - Assembles and tests this project. [seconddex:assemble, seconddex:check]
+app:buildDependents - Assembles and tests this project and all projects that depend on it. [app:build]
+seconddex:buildDependents - Assembles and tests this project and all projects that depend on it. [app:buildDependents, seconddex:build]
+app:buildNeeded - Assembles and tests this project and all projects it depends on. [app:build, seconddex:buildNeeded]
+seconddex:buildNeeded - Assembles and tests this project and all projects it depends on. [seconddex:build]
+app:clean - Deletes the build directory.
+seconddex:clean - Deletes the build directory.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build. [incubating]
+wrapper - Generates Gradle wrapper files. [incubating]
+
+Help tasks
+----------
+dependencies - Displays all dependencies declared in root project 'dalvik-classloading'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'dalvik-classloading'.
+help - Displays a help message
+projects - Displays the sub-projects of root project 'dalvik-classloading'.
+properties - Displays the properties of root project 'dalvik-classloading'.
+tasks - Displays the tasks runnable from root project 'dalvik-classloading' (some of the displayed tasks may belong to subprojects).
+
+Install tasks
+-------------
+app:installDebug - Installs the Debug build [seconddex:bundleRelease]
+    app:checkDebugManifest
+    app:compileDebugAidl
+    app:compileDebugJava
+    app:compileDebugNdk
+    app:compileDebugRenderscript
+    app:dexDebug
+    app:generateDebugBuildConfig
+    app:generateDebugResValues
+    app:generateDebugResources
+    app:generateDebugSources
+    app:mergeDebugAssets
+    app:mergeDebugResources
+    app:packageDebug
+    app:preBuild
+    app:preDebugBuild
+    app:preDexDebug
+    app:preReleaseBuild
+    app:prepareDalvikClassloadingSeconddexUnspecifiedLibrary - Prepare dalvik-classloading:seconddex:unspecified
+    app:prepareDebugDependencies
+    app:processDebugJavaRes
+    app:processDebugManifest
+    app:processDebugResources
+    app:validateDebugSigning
+app:installDebugTest - Installs the Test build for the Debug build [seconddex:bundleRelease]
+    app:checkDebugManifest
+    app:compileDebugAidl
+    app:compileDebugJava
+    app:compileDebugRenderscript
+    app:compileDebugTestAidl
+    app:compileDebugTestJava
+    app:compileDebugTestNdk
+    app:compileDebugTestRenderscript
+    app:dexDebugTest
+    app:generateDebugBuildConfig
+    app:generateDebugResValues
+    app:generateDebugResources
+    app:generateDebugSources
+    app:generateDebugTestBuildConfig
+    app:generateDebugTestResValues
+    app:generateDebugTestResources
+    app:generateDebugTestSources
+    app:mergeDebugAssets
+    app:mergeDebugResources
+    app:mergeDebugTestAssets
+    app:mergeDebugTestResources
+    app:packageDebugTest
+    app:preBuild
+    app:preDebugBuild
+    app:preDebugTestBuild
+    app:preDexDebugTest
+    app:preReleaseBuild
+    app:prepareDalvikClassloadingSeconddexUnspecifiedLibrary - Prepare dalvik-classloading:seconddex:unspecified
+    app:prepareDebugDependencies
+    app:prepareDebugTestDependencies
+    app:processDebugManifest
+    app:processDebugResources
+    app:processDebugTestJavaRes
+    app:processDebugTestManifest
+    app:processDebugTestResources
+    app:validateDebugSigning
+seconddex:installDebugTest - Installs the Test build for the Debug build [seconddex:assembleDebug]
+    seconddex:compileDebugTestAidl
+    seconddex:compileDebugTestJava
+    seconddex:compileDebugTestNdk
+    seconddex:compileDebugTestRenderscript
+    seconddex:dexDebugTest
+    seconddex:generateDebugTestBuildConfig
+    seconddex:generateDebugTestResValues
+    seconddex:generateDebugTestResources
+    seconddex:generateDebugTestSources
+    seconddex:mergeDebugTestAssets
+    seconddex:mergeDebugTestResources
+    seconddex:packageDebugTest
+    seconddex:preDebugTestBuild
+    seconddex:preDexDebugTest
+    seconddex:prepareDebugTestDependencies
+    seconddex:processDebugTestJavaRes
+    seconddex:processDebugTestManifest
+    seconddex:processDebugTestResources
+    seconddex:validateDebugSigning
+app:uninstallAll - Uninstall all applications. [app:uninstallDebug, app:uninstallDebugTest, app:uninstallRelease]
+seconddex:uninstallAll - Uninstall all applications. [seconddex:uninstallDebugTest]
+app:uninstallDebug - Uninstalls the Debug build
+app:uninstallDebugTest - Uninstalls the Test build for the Debug build
+seconddex:uninstallDebugTest - Uninstalls the Test build for the Debug build
+app:uninstallRelease - Uninstalls the Release build
+
+Verification tasks
+------------------
+app:check - Runs all checks. [app:lint]
+seconddex:check - Runs all checks. [seconddex:lint]
+app:connectedAndroidTest - Installs and runs the tests for Build 'debug' on connected devices. [app:assembleDebug, app:assembleDebugTest]
+seconddex:connectedAndroidTest - Installs and runs the tests for Build 'debug' on connected devices. [seconddex:assembleDebug, seconddex:assembleDebugTest]
+app:connectedCheck - Runs all device checks on currently connected devices. [app:connectedAndroidTest]
+seconddex:connectedCheck - Runs all device checks on currently connected devices. [seconddex:connectedAndroidTest]
+app:deviceCheck - Runs all device checks using Device Providers and Test Servers.
+seconddex:deviceCheck - Runs all device checks using Device Providers and Test Servers.
+app:lint - Runs lint on all variants. [seconddex:bundleRelease]
+    app:checkDebugManifest
+    app:checkReleaseManifest
+    app:compileDebugAidl
+    app:compileDebugJava
+    app:compileDebugRenderscript
+    app:compileLint
+    app:compileReleaseAidl
+    app:compileReleaseJava
+    app:compileReleaseRenderscript
+    app:generateDebugBuildConfig
+    app:generateDebugResValues
+    app:generateDebugResources
+    app:generateDebugSources
+    app:generateReleaseBuildConfig
+    app:generateReleaseResValues
+    app:generateReleaseResources
+    app:generateReleaseSources
+    app:mergeDebugAssets
+    app:mergeDebugResources
+    app:mergeReleaseAssets
+    app:mergeReleaseResources
+    app:preBuild
+    app:preDebugBuild
+    app:preReleaseBuild
+    app:prepareDalvikClassloadingSeconddexUnspecifiedLibrary - Prepare dalvik-classloading:seconddex:unspecified
+    app:prepareDebugDependencies
+    app:prepareReleaseDependencies
+    app:processDebugManifest
+    app:processDebugResources
+    app:processReleaseManifest
+    app:processReleaseResources
+seconddex:lint - Runs lint on all variants.
+    seconddex:checkDebugManifest
+    seconddex:checkReleaseManifest
+    seconddex:compileDebugAidl
+    seconddex:compileDebugJava
+    seconddex:compileDebugRenderscript
+    seconddex:compileLint
+    seconddex:compileReleaseAidl
+    seconddex:compileReleaseJava
+    seconddex:compileReleaseRenderscript
+    seconddex:generateDebugBuildConfig
+    seconddex:generateDebugResValues
+    seconddex:generateDebugResources
+    seconddex:generateDebugSources
+    seconddex:generateReleaseBuildConfig
+    seconddex:generateReleaseResValues
+    seconddex:generateReleaseResources
+    seconddex:generateReleaseSources
+    seconddex:mergeDebugAssets
+    seconddex:mergeReleaseAssets
+    seconddex:packageDebugResources
+    seconddex:packageReleaseResources
+    seconddex:preBuild
+    seconddex:preDebugBuild
+    seconddex:preReleaseBuild
+    seconddex:prepareDebugDependencies
+    seconddex:prepareReleaseDependencies
+    seconddex:processDebugManifest
+    seconddex:processDebugResources
+    seconddex:processReleaseManifest
+    seconddex:processReleaseResources
+app:lintDebug - Runs lint on the Debug build [seconddex:bundleRelease]
+    app:checkDebugManifest
+    app:compileDebugAidl
+    app:compileDebugJava
+    app:compileDebugRenderscript
+    app:compileLint
+    app:generateDebugBuildConfig
+    app:generateDebugResValues
+    app:generateDebugResources
+    app:generateDebugSources
+    app:mergeDebugAssets
+    app:mergeDebugResources
+    app:preBuild
+    app:preDebugBuild
+    app:preReleaseBuild
+    app:prepareDalvikClassloadingSeconddexUnspecifiedLibrary - Prepare dalvik-classloading:seconddex:unspecified
+    app:prepareDebugDependencies
+    app:processDebugManifest
+    app:processDebugResources
+seconddex:lintDebug - Runs lint on the Debug build
+    seconddex:checkDebugManifest
+    seconddex:compileDebugAidl
+    seconddex:compileDebugJava
+    seconddex:compileDebugRenderscript
+    seconddex:compileLint
+    seconddex:generateDebugBuildConfig
+    seconddex:generateDebugResValues
+    seconddex:generateDebugResources
+    seconddex:generateDebugSources
+    seconddex:mergeDebugAssets
+    seconddex:packageDebugResources
+    seconddex:preBuild
+    seconddex:preDebugBuild
+    seconddex:prepareDebugDependencies
+    seconddex:processDebugManifest
+    seconddex:processDebugResources
+app:lintRelease - Runs lint on the Release build [seconddex:bundleRelease]
+    app:checkReleaseManifest
+    app:compileLint
+    app:compileReleaseAidl
+    app:compileReleaseJava
+    app:compileReleaseRenderscript
+    app:generateReleaseBuildConfig
+    app:generateReleaseResValues
+    app:generateReleaseResources
+    app:generateReleaseSources
+    app:mergeReleaseAssets
+    app:mergeReleaseResources
+    app:preBuild
+    app:preDebugBuild
+    app:preReleaseBuild
+    app:prepareDalvikClassloadingSeconddexUnspecifiedLibrary - Prepare dalvik-classloading:seconddex:unspecified
+    app:prepareReleaseDependencies
+    app:processReleaseManifest
+    app:processReleaseResources
+seconddex:lintRelease - Runs lint on the Release build
+    seconddex:checkReleaseManifest
+    seconddex:compileLint
+    seconddex:compileReleaseAidl
+    seconddex:compileReleaseJava
+    seconddex:compileReleaseRenderscript
+    seconddex:generateReleaseBuildConfig
+    seconddex:generateReleaseResValues
+    seconddex:generateReleaseResources
+    seconddex:generateReleaseSources
+    seconddex:mergeReleaseAssets
+    seconddex:packageReleaseResources
+    seconddex:preBuild
+    seconddex:preReleaseBuild
+    seconddex:prepareReleaseDependencies
+    seconddex:processReleaseManifest
+    seconddex:processReleaseResources
+
+BUILD SUCCESSFUL
+
+Total time: 7.444 secs

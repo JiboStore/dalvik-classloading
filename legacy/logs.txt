@@ -1,3 +1,26 @@
+cd autotest/
+gradle clean assembleDebug
+adb install -r  ./build/apk/autotest-debug-unaligned.apk
+adb install -r <THE APK YOU WANT TO TEST>
+adb shell "am instrument -w co.tmgamer.automation/<YOU NEED TO TYPE THE PACKAGE NAME IN TO HERE>.TMGTester"
+[12:48:52 PM] SK Heng: so compile the instrumentation APK, which is the so call testing APK.
+[12:49:02 PM] SK Heng: then you install that test apk to the phone.
+[12:49:12 PM] SK Heng: .then install the APK app you want to test..
+[12:49:19 PM] SK Heng: then run the test command.
+[12:49:52 PM] SK Heng: for "gradle clean assembleDebug"
+you need to path the directory of APKs.
+[12:49:56 PM] SK Heng: or APK.
+
+[11:36:29 AM] Hakim Hauston: aaron, which script do you use to wrap all the apks?
+[11:36:40 AM] Hakim Hauston: auto-wrap-dir.sh?
+[11:37:07 AM] Aaron Santos: yes yes
+[11:38:52 AM] Hakim Hauston: what are your arguments?
+[11:39:04 AM] Hakim Hauston: would you please paste me the command?
+[11:40:07 AM] Aaron Santos: (cd ~/tmg-agent/ && gradle clean assemble) && (DRM_BUILD_TYPE=release auto-wrap-dir.sh /opt/apks/ksmobile/BatteryDoctor /opt/tmp/BatteryDoctor)
+[11:40:11 AM] Aaron Santos: something like that
+[11:40:31 AM] Aaron Santos: autowrap SOURCE_DIR DEST_DIR
+
+
 05-19 12:11:36.450: W/qdhwcomposer(352): Excessive delay reading vsync: took 1051 ms
 05-19 12:11:38.462: W/qdhwcomposer(352): Excessive delay reading vsync: took 1852 ms
 05-19 12:11:39.473: W/qdhwcomposer(352): Excessive delay reading vsync: took 833 ms
@@ -5385,3 +5408,1929 @@
 05-21 12:59:31.310: V/GCMRegistrar(3672): Saving regId on app version 240100
 05-21 12:59:31.310: V/GCMBaseIntentService(3672): Releasing wakelock
 05-21 12:59:31.561: W/qdhwcomposer(352): Excessive delay reading vsync: took 283 ms
+
+
+
+05-28 16:06:07.736: D/dalvikvm(26743): GC_CONCURRENT freed 393K, 77% free 2690K/11244K, paused 4ms+2ms, total 38ms
+05-28 16:06:07.956: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-28 16:06:08.076: W/qdhwcomposer(323): Excessive delay reading vsync: took 1351 ms
+05-28 16:06:08.136: D/TMGSample(902): LoginActivity.launchActivity
+05-28 16:06:08.136: D/TMG.DRMActivityData(902): DRMActivityData.writeToParcel
+05-28 16:06:08.146: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-28 16:06:08.146: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-28 16:06:08.146: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-28 16:06:08.146: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-28 16:06:08.146: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-28 16:06:08.146: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-28 16:06:08.146: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-28 16:06:08.146: I/ActivityManager(851): START u0 {cmp=com.company1.app/co.tmgamer.drmapi.DRMAbstractActivity (has extras)} from pid 902
+05-28 16:06:08.156: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-28 16:06:08.156: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-28 16:06:08.156: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-28 16:06:08.156: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-28 16:06:08.166: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-28 16:06:08.166: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-28 16:06:08.166: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-28 16:06:08.176: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-28 16:06:08.176: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-28 16:06:08.346: D/dalvikvm(851): GC_FOR_ALLOC freed 1974K, 25% free 48113K/63372K, paused 170ms, total 172ms
+05-28 16:06:08.517: D/dalvikvm(851): GC_FOR_ALLOC freed 10058K, 29% free 39726K/55272K, paused 156ms, total 157ms
+05-28 16:06:08.517: D/TMG.DRM(902): onPause for co.tmgamer.drmsample.LoginActivity
+05-28 16:06:08.517: D/TMG.ActivityDebug(902): Trigger onPause task270 for co.tmgamer.drmsample.LoginActivity@41924a08 tracker=top=[] partial=[co.tmgamer.drmsample.LoginActivity@41924a08] hidden=[] dialogs=[]
+05-28 16:06:08.527: W/qdhwcomposer(323): Excessive delay reading vsync: took 383 ms
+05-28 16:06:08.567: I/analytics(902): Item [Item 218362c9-6e5d-43f5-b03a-313e1090372c] track successfully enqueued.
+05-28 16:06:08.597: D/AndroidRuntime(902): Shutting down VM
+05-28 16:06:08.597: W/dalvikvm(902): threadid=1: thread exiting with uncaught exception (group=0x416278b0)
+05-28 16:06:08.617: D/dalvikvm(902): GC_FOR_ALLOC freed 240K, 42% free 11384K/19348K, paused 16ms, total 16ms
+05-28 16:06:08.627: E/AndroidRuntime(902): FATAL EXCEPTION: main
+05-28 16:06:08.627: E/AndroidRuntime(902): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.company1.app/co.tmgamer.drmapi.DRMAbstractActivity}: android.os.BadParcelableException: Parcelable protocol requires a Parcelable.Creator object called  CREATOR on class co.tmgamer.drmapi.DRMActivityData
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2266)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2316)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.app.ActivityThread.access$600(ActivityThread.java:150)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1298)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.os.Looper.loop(Looper.java:213)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.app.ActivityThread.main(ActivityThread.java:5225)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at java.lang.reflect.Method.invokeNative(Native Method)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at java.lang.reflect.Method.invoke(Method.java:525)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:741)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:557)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at dalvik.system.NativeStart.main(Native Method)
+05-28 16:06:08.627: E/AndroidRuntime(902): Caused by: android.os.BadParcelableException: Parcelable protocol requires a Parcelable.Creator object called  CREATOR on class co.tmgamer.drmapi.DRMActivityData
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.os.Parcel.readParcelableCreator(Parcel.java:2147)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.os.Parcel.readParcelable(Parcel.java:2088)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.os.Parcel.readValue(Parcel.java:2004)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.os.Parcel.readMapInternal(Parcel.java:2288)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.os.Bundle.unparcel(Bundle.java:223)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.os.Bundle.getParcelable(Bundle.java:1170)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.content.Intent.getParcelableExtra(Intent.java:4501)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at co.tmgamer.drmapi.DRMAbstractActivity.getActivityData(DRMAbstractActivity.java:103)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at co.tmgamer.drmapi.DRMAbstractActivity.onCreate(DRMAbstractActivity.java:33)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.app.Activity.performCreate(Activity.java:5133)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2230)
+05-28 16:06:08.627: E/AndroidRuntime(902): 	... 11 more
+05-28 16:06:08.637: W/ActivityManager(851):   Force finishing activity com.company1.app/co.tmgamer.drmapi.DRMAbstractActivity
+05-28 16:06:08.637: W/ActivityManager(851):   Force finishing activity com.company1.app/co.tmgamer.drmsample.LoginActivity
+05-28 16:06:08.807: D/dalvikvm(851): GC_FOR_ALLOC freed 900K, 28% free 39978K/55272K, paused 159ms, total 160ms
+05-28 16:06:08.817: I/dalvikvm-heap(851): Grow heap (frag case) to 42.509MB for 2536936-byte allocation
+05-28 16:06:08.827: W/qdhwcomposer(323): Excessive delay reading vsync: took 100 ms
+05-28 16:06:08.867: I/ActivityManager(851): Start proc com.sonyericsson.crashmonitor for broadcast com.sonyericsson.crashmonitor/.receiver.CrashMonitorServiceBroadcastReceiver: pid=963 uid=10105 gids={50105, 1007, 1028, 1015, 1023}
+05-28 16:06:08.927: I/ActivityManager(851): No longer want com.sony.smallapp.managerservice (pid 32252): empty #34
+05-28 16:06:08.937: I/CrashMonitor(963): CrashMonitorServiceBroadcastReceiver: Forwarding intent: android.intent.action.DROPBOX_ENTRY_ADDED tag: data_app_crash
+05-28 16:06:08.947: I/CrashMonitor(963): CrashMonitorService: Service started...
+05-28 16:06:08.967: I/CrashMonitor(963): CrashMonitorService: action: android.intent.action.DROPBOX_ENTRY_ADDED
+05-28 16:06:09.117: I/CrashMonitor(963): CrashMonitorService: Service stopped...
+05-28 16:06:09.137: W/ActivityManager(851): Activity pause timeout for ActivityRecord{419110e0 u0 com.company1.app/co.tmgamer.drmapi.DRMAbstractActivity}
+05-28 16:06:09.147: D/CustomizationProcess(1520): dismissCustomizationDialog:true
+05-28 16:06:09.578: W/qdhwcomposer(323): Excessive delay reading vsync: took 133 ms
+05-28 16:06:09.838: W/qdhwcomposer(323): Excessive delay reading vsync: took 100 ms
+05-28 16:06:10.899: I/ActivityManager(851): No longer want com.sonymobile.xperialink (pid 300): empty #34
+05-28 16:06:11.469: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-28 16:06:11.469: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-28 16:06:11.469: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-28 16:06:11.469: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value Handset ASR
+05-28 16:06:11.469: D/alsa_ucm(309): disdev: device Handset ASR not enabled, no need to disable
+05-28 16:06:11.469: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-28 16:06:11.469: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-28 16:06:11.469: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-28 16:06:11.469: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-28 16:06:11.479: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-28 16:06:11.479: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-28 16:06:11.479: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+05-28 16:06:11.720: D/analytics(902): Starting flush operation ..
+05-28 16:06:11.760: I/analytics(902): Sending batch to the servers .. [1 - 5]
+05-28 16:06:11.820: D/analytics(902): Successfully sent a batch to the server
+05-28 16:06:11.820: D/analytics(902): Successfully sent batch to the server.[1 - 5]
+05-28 16:06:11.820: D/analytics(902): Removing flushed items from the db  .. [1 - 5]
+05-28 16:06:11.840: I/analytics(902): Successfully removed items from the flush db.[1 - 5]
+05-28 16:06:11.840: D/analytics(902): Starting flush operation ..
+05-28 16:06:11.840: D/analytics(902): Flush op success. [5 items]
+05-28 16:06:11.850: D/analytics(902): Flush op success. [0 items]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+05-28 18:08:22.031: W/qdhwcomposer(323): Excessive delay reading vsync: took 834 ms
+05-28 18:08:22.301: D/dalvikvm(27062): GC_CONCURRENT freed 1636K, 19% free 9726K/11872K, paused 6ms+2ms, total 60ms
+05-28 18:08:22.301: D/dalvikvm(27062): WAIT_FOR_CONCURRENT_GC blocked 48ms
+05-28 18:08:22.311: D/dalvikvm(27062): WAIT_FOR_CONCURRENT_GC blocked 45ms
+05-28 18:08:24.033: W/qdhwcomposer(323): Excessive delay reading vsync: took 1835 ms
+05-28 18:08:24.394: W/qdhwcomposer(323): Excessive delay reading vsync: took 200 ms
+05-28 18:08:24.454: I/ActivityManager(851): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.company1.app/co.tmgamer.drmsample.LoginActivity} from pid 1520
+05-28 18:08:24.484: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-28 18:08:24.484: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-28 18:08:24.674: D/dalvikvm(851): GC_FOR_ALLOC freed 1824K, 34% free 45104K/67520K, paused 169ms, total 170ms
+05-28 18:08:24.684: W/qdhwcomposer(323): Excessive delay reading vsync: took 150 ms
+05-28 18:08:24.844: D/dalvikvm(851): GC_FOR_ALLOC freed 836K, 23% free 52368K/67520K, paused 164ms, total 164ms
+05-28 18:08:24.884: W/qdhwcomposer(323): Excessive delay reading vsync: took 183 ms
+05-28 18:08:24.904: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-28 18:08:24.904: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-28 18:08:24.904: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-28 18:08:24.904: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-28 18:08:24.904: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-28 18:08:24.904: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-28 18:08:24.904: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-28 18:08:24.914: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-28 18:08:24.914: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-28 18:08:24.914: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-28 18:08:24.914: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-28 18:08:24.914: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-28 18:08:24.914: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-28 18:08:24.914: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-28 18:08:24.924: D/TMG.DRM(26965): onCreate for co.tmgamer.drmsample.LoginActivity
+05-28 18:08:24.924: D/TMG.Auth(26965): revalidate() before status = OK
+05-28 18:08:24.954: D/TMG.Auth(26965): handleQueryCompletion() after status = OK
+05-28 18:08:24.954: D/TMG.ActivityTracker(26965): ActivityTracker add has=[[ ActivityAdapter activity=co.tmgamer.drmsample.LoginActivity@41ae38b0 visible=false foreground=false]]
+05-28 18:08:24.984: I/analytics(26965): Item [Item 0533dbb4-c5a2-4e5e-a5d1-65de31b62495] track successfully enqueued.
+05-28 18:08:25.034: D/dalvikvm(26965): GC_FOR_ALLOC freed 1557K, 72% free 3175K/11244K, paused 19ms, total 19ms
+05-28 18:08:25.054: I/dalvikvm-heap(26965): Grow heap (frag case) to 11.996MB for 8294416-byte allocation
+05-28 18:08:25.074: D/dalvikvm(851): GC_CONCURRENT freed 922K, 23% free 52362K/67520K, paused 19ms+16ms, total 231ms
+05-28 18:08:25.124: D/TMG.DRM(26965): onStart for co.tmgamer.drmsample.LoginActivity
+05-28 18:08:25.134: D/TMG.ActivityDebug(26965): Trigger onStart task308 for co.tmgamer.drmsample.LoginActivity@41ae38b0 tracker=top=[] partial=[co.tmgamer.drmsample.LoginActivity@41ae38b0] hidden=[] dialogs=[]
+05-28 18:08:25.144: D/TMG.DRM(26965): onResume for co.tmgamer.drmsample.LoginActivity
+05-28 18:08:25.144: D/TMG.ActivityDebug(26965): Trigger onResume task308 for co.tmgamer.drmsample.LoginActivity@41ae38b0 tracker=top=[co.tmgamer.drmsample.LoginActivity@41ae38b0] partial=[] hidden=[] dialogs=[]
+05-28 18:08:25.144: D/TMG.DelayedBlock(26965): starting block state machine
+05-28 18:08:25.144: D/TMG.DelayedBlock(26965): Blocking after 4000
+05-28 18:08:25.164: I/analytics(26965): Item [Item badb8bbc-c3fa-4740-94e6-b68cfe223819] track successfully enqueued.
+05-28 18:08:25.194: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-28 18:08:25.194: I/analytics(26965): Item [Item f4921390-74a5-49af-a2ae-cf56a0f8fa7e] track successfully enqueued.
+05-28 18:08:25.204: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-28 18:08:25.214: D/libEGL(26965): loaded /vendor/lib/egl/libEGL_adreno.so
+05-28 18:08:25.214: D/libEGL(26965): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-28 18:08:25.224: D/libEGL(26965): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-28 18:08:25.224: I/Adreno-EGL(26965): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-28 18:08:25.224: I/Adreno-EGL(26965): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-28 18:08:25.224: I/Adreno-EGL(26965): Build Date: 12/01/13 Sun
+05-28 18:08:25.224: I/Adreno-EGL(26965): Local Branch: 
+05-28 18:08:25.224: I/Adreno-EGL(26965): Remote Branch: 
+05-28 18:08:25.224: I/Adreno-EGL(26965): Local Patches: 
+05-28 18:08:25.224: I/Adreno-EGL(26965): Reconstruct Branch: 
+05-28 18:08:25.264: D/OpenGLRenderer(26965): Enabling debug mode 0
+05-28 18:08:25.354: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-28 18:08:25.364: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-28 18:08:25.374: I/ActivityManager(851): Displayed com.company1.app/co.tmgamer.drmsample.LoginActivity: +470ms (total +57s501ms)
+05-28 18:08:25.384: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-28 18:08:25.575: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-28 18:08:26.055: W/qdhwcomposer(323): Excessive delay reading vsync: took 448 ms
+05-28 18:08:27.066: W/qdhwcomposer(323): Excessive delay reading vsync: took 850 ms
+05-28 18:08:27.226: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-28 18:08:27.366: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-28 18:08:27.386: I/GCM(1503): GCM config loaded
+05-28 18:08:27.607: D/TMG.AuthRenewal(26965): subscription is up for renewal
+05-28 18:08:27.607: D/TMG.Auth(26965): revalidate() before status = OK
+05-28 18:08:27.607: D/TMG.Auth(26965): Querying FileAuth
+05-28 18:08:27.607: D/TMG.FileAuth(26965): Reading from private file
+05-28 18:08:27.797: D/TMG.Auth(26965): Parsed json from provider 'FileAuth
+05-28 18:08:27.797: D/TMG.Auth(26965): Posting from provider FileAuth : posted data is older than our version
+05-28 18:08:27.797: D/TMG.Auth(26965): handleQueryCompletion() delaying verdict: isRevalidating()=true hasPending()=false
+05-28 18:08:27.807: D/TMG.Auth(26965): handleQueryCompletion() after status = OK
+05-28 18:08:27.807: D/TMG.Auth(26965): Querying BroadcastAuth
+05-28 18:08:27.807: D/TMG.Auth(26965): Querying ServerAuth
+05-28 18:08:27.807: D/TMG.ServerAuth(26965): Going to query server
+05-28 18:08:27.807: D/TMG.Auth(26965): handleQueryCompletion() delaying verdict: isRevalidating()=true hasPending()=true
+05-28 18:08:27.807: D/TMG.Auth(26965): handleQueryCompletion() after status = OK
+05-28 18:08:27.807: D/TMG.API(26965): HTTP request URl = http://dev1.adgm.me/drm/rest/syncdata?deviceId=b07d00badc815abf&imei=357945051088743&imsi=525037903416112
+05-28 18:08:27.807: D/TMG.API(26965): Executing http request = org.apache.http.client.methods.HttpGet@419a96e8 uri=http://dev1.adgm.me/drm/rest/syncdata?deviceId=b07d00badc815abf&imei=357945051088743&imsi=525037903416112
+05-28 18:08:27.817: D/TMG.Auth(26965): handleQueryCompletion() delaying verdict: isRevalidating()=false hasPending()=true
+05-28 18:08:27.817: D/TMG.Auth(26965): handleQueryCompletion() after status = OK
+05-28 18:08:27.887: D/TMG.API(26965): HTTP Response request=org.apache.http.client.methods.HttpGet@419a96e8 response=org.apache.http.message.BasicHttpResponse@41951c40
+05-28 18:08:27.887: D/TMG.API(26965): Following http redirect: redirectUri=http://dev1.adgm.me/numediadrmmsisdn/getMsisdnDrm.php?ssd=eyJhbCI6ImIwN2QwMGJhZGM4MTVhYmYiLCJnZSI6IjM1Nzk0NTA1MTA4ODc0MyIsInBlIjoiNTI1MDM3OTAzNDE2MTEyIiwiemUiOjE0MDEyNzE4Mjh9&ffe=1764e0c8cb3a2940c99bf78625dda5ed395bbf906140a21cf6d1d3f9443d8ed4
+05-28 18:08:27.887: D/TMG.API(26965): Executing http request = org.apache.http.client.methods.HttpGet@419aad60 uri=http://dev1.adgm.me/numediadrmmsisdn/getMsisdnDrm.php?ssd=eyJhbCI6ImIwN2QwMGJhZGM4MTVhYmYiLCJnZSI6IjM1Nzk0NTA1MTA4ODc0MyIsInBlIjoiNTI1MDM3OTAzNDE2MTEyIiwiemUiOjE0MDEyNzE4Mjh9&ffe=1764e0c8cb3a2940c99bf78625dda5ed395bbf906140a21cf6d1d3f9443d8ed4
+05-28 18:08:28.027: D/TMG.API(26965): HTTP Response request=org.apache.http.client.methods.HttpGet@419aad60 response=org.apache.http.message.BasicHttpResponse@41ae5928
+05-28 18:08:28.027: D/TMG.API(26965): Following http redirect: redirectUri=http://dev1.adgm.me/drm/rest/syncdata?deviceId=b07d00badc815abf&imei=357945051088743&imsi=525037903416112
+05-28 18:08:28.037: D/TMG.API(26965): Executing http request = org.apache.http.client.methods.HttpGet@419ba4c8 uri=http://dev1.adgm.me/drm/rest/syncdata?deviceId=b07d00badc815abf&imei=357945051088743&imsi=525037903416112
+05-28 18:08:28.087: W/qdhwcomposer(323): Excessive delay reading vsync: took 850 ms
+05-28 18:08:28.107: D/TMG.API(26965): HTTP Response request=org.apache.http.client.methods.HttpGet@419ba4c8 response=org.apache.http.message.BasicHttpResponse@419afdb8
+05-28 18:08:28.177: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-28 18:08:28.177: D/dalvikvm(26965): GC_FOR_ALLOC freed 397K, 42% free 11390K/19348K, paused 17ms, total 19ms
+05-28 18:08:28.217: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-28 18:08:28.217: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-28 18:08:28.217: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-28 18:08:28.217: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value Handset ASR
+05-28 18:08:28.217: D/alsa_ucm(309): disdev: device Handset ASR not enabled, no need to disable
+05-28 18:08:28.217: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-28 18:08:28.217: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-28 18:08:28.217: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-28 18:08:28.217: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-28 18:08:28.217: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-28 18:08:28.217: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-28 18:08:28.217: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+05-28 18:08:28.227: D/TMG.Auth(26965): Parsed json from provider 'ServerAuth
+05-28 18:08:28.227: D/TMG.Auth(26965): Posting from provider ServerAuth : YAY! accepted data
+05-28 18:08:28.227: D/TMG.FileAuth(26965): going to save to file
+05-28 18:08:28.227: D/TMG.BroadcastAuth(26965): sending to other apps our update
+05-28 18:08:28.227: D/TMG.Auth(26965): Skipping save for ServerAuth lastPostTimestamp=1401271708837 d.timestamp=1401271708837
+05-28 18:08:28.227: D/TMG.Auth(26965): New data accepted. isExpired=false shouldRenewNow=false
+05-28 18:08:28.227: D/TMG.Auth(26965): renewal will be scheduled after 15599
+05-28 18:08:28.237: D/TMG.Auth(26965): updateUI with shouldBlockApp()=true
+05-28 18:08:28.237: D/TMG.Auth(26965): handleQueryCompletion() after status = OK
+05-28 18:08:28.237: D/TMG.BroadcastAuth(26965): Receive DRM_AUTH broadcast com.company1.app -> com.company1.app
+05-28 18:08:28.237: D/TMG.BroadcastAuth(26965): Ignoring our own intent
+05-28 18:08:28.257: I/analytics(26965): Item [Item d1bfc149-aa46-4b99-9701-093354b4c947] identify successfully enqueued.
+05-28 18:08:28.728: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-28 18:08:29.148: D/TMGDelay(26965): Running DelayedBlock
+05-28 18:08:29.148: D/TMGDelay(26965): DelayedBlock try to block visible+foreground activities: tracker=top=[co.tmgamer.drmsample.LoginActivity@41ae38b0] partial=[] hidden=[] dialogs=[]
+05-28 18:08:29.148: D/TMGDelay(26965): DelayedBlock blocking co.tmgamer.drmsample.LoginActivity@41ae38b0
+05-28 18:08:29.158: I/ActivityManager(851): START u0 {flg=0x20020000 cmp=com.company1.app/co.tmgamer.drmapi.DRMAbstractActivity} from pid 26965
+05-28 18:08:29.198: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-28 18:08:29.198: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-28 18:08:29.378: D/dalvikvm(851): GC_FOR_ALLOC freed 2653K, 24% free 51534K/67520K, paused 159ms, total 161ms
+05-28 18:08:29.388: D/TMG.DRM(26965): onPause for co.tmgamer.drmsample.LoginActivity
+05-28 18:08:29.388: D/TMG.ActivityDebug(26965): Trigger onPause task308 for co.tmgamer.drmsample.LoginActivity@41ae38b0 tracker=top=[] partial=[co.tmgamer.drmsample.LoginActivity@41ae38b0] hidden=[] dialogs=[]
+05-28 18:08:29.398: D/AndroidRuntime(26965): Shutting down VM
+05-28 18:08:29.398: W/dalvikvm(26965): threadid=1: thread exiting with uncaught exception (group=0x416278b0)
+05-28 18:08:29.408: W/qdhwcomposer(323): Excessive delay reading vsync: took 1151 ms
+05-28 18:08:29.408: E/AndroidRuntime(26965): FATAL EXCEPTION: main
+05-28 18:08:29.408: E/AndroidRuntime(26965): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.company1.app/co.tmgamer.drmapi.DRMAbstractActivity}: java.lang.NullPointerException
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2266)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2316)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.app.ActivityThread.access$600(ActivityThread.java:150)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1298)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.os.Looper.loop(Looper.java:213)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.app.ActivityThread.main(ActivityThread.java:5225)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at java.lang.reflect.Method.invokeNative(Native Method)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at java.lang.reflect.Method.invoke(Method.java:525)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:741)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:557)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at dalvik.system.NativeStart.main(Native Method)
+05-28 18:08:29.408: E/AndroidRuntime(26965): Caused by: java.lang.NullPointerException
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at co.tmgamer.drmapi.DRMAbstractActivity.getActivityData(DRMAbstractActivity.java:104)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at co.tmgamer.drmapi.DRMAbstractActivity.onCreate(DRMAbstractActivity.java:33)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.app.Activity.performCreate(Activity.java:5133)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2230)
+05-28 18:08:29.408: E/AndroidRuntime(26965): 	... 11 more
+05-28 18:08:29.418: W/ActivityManager(851): Process com.company1.app has crashed too many times: killing!
+05-28 18:08:29.418: W/ActivityManager(851):   Force finishing activity com.company1.app/co.tmgamer.drmapi.DRMAbstractActivity
+05-28 18:08:29.418: W/ActivityManager(851):   Force finishing activity com.company1.app/co.tmgamer.drmsample.LoginActivity
+05-28 18:08:29.418: I/ActivityManager(851): Killing proc 26965:com.company1.app/u0a10302: crash
+05-28 18:08:29.448: I/WindowState(851): WIN DEATH: Window{41959e48 u0 com.company1.app/co.tmgamer.drmsample.LoginActivity}
+05-28 18:08:29.458: D/CustomizationProcess(1520): dismissCustomizationDialog:true
+05-28 18:08:29.488: W/InputMethodManagerService(851): Got RemoteException sending setActive(false) notification to pid 26965 uid 10302
+05-28 18:08:29.509: E/Parcel(424): Reading a NULL string not supported here.
+05-28 18:08:29.509: E/Parcel(424): Reading a NULL string not supported here.
+05-28 18:08:29.519: I/CrashMonitor(26876): CrashMonitorServiceBroadcastReceiver: Forwarding intent: android.intent.action.DROPBOX_ENTRY_ADDED tag: data_app_crash
+05-28 18:08:29.529: I/CrashMonitor(26876): CrashMonitorService: Service started...
+05-28 18:08:29.539: I/CrashMonitor(26876): CrashMonitorService: action: android.intent.action.DROPBOX_ENTRY_ADDED
+05-28 18:08:29.539: D/dalvikvm(24861): GC_CONCURRENT freed 388K, 76% free 2700K/11244K, paused 20ms+4ms, total 84ms
+05-28 18:08:29.589: I/CrashMonitor(26876): CrashMonitorService: Service stopped...
+05-28 18:08:30.189: W/qdhwcomposer(323): Excessive delay reading vsync: took 417 ms
+05-28 18:08:32.111: W/qdhwcomposer(323): Excessive delay reading vsync: took 834 ms
+
+
+05-28 18:58:36.412: I/Unity(6197): EnvConfig = {"gameCenterEnabled":false,"googlePlayEnabled":true,"socket":{"useSsl":true,"useCompression":true,"host":"gw-prod-panda.apelabs.net","port":8000,"sslport":443,"externalizerType":2,"connectionTimeout":20000,"retryCount":3,"keepAliveTimer":10000,"retryWaitTime":2000,"commandTimeout":10000,"auditCommandTimeout":45000,"autoRetryInterval":400,"rpcTimeout":7500},"directPlay":false,"deviceType":"Android_Standard_Panda_Production","codeRequired":false,"flurryKey":"Y2TCB9XRSBXDFG383Y7B","swrveKey":"ZbTgoqxUZkpFZrJwarOc","swrveGameId":752,"matAdvertisingID":"9402","matConversionKey":"acc6288f34b3ae638d04ad3d85bf6c81","facebookAppID":"642938649054159","facebookClientToken":"f2b2875b51ad07081f638a210b53a81c","gcmSenderID":"990746139785","googlePlayAppID":"990746139785","googlePlayLicenceKey":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0gCnDv1ZoizUaKywaDEthXeh9MLSftTlbE5XFn8kzBmuC+NTKIvl9TponZDxo+oEaFNvlQ/u74WNpjHac/1ilHJ9elb1FvsGp2K6o9ZesY8BH2fqpO5bbIEIFbawX696EgWFyxl2THnbuelwrMyA1SJAbR+is3S5NZbhGPjuA7uP1Ub
+
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: co.tmgamer.activityinformationclass: co.tmgamer.activityinformation.MainActivity
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: com.sonyericsson.homeclass: com.sonymobile.home.HomeActivity
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: com.whatsappclass: com.whatsapp.Conversation
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: com.yahoo.mobile.client.android.imclass: com.yahoo.mobile.client.android.im.ConversationActivity
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: jp.naver.line.androidclass: jp.naver.line.android.activity.chathistory.ChatHistoryActivity
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: com.android.systemuiclass: com.android.systemui.recent.RecentsActivity
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: com.android.calendarclass: com.android.calendar.LaunchActivity
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: com.outlook.Z7class: com.seven.Z7.app.email.EmailViewer
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: com.google.android.gmclass: com.google.android.gm.ConversationListActivityGmail
+05-30 16:11:44.912: D/MainActivity(17126): running: null
+05-30 16:11:44.912: V/MainActivity(17126): running: pack: com.android.phoneclass: com.android.phone.SomcInCallScreen
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.922: D/MainActivity(17126): recent: null
+05-30 16:11:44.982: D/libEGL(17126): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 16:11:44.982: D/libEGL(17126): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 16:11:44.982: D/libEGL(17126): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 16:11:44.992: I/Adreno-EGL(17126): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 16:11:44.992: I/Adreno-EGL(17126): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 16:11:44.992: I/Adreno-EGL(17126): Build Date: 12/01/13 Sun
+05-30 16:11:44.992: I/Adreno-EGL(17126): Local Branch: 
+05-30 16:11:44.992: I/Adreno-EGL(17126): Remote Branch: 
+05-30 16:11:44.992: I/Adreno-EGL(17126): Local Patches: 
+05-30 16:11:44.992: I/Adreno-EGL(17126): Reconstruct Branch: 
+05-30 16:11:45.032: D/OpenGLRenderer(17126): Enabling debug mode 0
+
+
+
+05-30 16:34:43.346: D/MainActivity(20615): running: null
+05-30 16:34:43.346: V/MainActivity(20615): running: pack: co.tmgamer.activityinformationclass: co.tmgamer.activityinformation.MainActivity
+05-30 16:34:43.346: D/MainActivity(20615): running: null
+05-30 16:34:43.346: V/MainActivity(20615): running: pack: com.sonyericsson.homeclass: com.sonymobile.home.HomeActivity
+05-30 16:34:43.346: D/MainActivity(20615): running: null
+05-30 16:34:43.346: V/MainActivity(20615): running: pack: com.whatsappclass: com.whatsapp.Conversation
+05-30 16:34:43.346: D/MainActivity(20615): running: null
+05-30 16:34:43.346: V/MainActivity(20615): running: pack: com.android.phoneclass: com.android.phone.SomcInCallScreen
+05-30 16:34:43.346: D/MainActivity(20615): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=co.tmgamer.activityinformation/.MainActivity }
+05-30 16:34:43.346: D/MainActivity(20615): recent: ComponentInfo{co.tmgamer.activityinformation/co.tmgamer.activityinformation.MainActivity}
+05-30 16:34:43.346: D/MainActivity(20615): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 16:34:43.346: D/MainActivity(20615): recent: ComponentInfo{com.sonyericsson.home/com.sonymobile.home.HomeActivity}
+05-30 16:34:43.346: D/MainActivity(20615): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 16:34:43.346: D/MainActivity(20615): recent: ComponentInfo{com.whatsapp/com.whatsapp.Conversation}
+05-30 16:34:43.346: D/MainActivity(20615): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 16:34:43.346: D/MainActivity(20615): recent: ComponentInfo{com.android.systemui/com.android.systemui.recent.RecentsActivity}
+05-30 16:34:43.346: D/MainActivity(20615): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 16:34:43.346: D/MainActivity(20615): recent: ComponentInfo{com.estrongs.android.pop/com.estrongs.android.pop.app.InstallMonitorActivity}
+05-30 16:34:43.346: D/MainActivity(20615): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 16:34:43.346: D/MainActivity(20615): recent: ComponentInfo{com.sonyericsson.usbux/com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity}
+05-30 16:34:43.346: D/MainActivity(20615): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 16:34:43.346: D/MainActivity(20615): recent: ComponentInfo{jp.naver.line.android/jp.naver.line.android.activity.pushdialog.PushDialogActivity}
+05-30 16:34:43.346: D/MainActivity(20615): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 16:34:43.346: D/MainActivity(20615): recent: ComponentInfo{com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen}
+05-30 16:34:43.397: D/libEGL(20615): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 16:34:43.397: D/libEGL(20615): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 16:34:43.397: D/libEGL(20615): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 16:34:43.407: I/Adreno-EGL(20615): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 16:34:43.407: I/Adreno-EGL(20615): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 16:34:43.407: I/Adreno-EGL(20615): Build Date: 12/01/13 Sun
+05-30 16:34:43.407: I/Adreno-EGL(20615): Local Branch: 
+05-30 16:34:43.407: I/Adreno-EGL(20615): Remote Branch: 
+05-30 16:34:43.407: I/Adreno-EGL(20615): Local Patches: 
+05-30 16:34:43.407: I/Adreno-EGL(20615): Reconstruct Branch: 
+05-30 16:34:43.447: D/OpenGLRenderer(20615): Enabling debug mode 0
+
+05-30 16:38:10.839: W/qdhwcomposer(323): Excessive delay reading vsync: took 867 ms
+05-30 16:38:11.860: W/qdhwcomposer(323): Excessive delay reading vsync: took 850 ms
+05-30 16:38:11.990: I/ActivityManager(851): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity} from pid 1520
+05-30 16:38:12.030: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 16:38:12.030: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 16:38:12.070: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 16:38:12.070: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 16:38:12.070: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 16:38:12.070: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 16:38:12.070: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 16:38:12.070: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 16:38:12.070: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 16:38:12.070: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 16:38:12.070: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 16:38:12.070: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 16:38:12.070: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 16:38:12.070: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 16:38:12.080: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 16:38:12.080: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 16:38:12.080: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 16:38:12.080: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 16:38:12.080: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 16:38:12.080: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 16:38:12.080: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 16:38:12.090: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 16:38:12.090: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 16:38:12.090: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 16:38:12.090: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 16:38:12.120: D/MainActivity(21988): running: null
+05-30 16:38:12.120: V/MainActivity(21988): running: pack: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 16:38:12.120: D/MainActivity(21988): running: null
+05-30 16:38:12.120: V/MainActivity(21988): running: pack: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 16:38:12.120: D/MainActivity(21988): running: null
+05-30 16:38:12.120: V/MainActivity(21988): running: pack: com.whatsapp class: com.whatsapp.Conversation
+05-30 16:38:12.120: D/MainActivity(21988): running: null
+05-30 16:38:12.120: V/MainActivity(21988): running: pack: com.android.phone class: com.android.phone.SomcInCallScreen
+05-30 16:38:12.120: D/MainActivity(21988): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity bnds=[792,205][1044,493] }
+05-30 16:38:12.120: D/MainActivity(21988): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 16:38:12.120: D/MainActivity(21988): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 16:38:12.120: D/MainActivity(21988): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 16:38:12.120: D/MainActivity(21988): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 16:38:12.120: D/MainActivity(21988): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 16:38:12.120: D/MainActivity(21988): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 16:38:12.120: D/MainActivity(21988): recent: com.whatsapp class: com.whatsapp.Conversation
+05-30 16:38:12.120: D/MainActivity(21988): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 16:38:12.120: D/MainActivity(21988): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 16:38:12.120: D/MainActivity(21988): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 16:38:12.120: D/MainActivity(21988): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 16:38:12.120: D/MainActivity(21988): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 16:38:12.120: D/MainActivity(21988): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 16:38:12.120: D/MainActivity(21988): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 16:38:12.120: D/MainActivity(21988): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 16:38:12.210: I/ActivityManager(851): Displayed co.tmgamer.activityinformation/.MainActivity: +143ms
+05-30 16:38:12.430: I/ActivityManager(851): Start proc com.sonyericsson.video for service com.sonyericsson.video/.player.service.VideoPlayerService: pid=22057 uid=10116 gids={50116, 3003, 1015, 3002, 1028}
+05-30 16:38:12.511: W/dalvikvm(22057): Refusing to reopen boot DEX '/system/framework/com.sonyericsson.uxpres.jar'
+05-30 16:38:12.521: I/dalvikvm(22057): Could not find method android.app.ActivityManager.isLowRamDevice, referenced from method com.sonyericsson.video.VideoApplication.getCacheSize
+05-30 16:38:12.521: W/dalvikvm(22057): VFY: unable to resolve virtual method 117: Landroid/app/ActivityManager;.isLowRamDevice ()Z
+05-30 16:38:12.521: D/dalvikvm(22057): VFY: replacing opcode 0x6e at 0x0016
+05-30 16:38:12.851: W/qdhwcomposer(323): Excessive delay reading vsync: took 333 ms
+05-30 16:38:12.901: D/dalvikvm(22057): Trying to load lib /data/app-lib/com.sonyericsson.video-2/libjpeguser.so 0x4192c8c0
+05-30 16:38:12.901: D/dalvikvm(22057): Added shared lib /data/app-lib/com.sonyericsson.video-2/libjpeguser.so 0x4192c8c0
+05-30 16:38:12.901: D/dalvikvm(22057): No JNI_OnLoad found in /data/app-lib/com.sonyericsson.video-2/libjpeguser.so 0x4192c8c0, skipping init
+05-30 16:38:13.311: D/Finsky(17382): [1] 5.onFinished: Installation state replication succeeded.
+05-30 16:38:14.142: W/VUPlugin(21172): AccountMgr.java:349. refreshDefaultGuestLocale: Locale language is unsupported in the store.
+05-30 16:38:14.142: E/VUPlugin(21172): GetAccountIdTask.java:40. Create session failed: ERROR_UNKNOWN
+05-30 16:38:14.172: W/VUPlugin(21172): AccountMgr.java:349. refreshDefaultGuestLocale: Locale language is unsupported in the store.
+05-30 16:38:14.172: E/VUPlugin(21172): GetSigninIdTask.java:40. Create session failed: ERROR_UNKNOWN
+05-30 16:38:14.212: W/VUPlugin(21172): AccountMgr.java:349. refreshDefaultGuestLocale: Locale language is unsupported in the store.
+05-30 16:38:14.212: E/VUPlugin(21172): GetSigninTypeTask.java:41. Create session failed: ERROR_UNKNOWN
+05-30 16:38:14.322: W/qdhwcomposer(323): Excessive delay reading vsync: took 1301 ms
+
+
+05-30 16:40:08.344: W/qdhwcomposer(323): Excessive delay reading vsync: took 1501 ms
+05-30 16:40:08.694: W/qdhwcomposer(323): Excessive delay reading vsync: took 313 ms
+05-30 16:40:08.724: E/Parcel(424): Reading a NULL string not supported here.
+05-30 16:40:08.724: E/Parcel(424): Reading a NULL string not supported here.
+05-30 16:40:08.744: I/ActivityManager(851): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity} from pid 1520
+05-30 16:40:08.774: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 16:40:08.774: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 16:40:08.824: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 16:40:08.824: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 16:40:08.824: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 16:40:08.824: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 16:40:08.824: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 16:40:08.824: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 16:40:08.824: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 16:40:08.834: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 16:40:08.834: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 16:40:08.834: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 16:40:08.834: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 16:40:08.834: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 16:40:08.834: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 16:40:08.834: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 16:40:08.834: I/ActivityManager(851): Start proc co.tmgamer.activityinformation for activity co.tmgamer.activityinformation/.MainActivity: pid=22495 uid=10303 gids={50303, 1028}
+05-30 16:40:08.844: D/dalvikvm(22495): Late-enabling CheckJNI
+05-30 16:40:08.854: D/dalvikvm(324): GC_EXPLICIT freed 40K, 78% free 2566K/11244K, paused 2ms+2ms, total 26ms
+05-30 16:40:08.874: D/dalvikvm(324): GC_EXPLICIT freed <1K, 78% free 2566K/11244K, paused 2ms+1ms, total 20ms
+05-30 16:40:08.884: D/dalvikvm(324): GC_EXPLICIT freed <1K, 78% free 2566K/11244K, paused 1ms+2ms, total 17ms
+05-30 16:40:08.954: D/MainActivity(22495): running: null
+05-30 16:40:08.954: V/MainActivity(22495): running: pack: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 16:40:08.954: D/MainActivity(22495): running: null
+05-30 16:40:08.954: V/MainActivity(22495): running: pack: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 16:40:08.954: D/MainActivity(22495): running: null
+05-30 16:40:08.954: V/MainActivity(22495): running: pack: com.whatsapp class: com.whatsapp.gallerypicker.ImageGallery
+05-30 16:40:08.954: D/MainActivity(22495): running: null
+05-30 16:40:08.954: V/MainActivity(22495): running: pack: com.android.phone class: com.android.phone.SomcInCallScreen
+05-30 16:40:08.964: D/MainActivity(22495): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity bnds=[792,205][1044,493] }
+05-30 16:40:08.964: D/MainActivity(22495): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 16:40:08.964: D/MainActivity(22495): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 16:40:08.964: D/MainActivity(22495): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 16:40:08.964: D/MainActivity(22495): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.whatsapp/.Main bnds=[0,834][270,1173] }
+05-30 16:40:08.964: D/MainActivity(22495): recent: com.whatsapp class: com.whatsapp.Main
+05-30 16:40:08.964: D/MainActivity(22495): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 16:40:08.964: D/MainActivity(22495): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 16:40:08.964: D/MainActivity(22495): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 16:40:08.964: D/MainActivity(22495): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 16:40:08.964: D/MainActivity(22495): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 16:40:08.964: D/MainActivity(22495): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 16:40:08.964: D/MainActivity(22495): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 16:40:08.964: D/MainActivity(22495): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 16:40:08.964: D/MainActivity(22495): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 16:40:08.964: D/MainActivity(22495): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 16:40:09.004: D/libEGL(22495): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 16:40:09.004: D/libEGL(22495): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 16:40:09.004: D/libEGL(22495): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 16:40:09.004: I/Adreno-EGL(22495): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 16:40:09.004: I/Adreno-EGL(22495): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 16:40:09.004: I/Adreno-EGL(22495): Build Date: 12/01/13 Sun
+05-30 16:40:09.004: I/Adreno-EGL(22495): Local Branch: 
+05-30 16:40:09.004: I/Adreno-EGL(22495): Remote Branch: 
+05-30 16:40:09.004: I/Adreno-EGL(22495): Local Patches: 
+05-30 16:40:09.004: I/Adreno-EGL(22495): Reconstruct Branch: 
+05-30 16:40:09.044: D/OpenGLRenderer(22495): Enabling debug mode 0
+05-30 16:40:09.094: D/dalvikvm(1267): GC_CONCURRENT freed 2897K, 51% free 11340K/22692K, paused 1ms+5ms, total 36ms
+05-30 16:40:09.134: I/ActivityManager(851): Displayed co.tmgamer.activityinformation/.MainActivity: +320ms
+05-30 16:40:09.755: D/dalvikvm(11171): GC_CONCURRENT freed 403K, 76% free 2699K/11244K, paused 6ms+7ms, total 39ms
+05-30 16:40:10.736: W/qdhwcomposer(323): Excessive delay reading vsync: took 1351 ms
+05-30 16:40:12.137: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-30 16:40:12.137: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-30 16:40:12.137: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-30 16:40:12.137: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value DMIC Endfire
+05-30 16:40:12.137: D/alsa_ucm(309): disdev: device DMIC Endfire not enabled, no need to disable
+05-30 16:40:12.137: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-30 16:40:12.137: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-30 16:40:12.137: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-30 16:40:12.137: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-30 16:40:12.137: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-30 16:40:12.137: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-30 16:40:12.147: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+
+
+
+05-30 16:41:38.942: W/qdhwcomposer(323): Excessive delay reading vsync: took 1168 ms
+05-30 16:41:40.193: W/qdhwcomposer(323): Excessive delay reading vsync: took 1214 ms
+05-30 16:41:40.243: I/ActivityManager(851): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity} from pid 1520
+05-30 16:41:40.273: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 16:41:40.273: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 16:41:40.303: W/qdhwcomposer(323): Excessive delay reading vsync: took 49 ms
+05-30 16:41:40.313: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 16:41:40.313: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 16:41:40.313: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 16:41:40.313: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 16:41:40.313: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 16:41:40.313: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 16:41:40.313: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 16:41:40.323: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 16:41:40.323: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 16:41:40.323: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 16:41:40.323: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 16:41:40.333: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 16:41:40.333: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 16:41:40.333: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 16:41:40.343: I/ActivityManager(851): Start proc co.tmgamer.activityinformation for activity co.tmgamer.activityinformation/.MainActivity: pid=23031 uid=10303 gids={50303, 1028}
+05-30 16:41:40.353: D/dalvikvm(23031): Late-enabling CheckJNI
+05-30 16:41:40.463: D/MainActivity(23031): running: null
+05-30 16:41:40.463: V/MainActivity(23031): running: pack: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 16:41:40.463: D/MainActivity(23031): running: null
+05-30 16:41:40.463: V/MainActivity(23031): running: pack: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 16:41:40.463: D/MainActivity(23031): running: null
+05-30 16:41:40.463: V/MainActivity(23031): running: pack: com.whatsapp class: com.whatsapp.Conversation
+05-30 16:41:40.463: D/MainActivity(23031): running: null
+05-30 16:41:40.463: V/MainActivity(23031): running: pack: com.sonyericsson.album class: com.sonyericsson.album.MainActivity
+05-30 16:41:40.463: D/MainActivity(23031): running: null
+05-30 16:41:40.463: V/MainActivity(23031): running: pack: com.android.phone class: com.android.phone.SomcInCallScreen
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity bnds=[792,205][1044,493] }
+05-30 16:41:40.463: D/MainActivity(23031): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 16:41:40.463: D/MainActivity(23031): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 16:41:40.463: D/MainActivity(23031): recent: com.whatsapp class: com.whatsapp.Conversation
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.sonyericsson.album/.MainActivity bnds=[270,1173][540,1512] }
+05-30 16:41:40.463: D/MainActivity(23031): recent: com.sonyericsson.album class: com.sonyericsson.album.MainActivity
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 16:41:40.463: D/MainActivity(23031): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 16:41:40.463: D/MainActivity(23031): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 16:41:40.463: D/MainActivity(23031): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 16:41:40.463: D/MainActivity(23031): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 16:41:40.463: D/MainActivity(23031): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 16:41:40.473: D/MainActivity(23031): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 16:41:40.513: D/libEGL(23031): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 16:41:40.513: D/libEGL(23031): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 16:41:40.523: D/libEGL(23031): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 16:41:40.533: I/Adreno-EGL(23031): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 16:41:40.533: I/Adreno-EGL(23031): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 16:41:40.533: I/Adreno-EGL(23031): Build Date: 12/01/13 Sun
+05-30 16:41:40.533: I/Adreno-EGL(23031): Local Branch: 
+05-30 16:41:40.533: I/Adreno-EGL(23031): Remote Branch: 
+05-30 16:41:40.533: I/Adreno-EGL(23031): Local Patches: 
+05-30 16:41:40.533: I/Adreno-EGL(23031): Reconstruct Branch: 
+05-30 16:41:40.584: D/OpenGLRenderer(23031): Enabling debug mode 0
+05-30 16:41:40.664: I/ActivityManager(851): Displayed co.tmgamer.activityinformation/.MainActivity: +326ms
+05-30 16:41:40.744: D/dalvikvm(11171): GC_CONCURRENT freed 409K, 76% free 2702K/11244K, paused 3ms+1ms, total 17ms
+05-30 16:41:40.884: E/Parcel(424): Reading a NULL string not supported here.
+05-30 16:41:40.884: E/Parcel(424): Reading a NULL string not supported here.
+05-30 16:41:42.225: W/qdhwcomposer(323): Excessive delay reading vsync: took 1168 ms
+
+05-30 17:09:13.606: W/qdhwcomposer(323): Excessive delay reading vsync: took 1852 ms
+05-30 17:09:13.706: I/ActivityManager(851): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity} from pid 1520
+05-30 17:09:13.736: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 17:09:13.736: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 17:09:13.786: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:09:13.786: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:09:13.786: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:09:13.786: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:09:13.786: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:09:13.786: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:09:13.786: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:09:13.786: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:09:13.796: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:09:13.796: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:09:13.796: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:09:13.796: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:09:13.796: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:09:13.796: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:09:13.846: D/MainActivity(23031): running: null
+05-30 17:09:13.846: V/MainActivity(23031): running: pack: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:09:13.846: D/MainActivity(23031): running: null
+05-30 17:09:13.846: V/MainActivity(23031): running: pack: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:09:13.846: D/MainActivity(23031): running: null
+05-30 17:09:13.846: V/MainActivity(23031): running: pack: com.android.phone class: com.android.phone.SomcInCallScreen
+05-30 17:09:13.846: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity bnds=[792,205][1044,493] }
+05-30 17:09:13.846: D/MainActivity(23031): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:09:13.846: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:09:13.846: D/MainActivity(23031): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:09:13.856: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.sonyericsson.album/.MainActivity bnds=[270,1173][540,1512] }
+05-30 17:09:13.856: D/MainActivity(23031): recent: com.sonyericsson.album class: com.sonyericsson.album.MainActivity
+05-30 17:09:13.856: D/MainActivity(23031): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 17:09:13.856: D/MainActivity(23031): recent: com.whatsapp class: com.whatsapp.Conversation
+05-30 17:09:13.856: D/MainActivity(23031): recent: Intent { dat=ig://user?username=ilovemedanshop&notif_dummy=ee5b237b-0422-43ac-bf1a-049ff291a324 flg=0x4000000 cmp=com.instagram.android/.activity.MainTabActivity }
+05-30 17:09:13.856: D/MainActivity(23031): recent: com.instagram.android class: com.instagram.android.activity.MainTabActivity
+05-30 17:09:13.856: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:09:13.856: D/MainActivity(23031): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:09:13.856: D/MainActivity(23031): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:09:13.856: D/MainActivity(23031): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:09:13.856: D/MainActivity(23031): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:09:13.867: D/MainActivity(23031): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:09:13.867: D/MainActivity(23031): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:09:13.867: D/MainActivity(23031): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:09:13.867: D/MainActivity(23031): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:09:13.867: D/MainActivity(23031): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:09:13.867: D/MainActivity(23031): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 17:09:13.887: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:09:13.887: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:09:13.927: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:09:13.947: I/ActivityManager(851): Displayed co.tmgamer.activityinformation/.MainActivity: +165ms
+05-30 17:09:13.947: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:09:14.147: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:09:14.147: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:09:14.627: W/qdhwcomposer(323): Excessive delay reading vsync: took 433 ms
+05-30 17:09:16.679: W/qdhwcomposer(323): Excessive delay reading vsync: took 1885 ms
+05-30 17:09:17.100: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-30 17:09:17.100: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-30 17:09:17.100: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-30 17:09:17.100: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value DMIC Endfire
+05-30 17:09:17.100: D/alsa_ucm(309): disdev: device DMIC Endfire not enabled, no need to disable
+05-30 17:09:17.100: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-30 17:09:17.100: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-30 17:09:17.100: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-30 17:09:17.100: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-30 17:09:17.110: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-30 17:09:17.110: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-30 17:09:17.110: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+05-30 17:09:17.160: D/dalvikvm(23966): GC_CONCURRENT freed 399K, 77% free 2690K/11244K, paused 5ms+2ms, total 30ms
+05-30 17:09:17.670: W/qdhwcomposer(323): Excessive delay reading vsync: took 967 ms
+05-30 17:09:18.061: W/qdhwcomposer(323): Excessive delay reading vsync: took 233 ms
+
+
+05-30 17:11:32.272: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:32.272: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:32.272: W/qdhwcomposer(323): Excessive delay reading vsync: took 818 ms
+05-30 17:11:32.782: W/qdhwcomposer(323): Excessive delay reading vsync: took 333 ms
+05-30 17:11:34.023: I/yahoo.push.service(17471): yahoo.log.im: im_29873_im Received '200' from server
+05-30 17:11:34.023: I/yahoo.push.service(17471): yahoo.log.im: im_29873_im Reg close. Timeout++: 2730s
+05-30 17:11:34.033: I/yahoo.push.service(17471): yahoo.log.im: im_29873_im Connection count: 86
+05-30 17:11:34.033: I/yahoo.push.service(17471): yahoo.log.im: im_29873_im Start HTTP Push. Idle timeout: 2730 Sequence: 588
+05-30 17:11:34.043: V/yahoo.push.service(17471): yahoo.log.im: Registered alarm timer(Action: com.yahoo.android.push.Connection_Watchdoghakim.haustonim) to go off in: 2760s
+05-30 17:11:34.744: W/qdhwcomposer(323): Excessive delay reading vsync: took 1952 ms
+05-30 17:11:35.445: W/qdhwcomposer(323): Excessive delay reading vsync: took 534 ms
+05-30 17:11:36.325: D/dalvikvm(25939): GC_FOR_ALLOC freed 2812K, 26% free 33805K/45600K, paused 52ms, total 56ms
+05-30 17:11:36.346: W/qdhwcomposer(323): Excessive delay reading vsync: took 49 ms
+05-30 17:11:37.637: W/qdhwcomposer(323): Excessive delay reading vsync: took 1118 ms
+05-30 17:11:37.827: I/dalvikvm(25939): Total arena pages for JIT: 11
+05-30 17:11:37.827: I/dalvikvm(25939): Total arena pages for JIT: 12
+05-30 17:11:37.827: I/dalvikvm(25939): Total arena pages for JIT: 13
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 14
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 15
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 16
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 17
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 18
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 19
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 20
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 21
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 22
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 23
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 24
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 25
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 26
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 27
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 28
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 29
+05-30 17:11:37.837: I/dalvikvm(25939): Total arena pages for JIT: 30
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 31
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 32
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 33
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 34
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 35
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 36
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 37
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 38
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 39
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 40
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 41
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 42
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 43
+05-30 17:11:37.847: I/dalvikvm(25939): Total arena pages for JIT: 44
+05-30 17:11:38.347: D/dalvikvm(25939): GC_FOR_ALLOC freed 4522K, 20% free 36618K/45600K, paused 63ms, total 63ms
+05-30 17:11:38.367: W/qdhwcomposer(323): Excessive delay reading vsync: took 150 ms
+05-30 17:11:38.458: D/dalvikvm(25939): GC_FOR_ALLOC freed 73K, 13% free 40101K/45600K, paused 46ms, total 46ms
+05-30 17:11:38.468: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:11:38.478: I/dalvikvm-heap(25939): Grow heap (frag case) to 48.173MB for 8294416-byte allocation
+05-30 17:11:38.548: D/dalvikvm(25939): GC_CONCURRENT freed 2K, 11% free 48204K/53704K, paused 3ms+9ms, total 71ms
+05-30 17:11:38.828: D/dalvikvm(25939): GC_FOR_ALLOC freed 8167K, 21% free 44219K/55760K, paused 46ms, total 47ms
+05-30 17:11:40.129: D/fast-dormancy(924): [FDM]: ps_attach_state=1
+05-30 17:11:40.129: D/fast-dormancy(924): [FDM]: reg_state=1 param_mask=4
+05-30 17:11:40.129: D/fast-dormancy(924): [FDM]: reg_state=1 param_mask=4
+05-30 17:11:40.229: V/RealCellState(1285): telephonyManager network type is 10
+05-30 17:11:40.289: W/Settings(26398): Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+05-30 17:11:40.780: W/qdhwcomposer(323): Excessive delay reading vsync: took 817 ms
+05-30 17:11:41.340: D/dalvikvm(23966): GC_CONCURRENT freed 398K, 76% free 2698K/11244K, paused 7ms+2ms, total 38ms
+05-30 17:11:41.501: W/qdhwcomposer(323): Excessive delay reading vsync: took 567 ms
+05-30 17:11:41.751: W/qdhwcomposer(323): Excessive delay reading vsync: took 216 ms
+05-30 17:11:41.821: W/ActionProvider(25939): setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this ShareActionProvider instance while it is still in use somewhere else?
+05-30 17:11:42.742: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:11:42.782: W/qdhwcomposer(323): Excessive delay reading vsync: took 617 ms
+05-30 17:11:42.872: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:11:42.872: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:11:42.872: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:11:42.872: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:11:42.872: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:11:42.872: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:11:42.872: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:11:42.882: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:11:42.882: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:11:42.882: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:11:42.882: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:11:42.882: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:11:42.882: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:11:42.882: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:11:42.882: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:11:43.523: I/Choreographer(25939): Skipped 39 frames!  The application may be doing too much work on its main thread.
+05-30 17:11:43.543: W/qdhwcomposer(323): Excessive delay reading vsync: took 584 ms
+05-30 17:11:44.243: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:11:44.744: W/qdhwcomposer(323): Excessive delay reading vsync: took 784 ms
+05-30 17:11:45.785: I/WifiManager(1285): Process rocess.location requested a scan
+05-30 17:11:46.776: W/qdhwcomposer(323): Excessive delay reading vsync: took 1568 ms
+05-30 17:11:48.027: W/qdhwcomposer(323): Excessive delay reading vsync: took 1234 ms
+05-30 17:11:48.207: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-30 17:11:48.207: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-30 17:11:48.207: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-30 17:11:48.207: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value DMIC Endfire
+05-30 17:11:48.207: D/alsa_ucm(309): disdev: device DMIC Endfire not enabled, no need to disable
+05-30 17:11:48.207: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-30 17:11:48.207: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-30 17:11:48.207: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-30 17:11:48.217: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-30 17:11:48.217: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-30 17:11:48.217: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-30 17:11:48.217: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+05-30 17:11:49.538: W/qdhwcomposer(323): Excessive delay reading vsync: took 1451 ms
+05-30 17:11:49.598: D/dalvikvm(1285): GC_CONCURRENT freed 1028K, 50% free 5695K/11244K, paused 3ms+5ms, total 141ms
+05-30 17:11:49.598: D/dalvikvm(1285): WAIT_FOR_CONCURRENT_GC blocked 76ms
+05-30 17:11:49.618: D/dalvikvm(8623): GC_CONCURRENT freed 504K, 64% free 4118K/11244K, paused 3ms+3ms, total 29ms
+05-30 17:11:52.591: D/dalvikvm(23966): GC_CONCURRENT freed 469K, 77% free 2651K/11244K, paused 9ms+1ms, total 56ms
+05-30 17:11:52.601: D/WifiStateMachine(851): VerifyingLinkState enter
+05-30 17:11:52.601: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=5011
+05-30 17:11:52.611: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.611: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.611: D/QCNEA(424): |CAC| readCallback: read len:492, ret:0, errno:0
+05-30 17:11:52.611: D/QCNEA(424): |CAC| updateWlanNetCfgInfo
+05-30 17:11:52.611: D/QCNEA(424): |CAC| updateNetCfgInfo
+05-30 17:11:52.611: V/QCNEA(424): |CAC| *********************************************
+05-30 17:11:52.611: V/QCNEA(424): |CAC|                   Netconfig               
+05-30 17:11:52.611: V/QCNEA(424): |CAC| *********************************************
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	NetConfig: Net type   =3
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	NetConfig: subtype rl =0
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	NetConfig:         fl =0
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	NetConfig: ip4        =0.0.0.0
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	NetConfig: ip6        =::
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	NetConfig: mtu        =0
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	NetConfig: Default    =true
+05-30 17:11:52.611: V/QCNEA(424): |CAC| *********************************************
+05-30 17:11:52.611: D/QCNEA(424): |CAC| Received bssid= 20:aa:4b:f4:2e:66
+05-30 17:11:52.611: D/QCNEA(424): |CAC| net type = 3
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	bssid           =00:00:00:00:00:00
+05-30 17:11:52.611: D/QCNEA(424): |CAC| Received ssid= TMG56KDialUp
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	ssid           =TMG56KDialUp
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	DNS v4        =192.168.1.1
+05-30 17:11:52.611: V/QCNEA(424): |CAC| 	DNS v4        =0.0.0.0
+05-30 17:11:52.611: V/QCNEA(424): |CAC| *********************************************
+05-30 17:11:52.611: D/QCNEA(424): |CAC| updateCache: CAS_WLAN_NETCFG_INFO
+05-30 17:11:52.611: D/QCNEA(424): |CAC| dispatching netcfgupdate for wlan
+05-30 17:11:52.611: D/QCNEA(424): |CAC| dispatchNetCfg: updating:0xb8f2361c
+05-30 17:11:52.611: D/QCNEA(424): |CAC| readCallback: read len:0, ret:-1, errno:11
+05-30 17:11:52.611: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.611: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=458752
+05-30 17:11:52.611: D/ConnectivityServiceHSM(851): ConnectivityChange for WIFI: CONNECTING/VERIFYING_POOR_LINK
+05-30 17:11:52.611: D/WifiStateMachine(851): VerifyingLinkState GOOD_LINK_DETECTED: transition to captive portal check
+05-30 17:11:52.611: D/WifiStateMachine(851): CaptivePortalCheckState enter
+05-30 17:11:52.641: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=458752
+05-30 17:11:52.641: D/ConnectivityServiceHSM(851): ConnectivityChange for WIFI: CONNECTING/CAPTIVE_PORTAL_CHECK
+05-30 17:11:52.641: I/ActivityManager(851): Start proc com.sonyericsson.usbux for broadcast com.sonyericsson.usbux/.service.UsbServiceReceiver: pid=26780 uid=1000 gids={41000, 2993, 3003, 1015, 1028, 3002, 3001, 3006, 3007, 1021, 3004, 3005, 1000, 3009, 1023, 1010}
+05-30 17:11:52.651: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=5010
+05-30 17:11:52.651: D/WifiStateMachine(851): CaptivePortalCheckState CMD_CAPTIVE_CHECK_COMPLETE
+05-30 17:11:52.651: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.651: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.651: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.651: D/QcConnectivityService(851): Captive portal check NetworkInfo: type: WIFI[], state: CONNECTING/CAPTIVE_PORTAL_CHECK, reason: (unspecified), extra: "TMG56KDialUp", roaming: false, failover: false, isAvailable: true
+05-30 17:11:52.651: D/QcConnectivityService(851): handleInetConditionChange: net=0 != default=1 - ignore
+05-30 17:11:52.691: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=458752
+05-30 17:11:52.691: D/ConnectivityServiceHSM(851): ConnectivityChange for WIFI: CONNECTED/CONNECTED
+05-30 17:11:52.691: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=5001
+05-30 17:11:52.691: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.691: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.691: D/QCNEA(424): |CAC| readCallback: read len:492, ret:0, errno:0
+05-30 17:11:52.691: D/QCNEA(424): |CAC| updateWlanNetCfgInfo
+05-30 17:11:52.691: D/QCNEA(424): |CAC| updateNetCfgInfo
+05-30 17:11:52.691: V/QCNEA(424): |CAC| *********************************************
+05-30 17:11:52.691: V/QCNEA(424): |CAC|                   Netconfig               
+05-30 17:11:52.691: V/QCNEA(424): |CAC| *********************************************
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	NetConfig: Net type   =1
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	NetConfig: subtype rl =21
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	NetConfig:         fl =21
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	NetConfig: ip4        =192.168.1.101
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	NetConfig: ip6        =::
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	NetConfig: mtu        =1500
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	NetConfig: Default    =true
+05-30 17:11:52.691: V/QCNEA(424): |CAC| *********************************************
+05-30 17:11:52.691: D/QCNEA(424): |CAC| Received bssid= 20:aa:4b:f4:2e:66
+05-30 17:11:52.691: D/QCNEA(424): |CAC| net type = 1
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	bssid           =20:aa:4b:f4:2e:66
+05-30 17:11:52.691: D/QCNEA(424): |CAC| Received ssid= TMG56KDialUp
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	ssid           =TMG56KDialUp
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	DNS v4        =192.168.1.1
+05-30 17:11:52.691: V/QCNEA(424): |CAC| 	DNS v4        =0.0.0.0
+05-30 17:11:52.691: V/QCNEA(424): |CAC| *********************************************
+05-30 17:11:52.691: D/QCNEA(424): |CAC| updateCache: CAS_WLAN_NETCFG_INFO
+05-30 17:11:52.691: D/QCNEA(424): |CAC| dispatching netcfgupdate for wlan
+05-30 17:11:52.691: D/QCNEA(424): |CAC| dispatchNetCfg: updating:0xb8f2361c
+05-30 17:11:52.691: D/QCNEA(424): |CAC| readCallback: read len:0, ret:-1, errno:11
+05-30 17:11:52.691: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:52.691: D/QcConnectivityService(851): Setting TCP values: [524288,1048576,2097152,262144,524288,1048576] which comes from [net.tcp.buffersize.wifi]
+05-30 17:11:52.701: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:11:52.701: D/QcConnectivityService(851): handleConnectivityChange: changed linkProperty[1]: doReset=false resetMask=0
+05-30 17:11:52.701: D/QcConnectivityService(851):    curLp={InterfaceName: wlan0 LinkAddresses: [192.168.1.101/24,]  Routes: [192.168.1.0/24 -> 0.0.0.0,0.0.0.0/0 -> 192.168.1.1,] DnsAddresses: [192.168.1.1,] Domains: singnet.com.sgHttpProxy: [ProxyProperties.mHost == null] }
+05-30 17:11:52.701: D/QcConnectivityService(851):    newLp={InterfaceName: wlan0 LinkAddresses: [192.168.1.101/24,]  Routes: [192.168.1.0/24 -> 0.0.0.0,0.0.0.0/0 -> 192.168.1.1,] DnsAddresses: [192.168.1.1,] Domains: singnet.com.sgHttpProxy: [ProxyProperties.mHost == null] }
+05-30 17:11:52.701: D/QcConnectivityService(851): handleConnectivityChange: address are the same reset per doReset linkProperty[1]: resetMask=0
+05-30 17:11:52.701: D/Nat464Xlat(851): requiresClat: netType=1, hasIPv4Address=true
+05-30 17:11:52.701: D/QcConnectivityService(851): sendStickyBroadcast: action=android.net.conn.CONNECTIVITY_CHANGE_IMMEDIATE
+05-30 17:11:52.711: D/QcConnectivityService(851): sendStickyBroadcastDelayed: delayMs=3000, action=android.net.conn.CONNECTIVITY_CHANGE
+05-30 17:11:52.721: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=113
+05-30 17:11:52.721: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=113
+05-30 17:11:52.742: W/ContextImpl(26780): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 android.content.ContextWrapper.startService:473 com.sonyericsson.usbux.service.UsbServiceReceiver.onReceive:58 android.app.ActivityThread.handleReceiver:2488 
+05-30 17:11:52.762: I/MTP-usbux.SdCard(26780): VolumePaths : 
+05-30 17:11:52.762: I/MTP-usbux.SdCard(26780):          /storage/emulated/0
+05-30 17:11:52.762: I/MTP-usbux.SdCard(26780):          /storage/removable/sdcard1
+05-30 17:11:52.762: I/MTP-usbux.Class(26780): registerUserChangeReceiver()
+05-30 17:11:52.762: I/MTP-usbux.Class(26780): Action = android.net.wifi.STATE_CHANGE
+05-30 17:11:52.762: W/ContextImpl(26780): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 android.content.ContextWrapper.startService:473 com.sonyericsson.usbux.service.UsbServiceReceiver.onReceive:58 android.app.ActivityThread.handleReceiver:2488 
+05-30 17:11:52.772: I/MTP-usbux.Class(26780): Action = android.net.wifi.STATE_CHANGE
+05-30 17:11:52.772: I/MTP-usbux.Class(26780): Action = android.net.wifi.STATE_CHANGE
+05-30 17:11:52.772: W/ContextImpl(26780): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 android.content.ContextWrapper.startService:473 com.sonyericsson.usbux.service.UsbServiceReceiver.onReceive:58 android.app.ActivityThread.handleReceiver:2488 
+05-30 17:11:52.982: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=113
+05-30 17:11:52.982: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=113
+05-30 17:11:53.572: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:11:53.572: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:11:53.572: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:11:53.572: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:11:53.572: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:11:53.572: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:11:53.572: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:11:53.582: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:11:53.582: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:11:53.582: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:11:53.582: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:11:53.582: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:11:53.582: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:11:53.582: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:11:53.612: I/ActivityManager(851): START u0 {act=android.intent.action.SEND typ=image/png flg=0x80001 cmp=com.google.android.gm/.ComposeActivityGmail (has clip) (has extras)} from pid 25939
+05-30 17:11:53.652: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 17:11:53.652: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 17:11:53.682: W/qdhwcomposer(323): Excessive delay reading vsync: took 36 ms
+05-30 17:11:53.692: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=108
+05-30 17:11:53.692: D/ConnectivityServiceHSM(851): NetTransition Wakelock for ConnectedState released by timeout
+05-30 17:11:53.722: I/Scenic(25939): com.sonyericsson.scenic.system.helpers.ScenicView.onPause(ScenicView.java:99): onPause
+05-30 17:11:53.732: W/ContextImpl(18872): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 android.content.ContextWrapper.startService:473 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableScan:293 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableForegroundScan:81 
+05-30 17:11:53.783: W/qdhwcomposer(323): Excessive delay reading vsync: took 49 ms
+05-30 17:11:53.783: I/ActivityManager(851): Start proc com.google.android.gm for activity com.google.android.gm/.ComposeActivityGmail: pid=26829 uid=10045 gids={50045, 3003, 1015, 1028}
+05-30 17:11:53.953: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:11:53.953: I/dalvikvm(26829): Could not find method android.app.ActivityManager.isLowRamDevice, referenced from method com.android.mail.utils.W.be
+05-30 17:11:53.953: W/dalvikvm(26829): VFY: unable to resolve virtual method 176: Landroid/app/ActivityManager;.isLowRamDevice ()Z
+05-30 17:11:53.963: D/dalvikvm(26829): VFY: replacing opcode 0x6e at 0x000e
+05-30 17:11:54.033: W/qdhwcomposer(323): Excessive delay reading vsync: took 50 ms
+05-30 17:11:54.063: I/dalvikvm(26829): Could not find method com.android.mail.browse.i.getNotificationUri, referenced from method com.android.mail.browse.j.getNotificationUri
+05-30 17:11:54.063: W/dalvikvm(26829): VFY: unable to resolve virtual method 7596: Lcom/android/mail/browse/i;.getNotificationUri ()Landroid/net/Uri;
+05-30 17:11:54.063: D/dalvikvm(26829): VFY: replacing opcode 0x6e at 0x0008
+05-30 17:11:54.133: W/GAV2(26829): Thread[main,5,main]: Need to call initialize() and be in fallback mode to start dispatch.
+05-30 17:11:54.353: D/webcoreglue(26829): netstack: Memory Cache feature is OFF
+05-30 17:11:54.443: D/JSENGINE(26829): qualcomm.jsengine.version:C.2-patch35-git:7b7ad6f
+05-30 17:11:54.533: W/qdhwcomposer(323): Excessive delay reading vsync: took 450 ms
+05-30 17:11:54.593: D/HostStatisticManager(26829): netstack: DNS Host Prioritization is: ON, Version: 5.0.1
+05-30 17:11:54.593: I/(26829): netstack: LIB_MGR - Lib loaded: libdnshostprio.so
+05-30 17:11:54.593: I/(26829): netstack: STAT_HUB - Succeeded to load plugin: libdnshostprio.so
+05-30 17:11:54.593: E/(26829): netstack: LIB_MGR - Error loading lib spl_proc_plugin.so
+05-30 17:11:54.593: E/(26829): netstack: STAT_HUB - Failed to load plugin: spl_proc_plugin.so
+05-30 17:11:54.603: W/qdhwcomposer(323): Excessive delay reading vsync: took 50 ms
+05-30 17:11:54.603: I/(26829): netstack: LIB_MGR - Lib loaded: pp_proc_plugin.so
+05-30 17:11:54.603: I/(26829): netstack: STAT_HUB - Succeeded to load plugin: pp_proc_plugin.so
+05-30 17:11:54.603: E/(26829): netstack:  STAT_HUB - App com.google.android.gm isn't supported
+05-30 17:11:54.643: D/libEGL(26829): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 17:11:54.643: D/libEGL(26829): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 17:11:54.643: D/libEGL(26829): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 17:11:54.643: I/Adreno-EGL(26829): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 17:11:54.643: I/Adreno-EGL(26829): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 17:11:54.643: I/Adreno-EGL(26829): Build Date: 12/01/13 Sun
+05-30 17:11:54.643: I/Adreno-EGL(26829): Local Branch: 
+05-30 17:11:54.643: I/Adreno-EGL(26829): Remote Branch: 
+05-30 17:11:54.643: I/Adreno-EGL(26829): Local Patches: 
+05-30 17:11:54.643: I/Adreno-EGL(26829): Reconstruct Branch: 
+05-30 17:11:54.713: D/OpenGLRenderer(26829): Enabling debug mode 0
+05-30 17:11:54.723: I/Gmail(26829): PlayLogger.onLoggerConnected
+05-30 17:11:54.783: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:54.783: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:11:54.804: W/qdhwcomposer(323): Excessive delay reading vsync: took 116 ms
+05-30 17:11:54.824: I/ActivityManager(851): Displayed com.google.android.gm/.ComposeActivityGmail: +1s53ms
+05-30 17:11:54.944: I/Scenic(25939): com.sonyericsson.scenic.system.helpers.ScenicView.onStop(ScenicView.java:111): onStop
+05-30 17:11:54.944: W/ContextImpl(18872): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableScan:293 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableForegroundScan:81 com.sonymobile.playanywhere.service.PlayAnywhereSinkControllerImpl.unregisterRemoteCallback:842 
+05-30 17:11:54.994: D/dalvikvm(851): GC_EXPLICIT freed 5928K, 31% free 50807K/73376K, paused 5ms+17ms, total 249ms
+05-30 17:11:55.014: I/Gmail(26829): calculateUnknownSyncRationalesAndPurgeInBackground: queueing
+05-30 17:11:55.024: I/Gmail(26829): calculateUnknownSyncRationalesAndPurgeInBackground: queueing
+05-30 17:11:55.064: D/dalvikvm(26829): GC_FOR_ALLOC freed 2281K, 30% free 7922K/11244K, paused 29ms, total 30ms
+05-30 17:11:55.074: I/dalvikvm-heap(26829): Grow heap (frag case) to 10.698MB for 2073616-byte allocation
+05-30 17:11:55.104: D/dalvikvm(26829): GC_CONCURRENT freed 56K, 26% free 9924K/13272K, paused 2ms+6ms, total 30ms
+05-30 17:11:55.114: I/Gmail(26829): calculateUnknownSyncRationalesAndPurgeInBackground: running
+05-30 17:11:55.124: I/Gmail(26829): calculateUnknownSyncRationalesAndPurgeInBackground: running
+05-30 17:11:55.204: D/dalvikvm(1125): GC_EXPLICIT freed 272K, 73% free 3134K/11244K, paused 2ms+4ms, total 29ms
+05-30 17:11:55.234: D/dalvikvm(26829): GC_FOR_ALLOC freed 63K, 26% free 9940K/13272K, paused 17ms, total 17ms
+05-30 17:11:55.234: I/dalvikvm-heap(26829): Grow heap (frag case) to 12.669MB for 2073616-byte allocation
+05-30 17:11:55.344: D/dalvikvm(26829): GC_FOR_ALLOC freed 2099K, 36% free 9920K/15300K, paused 21ms, total 21ms
+05-30 17:11:55.494: D/dalvikvm(26829): GC_FOR_ALLOC freed 2030K, 36% free 9917K/15300K, paused 33ms, total 33ms
+05-30 17:11:55.724: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=112
+05-30 17:11:55.724: D/QcConnectivityService(851): sendStickyBroadcast: action=android.net.conn.CONNECTIVITY_CHANGE
+05-30 17:11:55.744: D/Tethering(851): MasterInitialState.processMessage what=3
+05-30 17:11:55.754: W/qdhwcomposer(323): Excessive delay reading vsync: took 150 ms
+05-30 17:11:55.764: D/QcConnectivityService(851): reportNetworkCondition(1, 0)
+05-30 17:11:55.784: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=104
+05-30 17:11:55.784: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=5006
+05-30 17:11:55.784: D/QcConnectivityService(851): handleInetConditionChange: net=1, condition=0,mActiveDefaultNetwork=1
+05-30 17:11:55.784: D/QcConnectivityService(851): handleInetConditionChange: starting a change hold
+05-30 17:11:55.804: D/TelephonyProvider(1321): Column apn id key is 'apn_id'
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: Network state change received
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: noConnectivity: false
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: Extra network state info: "TMG56KDialUp"
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: Failover: false
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: Reason: null
+05-30 17:11:55.845: V/yahoo.push.service(17471): yahoo.log.im: main_im Got Connectivity WIFI
+05-30 17:11:55.845: V/yahoo.push.service(17471): yahoo.log.im: main_im We already have network. Do nothing
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: Network state change received
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: noConnectivity: false
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: Extra network state info: "TMG56KDialUp"
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: Failover: false
+05-30 17:11:55.845: V/Y_net_state(17471): yahoo.log.im: Reason: null
+05-30 17:11:55.855: I/RESTBroker(17471): yahoo.log.im: Got network connection state change: true
+05-30 17:11:55.855: I/PinnedContentDownloader(23771): Started downloading pinned content.
+05-30 17:11:55.855: D/DefaultNetworkApi(17471): yahoo.log.im: isOnSlowNetwork
+05-30 17:11:55.865: V/DefaultNetworkApi(17471): yahoo.log.im: Checking network type...
+05-30 17:11:55.865: I/PinnedContentDownloader(23771): Finished downloading pinned content.
+05-30 17:11:55.865: D/TelephonyProvider(1321): Column apn id key is 'apn_id'
+05-30 17:11:55.865: V/DefaultNetworkApi(17471): yahoo.log.im: getMobileNetworkType Connectivity type = 1
+05-30 17:11:55.865: V/DefaultNetworkApi(17471): yahoo.log.im: Network type = 0
+05-30 17:11:55.865: E/DefaultNetworkApi(17471): yahoo.log.im: Unknown "slow" network type!
+05-30 17:11:55.875: I/ActivityManager(851): Start proc com.sonymobile.mx.android for broadcast com.sonymobile.mx.android/.receivers.NetworkConnectivityReceiver: pid=26922 uid=10068 gids={50068, 3003, 1015, 3002, 3001, 1028}
+05-30 17:11:55.915: D/dalvikvm(25696): GC_FOR_ALLOC freed 7K, 34% free 15361K/23256K, paused 79ms, total 85ms
+05-30 17:11:55.925: I/dalvikvm-heap(25696): Grow heap (frag case) to 19.895MB for 4099024-byte allocation
+05-30 17:11:55.925: W/fb4a(:<default>):ClientPeriodicEventReporterManager(16047): Requested time interval of 1200000 ms should be increased to at least 3600000 ms for DeviceStatusPeriodicReporter
+05-30 17:11:55.925: W/msgr(:<default>):x(22096): Requested time interval of 1200000 ms should be increased to at least 3600000 ms for n
+05-30 17:11:55.995: I/ActivityManager(851): Start proc com.sonyericsson.idd.agent for broadcast com.sonyericsson.idd.agent/.IDDEnabledBroadcastReceiver: pid=26942 uid=10057 gids={50057, 3003, 1015, 1028}
+05-30 17:11:56.055: I/ActivityManager(851): Start proc com.google.android.apps.uploader for broadcast com.google.android.apps.uploader/com.google.android.picasasync.ConnectivityReceiver: pid=26956 uid=10065 gids={50065, 3003, 1015, 1028}
+05-30 17:11:56.075: D/dalvikvm(324): GC_EXPLICIT freed 41K, 78% free 2566K/11244K, paused 1ms+2ms, total 19ms
+05-30 17:11:56.095: D/dalvikvm(324): GC_EXPLICIT freed <1K, 78% free 2566K/11244K, paused 2ms+2ms, total 20ms
+05-30 17:11:56.115: D/dalvikvm(324): GC_EXPLICIT freed <1K, 78% free 2566K/11244K, paused 1ms+2ms, total 16ms
+05-30 17:11:56.165: I/SystemUpdateService(5939): acquiring wakelock
+05-30 17:11:56.175: I/SystemUpdateService(5939): onCreate
+05-30 17:11:56.175: D/dalvikvm(25696): GC_CONCURRENT freed 10K, 28% free 19651K/27260K, paused 4ms+4ms, total 33ms
+05-30 17:11:56.185: I/SystemUpdateService(5939): cancelUpdate (empty URL)
+05-30 17:11:56.185: D/PicasaUploader(26956):    wifiOnlyPhoto changed to true
+05-30 17:11:56.185: D/PicasaUploader(26956):    wifiOnlyVideo changed to true
+05-30 17:11:56.185: D/PicasaUploader(26956):    syncOnBattery changed to true
+05-30 17:11:56.195: D/GCM(1503): GcmService start Intent { act=android.net.conn.CONNECTIVITY_CHANGE flg=0x8000010 cmp=com.google.android.gms/.gcm.GcmService (has extras) } android.net.conn.CONNECTIVITY_CHANGE
+05-30 17:11:56.195: D/PicasaUploaderSync(26956): sync account database
+05-30 17:11:56.205: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=104
+05-30 17:11:56.205: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=5006
+05-30 17:11:56.205: D/QcConnectivityService(851): reportNetworkCondition(1, 100)
+05-30 17:11:56.205: D/QcConnectivityService(851): handleInetConditionChange: net=1, condition=100,mActiveDefaultNetwork=1
+05-30 17:11:56.205: D/QcConnectivityService(851): handleInetConditionChange: currently in hold - not setting new end evt
+05-30 17:11:56.215: I/SystemUpdateService(5939): cancelUpdate (empty URL)
+05-30 17:11:56.215: D/PicasaUploaderSync(26956): accounts in DB=1
+05-30 17:11:56.215: I/ActivityManager(851): Start proc com.google.android.apps.magazines for broadcast com.google.android.apps.magazines/com.google.apps.dots.android.newsstand.appwidget.NewsWidgetProvider: pid=26985 uid=10063 gids={50063, 3003, 1015, 1028}
+05-30 17:11:56.235: D/PicasaUploaderSyncManager(26956): active network: NetworkInfo: type: WIFI[], state: CONNECTED/CONNECTED, reason: (unspecified), extra: "TMG56KDialUp", roaming: false, failover: false, isAvailable: true
+05-30 17:11:56.235: D/PicasaUploaderSyncManager(26956): background data: true
+05-30 17:11:56.235: D/dalvikvm(5939): GC_CONCURRENT freed 563K, 62% free 4384K/11244K, paused 3ms+6ms, total 37ms
+05-30 17:11:56.235: I/SystemUpdateService(5939): releasing wakelock
+05-30 17:11:56.245: D/PicasaUploaderSyncManager(26956): battery info: true
+05-30 17:11:56.295: I/dalvikvm(26985): Could not find method android.webkit.WebView.setWebContentsDebuggingEnabled, referenced from method com.google.apps.dots.android.newsstand.NSDepend.setupInternal
+05-30 17:11:56.295: W/dalvikvm(26985): VFY: unable to resolve static method 6692: Landroid/webkit/WebView;.setWebContentsDebuggingEnabled (Z)V
+05-30 17:11:56.295: D/dalvikvm(26985): VFY: replacing opcode 0x71 at 0x00a5
+05-30 17:11:56.325: W/GAV2(26985): Thread[main,5,main]: Need to call initialize() and be in fallback mode to start dispatch.
+05-30 17:11:56.375: W/qdhwcomposer(323): Excessive delay reading vsync: took 266 ms
+05-30 17:11:56.385: I/dalvikvm(26985): Could not find method android.graphics.Bitmap.getAllocationByteCount, referenced from method com.google.apps.dots.android.newsstand.bitmap.CachingBitmapPool.isGoodForMutableBitmapRequest
+05-30 17:11:56.385: W/dalvikvm(26985): VFY: unable to resolve virtual method 848: Landroid/graphics/Bitmap;.getAllocationByteCount ()I
+05-30 17:11:56.385: D/dalvikvm(26985): VFY: replacing opcode 0x6e at 0x0018
+05-30 17:11:56.385: I/dalvikvm(26985): Could not find method android.graphics.Bitmap.reconfigure, referenced from method com.google.apps.dots.android.newsstand.bitmap.CachingBitmapPool.reconfigureBitmap
+05-30 17:11:56.395: W/dalvikvm(26985): VFY: unable to resolve virtual method 858: Landroid/graphics/Bitmap;.reconfigure (IILandroid/graphics/Bitmap$Config;)V
+05-30 17:11:56.395: D/dalvikvm(26985): VFY: replacing opcode 0x6e at 0x0008
+05-30 17:11:56.405: I/NSApplication(26985): Starting up...
+05-30 17:11:56.425: I/ActivityManager(851): Start proc com.android.chrome for broadcast com.android.chrome/com.google.android.apps.chrome.precache.PrecacheServiceLauncher: pid=27012 uid=10025 gids={50025, 3003, 1015, 1028}
+05-30 17:11:56.505: I/ActivityManager(851): Start proc com.snapchat.android for broadcast com.snapchat.android/.receiver.ConnectivityReceiver: pid=27030 uid=10245 gids={50245, 3003, 1015, 1028}
+05-30 17:11:56.705: W/qdhwcomposer(323): Excessive delay reading vsync: took 300 ms
+05-30 17:11:56.705: I/ActivityManager(851): Start proc com.genina.android.blackjack.view for broadcast com.genina.android.blackjack.view/com.helpshift.HelpshiftConnReceiver: pid=27047 uid=10269 gids={50269, 3003, 1015, 1028}
+05-30 17:11:56.835: I/ActivityManager(851): Start proc jp.naver.line.android for broadcast jp.naver.line.android/.service.push.SystemBroadcastReceiver: pid=27061 uid=10228 gids={50228, 3003, 1015, 1028, 3002}
+05-30 17:11:56.846: I/dalvikvm(27061): Turning on JNI app bug workarounds for target SDK version 10...
+05-30 17:11:56.886: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-30 17:11:56.886: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-30 17:11:56.886: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-30 17:11:56.886: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value DMIC Endfire
+05-30 17:11:56.886: D/alsa_ucm(309): disdev: device DMIC Endfire not enabled, no need to disable
+05-30 17:11:56.886: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-30 17:11:56.886: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-30 17:11:56.886: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-30 17:11:56.896: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-30 17:11:56.896: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-30 17:11:56.896: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-30 17:11:56.896: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+05-30 17:11:57.376: W/qdhwcomposer(323): Excessive delay reading vsync: took 467 ms
+05-30 17:11:57.406: D/dalvikvm(27061): GC_CONCURRENT freed 4443K, 44% free 6348K/11244K, paused 3ms+3ms, total 64ms
+05-30 17:11:57.506: I/system_monitor(317): alarm_callback - Received MAX alarm: apq_therm at Level:18
+05-30 17:11:57.506: I/cpu_frequency(317): execute_action - cpu frequency mitigation requester = apq_therm freq = 1512000
+05-30 17:11:57.506: I/cpu_frequency(317): Using previous CPU[0] frequency
+05-30 17:11:57.506: I/cpu_frequency(317): Using previous CPU[1] frequency
+05-30 17:11:57.506: I/cpu_frequency(317): Using previous CPU[2] frequency
+05-30 17:11:57.506: I/cpu_frequency(317): Using previous CPU[3] frequency
+05-30 17:11:57.506: I/cpu_frequency(317): log_idd - Thermal mitigation:sensor = apq_therm from level = 18 to 17
+05-30 17:11:57.506: I/sysmon-charge_current_limit(317): set_charge_current_level - Set OK Charge Current limit:level 0
+05-30 17:11:57.506: I/sysmon-charge_current_limit(317): log_idd - Thermal mitigation:sensor = apq_therm from level = 18 to 17
+05-30 17:11:57.506: I/sysmon-charge_current_limit(317): execute_action - Set OK Charge Current limit:level 0
+05-30 17:11:57.506: I/sysmon-usb_current_limit(317): set_usb_current_level - Set OK USB Current limit: 1500mA
+05-30 17:11:57.506: I/sysmon-usb_current_limit(317): log_idd - Thermal mitigation:sensor = apq_therm from level = 18 to 17
+05-30 17:11:57.506: I/system_monitor(317): log_idd - Thermal mitigation:sensor = apq_therm from level = 18 to 17
+05-30 17:11:57.506: I/sysmon-gpu_frequency(317): execute_action - gpu_perflevel mitigation requester = apq_therm freq = 400000000 Hz
+05-30 17:11:57.506: I/sysmon-gpu_frequency(317): GPU[0] frequency limited to 400000000 Hz
+05-30 17:11:57.506: I/sysmon-gpu_frequency(317): log_idd - Thermal mitigation:sensor = apq_therm from level = 18 to 17
+05-30 17:11:57.506: V/sysmon-modem_lagan(317): execute_action [341] LOCK 0xb6daf058 from 528
+05-30 17:11:57.506: V/sysmon-modem_lagan(317): execute_action mutex 0xb6daf058 GOT by 528
+05-30 17:11:57.506: I/sysmon-modem_lagan(317): execute_action - modem_level mitigation requester = apq_therm level = 0
+05-30 17:11:57.506: I/sysmon-modem_lagan(317): Fusion modem already at mitigation state 0
+05-30 17:11:57.506: V/sysmon-modem_lagan(317): execute_action [392] UNLOCK 0xb6daf058 from 528
+05-30 17:11:57.506: E/bl_ctrl(315): set_bl_limit: thremal limit 240
+05-30 17:11:57.506: I/illumination-service(315): Client disconnected
+05-30 17:11:57.506: I/illumination-service(315): Client disconnected
+05-30 17:11:57.506: I/libsysmon(851): handle_notification - Called
+05-30 17:11:57.506: I/libsysmon(851): handle_notification - Dumping notification
+05-30 17:11:57.506: I/libsysmon(851): name: apq_therm
+05-30 17:11:57.506: I/libsysmon(851): current_level: 17
+05-30 17:11:57.506: I/libsysmon(851): prev_level: 18
+05-30 17:11:57.506: I/libsysmon(851): shutdown_in: 0
+05-30 17:11:57.506: I/libsysmon(851): Adding action: CAM_NORMAL
+05-30 17:11:57.506: I/libsysmon(851): Adding action: cpu_perflevel
+05-30 17:11:57.506: I/libsysmon(851): Adding action: charge_current_limit
+05-30 17:11:57.506: I/libsysmon(851): Adding action: usb_current_limit
+05-30 17:11:57.506: I/libsysmon(851): Adding action: lcd_brightnesslevel
+05-30 17:11:57.506: I/libsysmon(851): Adding action: gpu_perflevel
+05-30 17:11:57.506: I/libsysmon(851): Adding action: modem_level
+05-30 17:11:57.506: I/libsysmon(851): handle_notification - Going to callback function
+05-30 17:11:57.506: W/ContextImpl(851): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 com.sonyericsson.psm.sysmonservice.SysmonMonitor.handleCameraActions:213 com.sonyericsson.psm.sysmonservice.SysmonMonitor.handleSysmonNotification:302 com.sonyericsson.sysmon.SysmonManager.reportEvent:238 
+05-30 17:11:57.516: W/ContextImpl(16369): Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1084 android.content.ContextWrapper.sendBroadcast:344 com.sonyericsson.psm.sysmonservice.SysmonActionService.onStartCommand:81 android.app.ActivityThread.handleServiceArgs:2768 android.app.ActivityThread.access$1900:150 
+05-30 17:11:57.606: D/dalvikvm(27061): GC_CONCURRENT freed 279K, 35% free 7332K/11244K, paused 1ms+9ms, total 41ms
+05-30 17:11:57.606: D/dalvikvm(27061): WAIT_FOR_CONCURRENT_GC blocked 24ms
+05-30 17:11:57.706: W/qdhwcomposer(323): Excessive delay reading vsync: took 300 ms
+05-30 17:11:57.826: D/dalvikvm(27061): GC_CONCURRENT freed 1058K, 31% free 7865K/11244K, paused 2ms+2ms, total 71ms
+05-30 17:11:57.826: D/dalvikvm(27061): WAIT_FOR_CONCURRENT_GC blocked 47ms
+05-30 17:11:58.097: D/dalvikvm(27061): GC_CONCURRENT freed 395K, 18% free 9239K/11244K, paused 4ms+2ms, total 66ms
+05-30 17:11:58.097: D/dalvikvm(27061): WAIT_FOR_CONCURRENT_GC blocked 48ms
+05-30 17:11:58.377: W/qdhwcomposer(323): Excessive delay reading vsync: took 467 ms
+05-30 17:11:58.697: D/dalvikvm(27061): GC_CONCURRENT freed 1893K, 21% free 9568K/11964K, paused 17ms+3ms, total 73ms
+05-30 17:11:58.697: D/dalvikvm(27061): WAIT_FOR_CONCURRENT_GC blocked 51ms
+05-30 17:11:58.697: D/dalvikvm(27061): WAIT_FOR_CONCURRENT_GC blocked 54ms
+05-30 17:11:58.697: D/dalvikvm(27061): WAIT_FOR_CONCURRENT_GC blocked 51ms
+05-30 17:11:58.697: D/dalvikvm(27061): WAIT_FOR_CONCURRENT_GC blocked 51ms
+05-30 17:11:58.697: D/dalvikvm(27061): WAIT_FOR_CONCURRENT_GC blocked 52ms
+05-30 17:11:58.707: W/qdhwcomposer(323): Excessive delay reading vsync: took 300 ms
+05-30 17:11:58.747: I/ActivityManager(851): Start proc com.twitter.android for broadcast com.twitter.android/.client.AppBroadcastReceiver: pid=27111 uid=10253 gids={50253, 3003, 1015, 1028}
+05-30 17:11:58.757: I/SemcDlna:(4698): No clients is registered now...
+05-30 17:11:58.757: I/SemcDlna:(4698): updating network interfaces []...
+05-30 17:11:58.787: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=105
+05-30 17:11:58.787: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=5007
+05-30 17:11:58.797: D/QcConnectivityService(851): handleInetConditionHoldEnd: net=1, condition=100, published condition=0
+05-30 17:11:58.797: D/QcConnectivityService(851): sendStickyBroadcast: action=android.net.conn.INET_CONDITION_ACTION
+05-30 17:11:58.807: W/msgr(:<default>):x(22096): Requested time interval of 1200000 ms should be increased to at least 3600000 ms for n
+05-30 17:11:58.807: W/fb4a(:<default>):ClientPeriodicEventReporterManager(16047): Requested time interval of 1200000 ms should be increased to at least 3600000 ms for DeviceStatusPeriodicReporter
+05-30 17:11:58.817: I/Crashlytics(27111): Initializing Crashlytics 1.1.11.11
+05-30 17:11:59.128: W/GAV2(26829): Thread[GAThread,5,main]: Service unavailable (code=1), will retry.
+05-30 17:11:59.128: I/GAV2(26829): Thread[GAThread,5,main]: No campaign data found.
+05-30 17:11:59.128: W/ActivityManager(851): Unable to start service Intent { act=com.google.android.gms.analytics.service.START cmp=com.google.android.gms/.analytics.service.AnalyticsService (has extras) } U=0: not found
+05-30 17:11:59.188: D/dalvikvm(27111): Trying to load lib /data/app-lib/com.twitter.android-1/libtwittermedia.so 0x41922608
+05-30 17:11:59.198: D/dalvikvm(27111): Added shared lib /data/app-lib/com.twitter.android-1/libtwittermedia.so 0x41922608
+05-30 17:11:59.348: W/qdhwcomposer(323): Excessive delay reading vsync: took 367 ms
+05-30 17:11:59.418: I/SemcDlna:(4698): disabling the server control point...
+05-30 17:11:59.418: I/LOWI-SERVER(474): [LOWIController] OSAgent Subscription timer, check and issue subscription request
+05-30 17:11:59.418: E/QCALOG(472): [MessageQ] ProcessNewMessage: [LOWI-SERVER] unknown deliver target [OS-Agent]
+05-30 17:11:59.418: I/SemcDlna:(4698): ...Done!!
+05-30 17:11:59.418: I/SemcDlna:(4698): disabling the renderer control point...
+05-30 17:11:59.418: I/SemcDlna:(4698): ...Done!!
+05-30 17:11:59.418: I/SemcDlna:(4698): The server list is clear, then refreshing in [2] secs...
+05-30 17:11:59.418: I/SemcDlna:(4698): The renderer list is clear, then refreshing in [2] secs...
+05-30 17:11:59.418: I/SemcDlna:(4698): The [0] server(s) are found!!!
+05-30 17:11:59.478: I/dalvikvm(27111): Could not find method android.graphics.Bitmap.getAllocationByteCount, referenced from method com.twitter.library.media.util.ImageUtils.a
+05-30 17:11:59.478: W/dalvikvm(27111): VFY: unable to resolve virtual method 898: Landroid/graphics/Bitmap;.getAllocationByteCount ()I
+05-30 17:11:59.478: D/dalvikvm(27111): VFY: replacing opcode 0x6e at 0x000a
+05-30 17:11:59.708: D/dalvikvm(851): GC_EXPLICIT freed 10104K, 36% free 42186K/65276K, paused 5ms+28ms, total 212ms
+05-30 17:11:59.708: W/qdhwcomposer(323): Excessive delay reading vsync: took 300 ms
+05-30 17:12:00.019: W/qdhwcomposer(323): Excessive delay reading vsync: took 100 ms
+05-30 17:12:00.259: I/GCM(1503): GCM config loaded
+05-30 17:12:00.309: D/dalvikvm(27111): GC_CONCURRENT freed 5780K, 56% free 4966K/11244K, paused 6ms+3ms, total 91ms
+05-30 17:12:00.309: D/dalvikvm(27111): WAIT_FOR_CONCURRENT_GC blocked 64ms
+05-30 17:12:00.379: W/qdhwcomposer(323): Excessive delay reading vsync: took 333 ms
+05-30 17:12:00.439: D/dalvikvm(27111): GC_CONCURRENT freed 732K, 56% free 5037K/11244K, paused 2ms+3ms, total 35ms
+05-30 17:12:00.439: D/dalvikvm(27111): WAIT_FOR_CONCURRENT_GC blocked 19ms
+05-30 17:12:00.879: W/qdhwcomposer(323): Excessive delay reading vsync: took 467 ms
+05-30 17:12:01.060: D/dalvikvm(27111): GC_CONCURRENT freed 578K, 54% free 5177K/11244K, paused 3ms+9ms, total 92ms
+05-30 17:12:01.330: W/ActivityManager(851): Unable to start service Intent { act=com.google.android.gms.analytics.service.START cmp=com.google.android.gms/.analytics.service.AnalyticsService (has extras) } U=0: not found
+05-30 17:12:01.350: W/GAV2(26985): Thread[GAThread,5,main]: Service unavailable (code=1), will retry.
+05-30 17:12:01.360: I/GAV2(26985): Thread[GAThread,5,main]: No campaign data found.
+05-30 17:12:01.580: W/qdhwcomposer(323): Excessive delay reading vsync: took 450 ms
+05-30 17:12:02.061: W/qdhwcomposer(323): Excessive delay reading vsync: took 448 ms
+05-30 17:12:02.391: W/qdhwcomposer(323): Excessive delay reading vsync: took 83 ms
+05-30 17:12:02.421: D/dalvikvm(26829): GC_CONCURRENT freed 2080K, 34% free 10181K/15296K, paused 3ms+3ms, total 33ms
+05-30 17:12:02.441: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:12:03.012: D/dalvikvm(23966): GC_CONCURRENT freed 359K, 77% free 2689K/11244K, paused 4ms+2ms, total 34ms
+05-30 17:12:03.142: W/qdhwcomposer(323): Excessive delay reading vsync: took 266 ms
+05-30 17:12:03.162: D/fast-dormancy(924): [FDM]: ps_attach_state=1
+05-30 17:12:03.162: D/fast-dormancy(924): [FDM]: reg_state=1 param_mask=4
+05-30 17:12:03.162: D/fast-dormancy(924): [FDM]: reg_state=1 param_mask=4
+05-30 17:12:03.252: V/RealCellState(1285): telephonyManager network type is 10
+05-30 17:12:03.312: E/GpsXtraDownloader(851): No XTRA servers were specified in the GPS configuration
+05-30 17:12:03.322: W/Settings(26398): Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+05-30 17:12:04.123: W/ActivityManager(851): Unable to start service Intent { act=com.google.android.gms.analytics.service.START cmp=com.google.android.gms/.analytics.service.AnalyticsService (has extras) } U=0: not found
+05-30 17:12:04.133: W/GAV2(26829): Thread[Service Reconnect,5,main]: Service unavailable (code=1), using local store.
+05-30 17:12:04.383: W/qdhwcomposer(323): Excessive delay reading vsync: took 417 ms
+05-30 17:12:04.733: W/qdhwcomposer(323): Excessive delay reading vsync: took 300 ms
+05-30 17:12:05.384: W/qdhwcomposer(323): Excessive delay reading vsync: took 467 ms
+05-30 17:12:05.754: W/qdhwcomposer(323): Excessive delay reading vsync: took 317 ms
+05-30 17:12:05.884: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:12:05.884: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:12:05.884: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:12:05.884: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:12:05.884: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:12:05.884: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:12:05.884: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:12:05.894: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:12:05.894: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:12:05.894: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:12:05.904: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:12:05.904: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:12:05.904: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:12:05.904: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:12:06.355: W/GAV2(26985): Thread[Service Reconnect,5,main]: Service unavailable (code=1), using local store.
+05-30 17:12:06.355: W/ActivityManager(851): Unable to start service Intent { act=com.google.android.gms.analytics.service.START cmp=com.google.android.gms/.analytics.service.AnalyticsService (has extras) } U=0: not found
+05-30 17:12:06.435: W/qdhwcomposer(323): Excessive delay reading vsync: took 200 ms
+05-30 17:12:06.905: W/qdhwcomposer(323): Excessive delay reading vsync: took 433 ms
+05-30 17:12:07.116: W/qdhwcomposer(323): Excessive delay reading vsync: took 66 ms
+05-30 17:12:07.136: D/dalvikvm(1267): GC_CONCURRENT freed 2852K, 50% free 11412K/22692K, paused 2ms+11ms, total 78ms
+05-30 17:12:07.206: W/qdhwcomposer(323): Excessive delay reading vsync: took 66 ms
+05-30 17:12:07.486: W/qdhwcomposer(323): Excessive delay reading vsync: took 233 ms
+05-30 17:12:07.766: W/qdhwcomposer(323): Excessive delay reading vsync: took 233 ms
+05-30 17:12:07.986: W/qdhwcomposer(323): Excessive delay reading vsync: took 50 ms
+05-30 17:12:08.127: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:12:08.127: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:12:08.137: W/qdhwcomposer(323): Excessive delay reading vsync: took 99 ms
+05-30 17:12:08.407: W/qdhwcomposer(323): Excessive delay reading vsync: took 50 ms
+05-30 17:12:08.587: W/qdhwcomposer(323): Excessive delay reading vsync: took 99 ms
+05-30 17:12:09.228: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-30 17:12:09.228: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-30 17:12:09.228: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-30 17:12:09.228: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value DMIC Endfire
+05-30 17:12:09.228: D/alsa_ucm(309): disdev: device DMIC Endfire not enabled, no need to disable
+05-30 17:12:09.228: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-30 17:12:09.228: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-30 17:12:09.228: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-30 17:12:09.228: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-30 17:12:09.238: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-30 17:12:09.238: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-30 17:12:09.238: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+05-30 17:12:09.388: W/qdhwcomposer(323): Excessive delay reading vsync: took 300 ms
+05-30 17:12:09.438: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:12:09.508: E/XT9ENEngine(1267): ET9AddExplicitSymb, status = 41
+05-30 17:12:10.028: W/qdhwcomposer(323): Excessive delay reading vsync: took 400 ms
+05-30 17:12:10.108: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:12:10.589: W/qdhwcomposer(323): Excessive delay reading vsync: took 317 ms
+05-30 17:12:11.029: W/qdhwcomposer(323): Excessive delay reading vsync: took 132 ms
+05-30 17:12:11.300: W/qdhwcomposer(323): Excessive delay reading vsync: took 66 ms
+05-30 17:12:11.930: W/qdhwcomposer(323): Excessive delay reading vsync: took 450 ms
+05-30 17:12:12.010: W/qdhwcomposer(323): Excessive delay reading vsync: took 49 ms
+05-30 17:12:12.491: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:12:12.631: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:12:12.851: W/qdhwcomposer(323): Excessive delay reading vsync: took 467 ms
+05-30 17:12:13.091: W/qdhwcomposer(323): Excessive delay reading vsync: took 200 ms
+05-30 17:12:13.221: D/dalvikvm(23966): GC_CONCURRENT freed 405K, 77% free 2667K/11244K, paused 13ms+1ms, total 71ms
+05-30 17:12:13.762: W/qdhwcomposer(323): Excessive delay reading vsync: took 450 ms
+05-30 17:12:13.982: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:12:14.072: W/qdhwcomposer(323): Excessive delay reading vsync: took 116 ms
+05-30 17:12:14.202: E/XT9ENEngine(1267): ET9AddExplicitSymb, status = 41
+05-30 17:12:14.293: W/qdhwcomposer(323): Excessive delay reading vsync: took 49 ms
+05-30 17:12:14.493: W/qdhwcomposer(323): Excessive delay reading vsync: took 166 ms
+05-30 17:12:14.593: I/yahoo.push.service(17471): yahoo.log.im: im_29873_im Received '200' from server
+05-30 17:12:14.593: I/yahoo.push.service(17471): yahoo.log.im: im_29873_im Reg close. Timeout++: 2760s
+05-30 17:12:14.603: I/yahoo.push.service(17471): yahoo.log.im: im_29873_im Connection count: 87
+05-30 17:12:14.603: I/yahoo.push.service(17471): yahoo.log.im: im_29873_im Start HTTP Push. Idle timeout: 2760 Sequence: 588
+05-30 17:12:14.613: V/yahoo.push.service(17471): yahoo.log.im: Registered alarm timer(Action: com.yahoo.android.push.Connection_Watchdoghakim.haustonim) to go off in: 2790s
+05-30 17:12:14.813: W/qdhwcomposer(323): Excessive delay reading vsync: took 133 ms
+05-30 17:12:15.374: W/qdhwcomposer(323): Excessive delay reading vsync: took 166 ms
+05-30 17:12:15.614: W/qdhwcomposer(323): Excessive delay reading vsync: took 50 ms
+05-30 17:12:15.824: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:12:16.244: W/qdhwcomposer(323): Excessive delay reading vsync: took 250 ms
+05-30 17:12:16.345: W/qdhwcomposer(323): Excessive delay reading vsync: took 49 ms
+05-30 17:12:16.745: W/qdhwcomposer(323): Excessive delay reading vsync: took 133 ms
+05-30 17:12:17.386: W/qdhwcomposer(323): Excessive delay reading vsync: took 383 ms
+05-30 17:12:17.886: W/qdhwcomposer(323): Excessive delay reading vsync: took 467 ms
+05-30 17:12:18.046: W/qdhwcomposer(323): Excessive delay reading vsync: took 133 ms
+05-30 17:12:18.387: W/qdhwcomposer(323): Excessive delay reading vsync: took 266 ms
+05-30 17:12:18.887: W/qdhwcomposer(323): Excessive delay reading vsync: took 450 ms
+05-30 17:12:19.157: W/qdhwcomposer(323): Excessive delay reading vsync: took 233 ms
+05-30 17:12:19.217: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:12:19.217: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:12:19.217: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:12:19.217: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:12:19.217: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:12:19.217: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:12:19.217: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:12:19.217: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:12:19.227: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:12:19.227: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:12:19.227: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:12:19.227: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:12:19.227: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:12:19.227: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:12:19.227: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:12:19.297: W/Adreno-GSL(323): <gsl_ldd_control:393>: ioctl fd 15 code 0xc0140910 (IOCTL_KGSL_RINGBUFFER_ISSUEIBCMDS) failed: errno 71 Protocol error
+05-30 17:12:19.297: W/Adreno-GSL(323): <log_gpu_snapshot:308>: panel.gpuSnapshotPath is not set.not generating user snapshot
+05-30 17:12:19.307: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 17:12:19.307: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 17:12:19.337: W/qdhwcomposer(323): Excessive delay reading vsync: took 100 ms
+05-30 17:12:19.388: I/Scenic(25939): com.sonyericsson.scenic.system.helpers.ScenicView.onResume(ScenicView.java:93): onResume
+05-30 17:12:19.418: W/ActionProvider(25939): setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this ShareActionProvider instance while it is still in use somewhere else?
+05-30 17:12:19.458: I/Scenic(25939): com.sonyericsson.scenic.system.ScenicGLSurfaceView.onSurfaceCreated(ScenicGLSurfaceView.java:424): onSurfaceCreated
+05-30 17:12:19.458: I/Scenic(25939): com.sonyericsson.scenic.render.Capabilities.setExtensions(Capabilities.java:76): Supports the following GLES extensions:
+05-30 17:12:19.458: I/Scenic(25939):    GL_AMD_compressed_ATC_texture
+05-30 17:12:19.458: I/Scenic(25939):    GL_AMD_performance_monitor
+05-30 17:12:19.458: I/Scenic(25939):    GL_AMD_program_binary_Z400
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_debug_label
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_debug_marker
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_discard_framebuffer
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_robustness
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_texture_format_BGRA8888
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_texture_type_2_10_10_10_REV
+05-30 17:12:19.458: I/Scenic(25939):    GL_NV_fence
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_compressed_ETC1_RGB8_texture
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_depth_texture
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_depth24
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_EGL_image
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_EGL_image_external
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_element_index_uint
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_fbo_render_mipmap
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_fragment_precision_high
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_get_program_binary
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_packed_depth_stencil
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_depth_texture_cube_map
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_rgb8_rgba8
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_standard_derivatives
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_texture_3D
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_texture_float
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_texture_half_float
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_texture_half_float_linear
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_texture_npot
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_vertex_half_float
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_vertex_type_10_10_10_2
+05-30 17:12:19.458: I/Scenic(25939):    GL_OES_vertex_array_object
+05-30 17:12:19.458: I/Scenic(25939):    GL_QCOM_alpha_test
+05-30 17:12:19.458: I/Scenic(25939):    GL_QCOM_binning_control
+05-30 17:12:19.458: I/Scenic(25939):    GL_QCOM_driver_control
+05-30 17:12:19.458: I/Scenic(25939):    GL_QCOM_perfmon_global_mode
+05-30 17:12:19.458: I/Scenic(25939):    GL_QCOM_extended_get
+05-30 17:12:19.458: I/Scenic(25939):    GL_QCOM_extended_get2
+05-30 17:12:19.458: I/Scenic(25939):    GL_QCOM_tiled_rendering
+05-30 17:12:19.458: I/Scenic(25939):    GL_QCOM_writeonly_rendering
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_sRGB
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_color_buffer_float
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_color_buffer_half_float
+05-30 17:12:19.458: I/Scenic(25939):    GL_EXT_disjoint_timer_query
+05-30 17:12:19.458: I/Scenic(25939): com.sonyericsson.scenic.system.ScenicGLSurfaceView.onSurfaceChanged(ScenicGLSurfaceView.java:404): onSurfaceChanged: width = 1080 height = 1919
+05-30 17:12:19.488: I/Scenic(25939): com.sonyericsson.scenic.system.ScenicGLSurfaceView.onSurfaceChanged(ScenicGLSurfaceView.java:404): onSurfaceChanged: width = 1080 height = 1919
+05-30 17:12:19.518: W/ContextImpl(18872): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableScan:293 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableForegroundScan:79 com.sonymobile.playanywhere.service.PlayAnywhereSinkControllerImpl.registerRemoteCallback:830 
+05-30 17:12:19.518: W/ContextImpl(18872): Calling a method in the system process without a qualified user: android.app.ContextImpl.sendStickyBroadcast:1242 android.content.ContextWrapper.sendStickyBroadcast:406 com.sonymobile.playanywhere.service.PlayAnywhereSinkControllerImpl.noticeDeviceFoundStatus:1973 com.sonymobile.playanywhere.service.PlayAnywhereSinkControllerImpl.handleOnStartCommand:1105 com.sonymobile.playanywhere.service.PlayAnywhereService.onStartCommand:108 
+05-30 17:12:19.528: I/SemcDlna:(4698): At least one client is registered now...
+05-30 17:12:19.528: I/SemcDlna:(4698): updating network interfaces [wlan0]...
+05-30 17:12:19.528: I/SemcDlna:(4698): enabling the server control point...
+05-30 17:12:19.538: I/SemcDlna:(4698): ...Done!!
+05-30 17:12:19.538: I/SemcDlna:(4698): enabling the renderer control point...
+05-30 17:12:19.538: I/SemcDlna:(4698): ...Done!!
+05-30 17:12:19.538: I/SemcDlna:(4698): The server list is clear, then refreshing in [2] secs...
+05-30 17:12:19.538: I/SemcDlna:(4698): The renderer list is clear, then refreshing in [2] secs...
+05-30 17:12:19.578: W/IInputConnectionWrapper(26829): getExtractedText on inactive InputConnection
+05-30 17:12:19.588: W/ActionProvider(25939): setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this ShareActionProvider instance while it is still in use somewhere else?
+05-30 17:12:19.598: W/IInputConnectionWrapper(26829): getTextBeforeCursor on inactive InputConnection
+05-30 17:12:19.598: W/IInputConnectionWrapper(26829): getTextAfterCursor on inactive InputConnection
+05-30 17:12:19.618: W/IInputConnectionWrapper(26829): getSelectedText on inactive InputConnection
+05-30 17:12:19.628: W/IInputConnectionWrapper(26829): showStatusIcon on inactive InputConnection
+05-30 17:12:19.678: D/dalvikvm(25939): GC_FOR_ALLOC freed 2597K, 14% free 48002K/55748K, paused 78ms, total 79ms
+05-30 17:12:19.748: I/Gmail(26829): MainSyncRequestProto: lowestBkwdConvoId: 0, highestHandledServerOp: 1309803, normalSync: true
+05-30 17:12:19.798: W/ActionProvider(25939): setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this ShareActionProvider instance while it is still in use somewhere else?
+05-30 17:12:20.769: I/SemcDlna:(4698): The [1] server(s) are found!!!
+05-30 17:12:20.769: W/qdhwcomposer(323): Excessive delay reading vsync: took 33 ms
+05-30 17:12:20.919: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:12:20.919: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:12:22.450: D/dalvikvm(23966): GC_CONCURRENT freed 370K, 77% free 2689K/11244K, paused 4ms+2ms, total 41ms
+05-30 17:12:22.521: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-30 17:12:22.521: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-30 17:12:22.521: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-30 17:12:22.521: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value DMIC Endfire
+05-30 17:12:22.521: D/alsa_ucm(309): disdev: device DMIC Endfire not enabled, no need to disable
+05-30 17:12:22.521: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-30 17:12:22.521: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-30 17:12:22.521: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-30 17:12:22.521: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-30 17:12:22.521: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-30 17:12:22.531: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-30 17:12:22.531: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+05-30 17:12:22.821: W/qdhwcomposer(323): Excessive delay reading vsync: took 1001 ms
+05-30 17:12:22.911: I/SemcDlna:(4698): The [2] server(s) are found!!!
+05-30 17:12:24.332: W/qdhwcomposer(323): Excessive delay reading vsync: took 1017 ms
+05-30 17:12:24.462: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:12:24.462: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:12:24.462: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:12:24.462: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:12:24.462: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:12:24.462: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:12:24.462: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:12:24.472: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:12:24.472: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:12:24.472: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:12:24.472: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:12:24.472: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:12:24.472: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:12:24.472: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:12:24.492: W/ActionProvider(25939): setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this ShareActionProvider instance while it is still in use somewhere else?
+05-30 17:12:24.583: W/ActionProvider(25939): setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this ShareActionProvider instance while it is still in use somewhere else?
+05-30 17:12:24.583: I/TextureStore(25939): Bitmap album_default_item.png was cached, but got thrown out.
+05-30 17:12:24.643: D/dalvikvm(25939): GC_FOR_ALLOC freed 11929K, 20% free 42985K/53648K, paused 63ms, total 63ms
+05-30 17:12:24.673: I/TextureStore(25939): Bitmap frame.png was cached, but got thrown out.
+05-30 17:12:24.673: W/Adreno-ES20(25939): <core_glTexParameteriv:566>: GL_INVALID_ENUM
+05-30 17:12:24.683: I/TextureStore(25939): Bitmap scrollbar.png was cached, but got thrown out.
+05-30 17:12:24.683: I/TextureStore(25939): Bitmap onepixel.png was cached, but got thrown out.
+05-30 17:12:25.003: D/dalvikvm(25939): GC_FOR_ALLOC freed 3701K, 25% free 40430K/53648K, paused 54ms, total 54ms
+05-30 17:12:25.023: I/dalvikvm-heap(25939): Grow heap (frag case) to 48.496MB for 8294416-byte allocation
+05-30 17:12:25.103: D/dalvikvm(25939): GC_CONCURRENT freed 1057K, 24% free 47479K/61752K, paused 5ms+15ms, total 72ms
+05-30 17:12:25.233: I/GCM(1503): GCM message GSYNC_TICKLE 0:1401441145350956%0#e7a71353318775e5
+05-30 17:12:25.233: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=104
+05-30 17:12:25.233: D/QcConnectivityService(851): reportNetworkCondition(1, 100)
+05-30 17:12:25.243: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=5006
+05-30 17:12:25.243: D/QcConnectivityService(851): handleInetConditionChange: net=1, condition=100,mActiveDefaultNetwork=1
+05-30 17:12:25.243: D/QcConnectivityService(851): handleInetConditionChange: starting a change hold
+05-30 17:12:25.263: I/SubscribedFeeds(1503): Received message
+05-30 17:12:25.303: E/GCoreUlr(1285): Error deleting /data/data/com.google.android.gms/files/flog
+05-30 17:12:25.303: E/GCoreUlr(1285): Error deleting /data/data/com.google.android.gms/files/flog
+05-30 17:12:25.313: E/GCoreUlr(1285): Error deleting /data/data/com.google.android.gms/files/flog
+05-30 17:12:25.313: E/GCoreUlr(1285): Error deleting /data/data/com.google.android.gms/files/flog
+05-30 17:12:25.333: E/GCoreUlr(1285): Error deleting /data/data/com.google.android.gms/files/flog
+05-30 17:12:25.333: E/GCoreUlr(1285): Error deleting /data/data/com.google.android.gms/files/flog
+05-30 17:12:25.333: E/GCoreUlr(1285): Error deleting /data/data/com.google.android.gms/files/flog
+05-30 17:12:25.333: E/GCoreUlr(1285): Error deleting /data/data/com.google.android.gms/files/flog
+05-30 17:12:25.383: D/dalvikvm(1285): GC_CONCURRENT freed 1048K, 51% free 5615K/11244K, paused 2ms+4ms, total 43ms
+05-30 17:12:25.704: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 17:12:25.704: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 17:12:25.734: I/Scenic(25939): com.sonyericsson.scenic.system.helpers.ScenicView.onPause(ScenicView.java:99): onPause
+05-30 17:12:25.744: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=105
+05-30 17:12:25.744: D/ConnectivityServiceHSM(851): Actual State: DefaultConnectivityState, Current State: DefaultConnectivityState.processMessage what=5007
+05-30 17:12:25.744: D/QcConnectivityService(851): handleInetConditionHoldEnd: net=1, condition=100, published condition=100
+05-30 17:12:25.744: D/QcConnectivityService(851): sendStickyBroadcast: action=android.net.conn.INET_CONDITION_ACTION
+05-30 17:12:25.744: W/ContextImpl(18872): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 android.content.ContextWrapper.startService:473 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableScan:293 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableForegroundScan:81 
+05-30 17:12:25.774: D/CustomizationProcess(1520): dismissCustomizationDialog:true
+05-30 17:12:25.864: D/dalvikvm(1520): GC_FOR_ALLOC freed 8545K, 32% free 37834K/55348K, paused 50ms, total 51ms
+05-30 17:12:25.874: D/dalvikvm(26829): GC_CONCURRENT freed 1782K, 29% free 10939K/15296K, paused 1ms+5ms, total 40ms
+05-30 17:12:25.874: D/dalvikvm(26829): WAIT_FOR_CONCURRENT_GC blocked 22ms
+05-30 17:12:25.974: D/dalvikvm(1520): GC_FOR_ALLOC freed 3935K, 26% free 41413K/55348K, paused 35ms, total 35ms
+05-30 17:12:26.034: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:12:26.034: E/Parcel(424): Reading a NULL string not supported here.
+05-30 17:12:26.084: I/Scenic(25939): com.sonyericsson.scenic.system.helpers.ScenicView.onStop(ScenicView.java:111): onStop
+05-30 17:12:26.084: W/ContextImpl(18872): Calling a method in the system process without a qualified user: android.app.ContextImpl.startService:1427 android.content.ContextWrapper.startService:473 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableScan:293 com.sonymobile.playanywhere.service.PlayAnywhereServiceUtil.enableForegroundScan:81 com.sonymobile.playanywhere.service.PlayAnywhereSinkControllerImpl.unregisterRemoteCallback:842 
+05-30 17:12:26.234: D/dalvikvm(25939): GC_EXPLICIT freed 12168K, 27% free 39285K/53648K, paused 3ms+10ms, total 87ms
+05-30 17:12:26.304: D/dalvikvm(25939): GC_EXPLICIT freed 18435K, 62% free 20850K/53648K, paused 3ms+8ms, total 65ms
+05-30 17:12:26.354: D/dalvikvm(26829): GC_CONCURRENT freed 3201K, 32% free 10509K/15296K, paused 4ms+2ms, total 43ms
+05-30 17:12:26.725: D/dalvikvm(26829): GC_CONCURRENT freed 2636K, 32% free 10523K/15296K, paused 6ms+3ms, total 62ms
+05-30 17:12:26.725: D/dalvikvm(26829): WAIT_FOR_CONCURRENT_GC blocked 42ms
+05-30 17:12:26.985: D/dalvikvm(26829): GC_EXPLICIT freed 773K, 32% free 10402K/15296K, paused 5ms+3ms, total 43ms
+05-30 17:12:26.995: I/Gmail(26829): MainSyncRequestProto: lowestBkwdConvoId: 0, highestHandledServerOp: 1309826, normalSync: true
+05-30 17:12:28.116: D/dalvikvm(26829): GC_EXPLICIT freed 286K, 33% free 10379K/15296K, paused 9ms+2ms, total 60ms
+05-30 17:12:28.136: I/Gmail(26829): MainSyncRequestProto: lowestBkwdConvoId: 0, highestHandledServerOp: 1309826, normalSync: true
+05-30 17:12:28.146: I/Gmail(26829): lowestBackward conversation id 0
+05-30 17:12:28.416: I/Gmail(26829): MainSyncRequestProto: lowestBkwdConvoId: 0, highestHandledServerOp: 1309826, normalSync: true
+05-30 17:12:28.486: D/dalvikvm(1125): GC_CONCURRENT freed 333K, 72% free 3189K/11244K, paused 2ms+4ms, total 22ms
+05-30 17:12:28.667: D/dalvikvm(851): GC_EXPLICIT freed 7492K, 36% free 42249K/65276K, paused 6ms+16ms, total 218ms
+05-30 17:12:28.687: I/DownloadManager(1125): Download 3408 starting
+05-30 17:12:28.777: D/dalvikvm(1125): GC_CONCURRENT freed 441K, 72% free 3153K/11244K, paused 1ms+2ms, total 17ms
+05-30 17:12:29.237: I/Icing(5939): Indexing 4ADAE445134E6569DF8F8E0BA580410B6B696618 from com.google.android.gm
+05-30 17:12:29.357: I/DownloadManager(1125): Ignoring Content-Length since Transfer-Encoding is also defined
+05-30 17:12:29.447: W/qdhwcomposer(323): Excessive delay reading vsync: took 166 ms
+05-30 17:12:29.487: D/dalvikvm(26829): GC_EXPLICIT freed 663K, 32% free 10470K/15296K, paused 2ms+12ms, total 109ms
+05-30 17:12:29.507: D/dalvikvm(1125): GC_CONCURRENT freed 433K, 73% free 3114K/11244K, paused 2ms+2ms, total 21ms
+05-30 17:12:29.517: I/Icing(5939): Indexing done 4ADAE445134E6569DF8F8E0BA580410B6B696618
+05-30 17:12:29.527: I/Gmail(26829): MainSyncRequestProto: lowestBkwdConvoId: 0, highestHandledServerOp: 1309833, normalSync: true
+05-30 17:12:29.527: I/DownloadManager(1125): Download 3408 finished with status SUCCESS
+05-30 17:12:29.527: I/Gmail(26829): lowestBackward conversation id 0
+05-30 17:12:29.828: D/dalvikvm(1125): GC_CONCURRENT freed 256K, 72% free 3247K/11244K, paused 3ms+2ms, total 21ms
+05-30 17:12:29.898: I/DownloadManager(1125): Download 3409 starting
+05-30 17:12:30.588: I/DownloadManager(1125): Ignoring Content-Length since Transfer-Encoding is also defined
+05-30 17:12:30.658: D/dalvikvm(1125): GC_CONCURRENT freed 239K, 70% free 3457K/11244K, paused 3ms+3ms, total 27ms
+05-30 17:12:30.729: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-30 17:12:30.729: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-30 17:12:30.729: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-30 17:12:30.729: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value DMIC Endfire
+05-30 17:12:30.729: D/alsa_ucm(309): disdev: device DMIC Endfire not enabled, no need to disable
+05-30 17:12:30.729: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-30 17:12:30.729: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-30 17:12:30.729: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-30 17:12:30.729: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-30 17:12:30.729: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-30 17:12:30.729: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-30 17:12:30.729: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+05-30 17:12:30.769: I/SemcDlna:(4698): No clients is registered now...
+05-30 17:12:30.769: I/SemcDlna:(4698): updating network interfaces []...
+05-30 17:12:30.889: W/qdhwcomposer(323): Excessive delay reading vsync: took 834 ms
+05-30 17:12:30.949: I/ActivityManager(851): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity} from pid 1520
+05-30 17:12:30.979: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 17:12:30.979: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 17:12:30.989: I/DownloadManager(1125): Download 3409 finished with status SUCCESS
+05-30 17:12:31.019: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:12:31.019: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:12:31.019: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:12:31.019: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:12:31.019: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:12:31.019: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:12:31.019: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:12:31.029: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:12:31.029: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:12:31.029: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:12:31.029: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:12:31.029: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:12:31.029: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:12:31.029: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:12:31.069: D/MainActivity(23031): running: null
+05-30 17:12:31.069: V/MainActivity(23031): running: pack: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:12:31.069: D/MainActivity(23031): running: null
+05-30 17:12:31.069: V/MainActivity(23031): running: pack: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:12:31.069: D/MainActivity(23031): running: null
+05-30 17:12:31.069: V/MainActivity(23031): running: pack: com.android.phone class: com.android.phone.SomcInCallScreen
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity bnds=[792,205][1044,493] }
+05-30 17:12:31.069: D/MainActivity(23031): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:12:31.069: D/MainActivity(23031): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.sonyericsson.album/.MainActivity bnds=[270,1173][540,1512] }
+05-30 17:12:31.069: D/MainActivity(23031): recent: com.sonyericsson.album class: com.sonyericsson.album.MainActivity
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 17:12:31.069: D/MainActivity(23031): recent: com.whatsapp class: com.whatsapp.Conversation
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { dat=ig://user?username=ilovemedanshop&notif_dummy=ee5b237b-0422-43ac-bf1a-049ff291a324 flg=0x4000000 cmp=com.instagram.android/.activity.MainTabActivity }
+05-30 17:12:31.069: D/MainActivity(23031): recent: com.instagram.android class: com.instagram.android.activity.MainTabActivity
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:12:31.069: D/MainActivity(23031): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:12:31.069: D/MainActivity(23031): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:12:31.069: D/MainActivity(23031): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:12:31.069: D/MainActivity(23031): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:12:31.069: D/MainActivity(23031): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:12:31.069: D/MainActivity(23031): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 17:12:31.089: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:12:31.109: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:12:31.139: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:12:31.159: I/ActivityManager(851): Displayed co.tmgamer.activityinformation/.MainActivity: +128ms
+05-30 17:12:31.159: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:12:31.209: D/dalvikvm(1125): GC_CONCURRENT freed 607K, 71% free 3272K/11244K, paused 3ms+3ms, total 24ms
+05-30 17:12:31.359: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:12:31.389: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:12:31.409: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:12:31.659: I/SemcDlna:(4698): disabling the server control point...
+05-30 17:12:31.690: D/dalvikvm(23966): GC_CONCURRENT freed 382K, 76% free 2702K/11244K, paused 3ms+2ms, total 36ms
+05-30 17:12:31.690: I/SemcDlna:(4698): ...Done!!
+05-30 17:12:31.690: I/SemcDlna:(4698): disabling the renderer control point...
+05-30 17:12:31.690: I/SemcDlna:(4698): ...Done!!
+05-30 17:12:31.690: I/SemcDlna:(4698): The server list is clear, then refreshing in [2] secs...
+05-30 17:12:31.690: I/SemcDlna:(4698): The renderer list is clear, then refreshing in [2] secs...
+05-30 17:12:31.700: I/SemcDlna:(4698): The [0] server(s) are found!!!
+05-30 17:12:32.881: W/qdhwcomposer(323): Excessive delay reading vsync: took 1435 ms
+05-30 17:12:34.082: W/qdhwcomposer(323): Excessive delay reading vsync: took 1034 ms
+05-30 17:12:34.322: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value Inactive
+05-30 17:12:34.322: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 0
+05-30 17:12:34.322: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 0
+05-30 17:12:34.322: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value DMIC Endfire
+05-30 17:12:34.322: D/alsa_ucm(309): disdev: device DMIC Endfire not enabled, no need to disable
+05-30 17:12:34.322: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _disdev value xLoud Speaker
+05-30 17:12:34.322: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 0
+05-30 17:12:34.322: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: ZERO
+05-30 17:12:34.332: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: ZERO
+05-30 17:12:34.332: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 0
+05-30 17:12:34.332: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: ZERO
+05-30 17:12:34.332: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: ZERO
+
+
+
+
+
+
+
+
+
+
+
+
+
+05-30 17:15:00.485: W/qdhwcomposer(323): Excessive delay reading vsync: took 400 ms
+05-30 17:15:00.575: I/ActivityManager(851): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity} from pid 1520
+05-30 17:15:00.615: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 17:15:00.615: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 17:15:00.645: W/qdhwcomposer(323): Excessive delay reading vsync: took 49 ms
+05-30 17:15:00.655: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:15:00.655: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:15:00.655: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:15:00.655: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:15:00.655: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:15:00.655: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:15:00.665: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:15:00.665: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:15:00.665: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:15:00.665: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:15:00.675: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:15:00.675: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:15:00.675: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:15:00.675: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:15:00.745: D/MainActivity(23031): running: null
+05-30 17:15:00.745: V/MainActivity(23031): running: pack: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:15:00.745: D/MainActivity(23031): running: null
+05-30 17:15:00.745: V/MainActivity(23031): running: pack: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:15:00.745: D/MainActivity(23031): running: null
+05-30 17:15:00.745: V/MainActivity(23031): running: pack: com.android.phone class: com.android.phone.SomcInCallScreen
+05-30 17:15:00.745: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity bnds=[792,205][1044,493] }
+05-30 17:15:00.745: D/MainActivity(23031): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:15:00.745: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:15:00.745: D/MainActivity(23031): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:15:00.745: D/MainActivity(23031): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.sonyericsson.album/.MainActivity bnds=[270,1173][540,1512] }
+05-30 17:15:00.755: D/MainActivity(23031): recent: com.sonyericsson.album class: com.sonyericsson.album.MainActivity
+05-30 17:15:00.755: D/MainActivity(23031): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 17:15:00.755: D/MainActivity(23031): recent: com.whatsapp class: com.whatsapp.Conversation
+05-30 17:15:00.755: D/MainActivity(23031): recent: Intent { dat=ig://user?username=ilovemedanshop&notif_dummy=ee5b237b-0422-43ac-bf1a-049ff291a324 flg=0x4000000 cmp=com.instagram.android/.activity.MainTabActivity }
+05-30 17:15:00.755: D/MainActivity(23031): recent: com.instagram.android class: com.instagram.android.activity.MainTabActivity
+05-30 17:15:00.755: D/MainActivity(23031): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:15:00.755: D/MainActivity(23031): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:15:00.755: D/MainActivity(23031): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:15:00.755: D/MainActivity(23031): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:15:00.755: D/MainActivity(23031): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:15:00.755: D/MainActivity(23031): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:15:00.755: D/MainActivity(23031): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:15:00.755: D/MainActivity(23031): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:15:00.755: D/MainActivity(23031): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:15:00.755: D/MainActivity(23031): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 17:15:00.775: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:15:00.785: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:15:00.845: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:15:00.855: I/ActivityManager(851): Displayed co.tmgamer.activityinformation/.MainActivity: +174ms
+05-30 17:15:00.855: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:15:01.045: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:15:01.055: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+
+
+
+05-30 17:19:48.496: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:19:48.636: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:19:49.136: W/qdhwcomposer(323): Excessive delay reading vsync: took 850 ms
+05-30 17:19:49.226: I/ActivityManager(851): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity} from pid 1520
+05-30 17:19:49.266: W/Adreno-EGL(323): <qeglDrvAPI_eglMakeCurrent:2843>: EGL_BAD_MATCH
+05-30 17:19:49.266: E/libEGL(323): eglMakeCurrent:671 error 3009 (EGL_BAD_MATCH)
+05-30 17:19:49.326: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _enadev value xLoud Speaker
+05-30 17:19:49.326: D/alsa_ucm(309): snd_use_case_set(): uc_mgr 0xb87f9bd8 identifier _verb value HiFi Lowlatency
+05-30 17:19:49.326: D/alsa_ucm(309): Set mixer controls for xLoud Speaker enable 1
+05-30 17:19:49.326: D/alsa_ucm(309): acdb_id 520 cap 1 enable 1
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> send_audio_cal, acdb_id = 520, path =  0
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> send_adm_topology
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> send_audtable
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TABLE
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_CAL
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> send_audvoltable
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> ACDB_CMD_GET_AUDPROC_GAIN_DEP_VOLTBL_STEP_COPP
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AUDPROC_VOL_CAL
+05-30 17:19:49.326: D/ACDB-LOADER(309): ACDB -> AUDIO_SET_AFE_CAL
+05-30 17:19:49.326: D/alsa_ucm(309): Setting mixer control: SLIM_0_RX Channels, value: Two
+05-30 17:19:49.326: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP1, value: RX1
+05-30 17:19:49.326: D/alsa_ucm(309): Setting mixer control: RX3 MIX1 INP2, value: RX2
+05-30 17:19:49.336: D/alsa_ucm(309): Setting mixer control: LINEOUT1 Volume, value: 100
+05-30 17:19:49.336: D/alsa_ucm(309): Setting mixer control: SLIM TX3 MUX, value: RMIX3
+05-30 17:19:49.336: D/alsa_ucm(309): Setting mixer control: SLIM TX5 MUX, value: RMIX3
+05-30 17:19:49.336: D/alsa_ucm(309): Setting mixer control: RX3 Digital Volume, value: 68
+05-30 17:19:49.336: D/alsa_ucm(309): Set mixer controls for HiFi Lowlatency enable 1
+05-30 17:19:49.336: D/alsa_ucm(309): Setting mixer control: SLIMBUS_0_RX Audio Mixer MultiMedia5, value: 1
+05-30 17:19:49.346: I/ActivityManager(851): Start proc co.tmgamer.activityinformation for activity co.tmgamer.activityinformation/.MainActivity: pid=28320 uid=10303 gids={50303, 1028}
+05-30 17:19:49.356: D/dalvikvm(28320): Late-enabling CheckJNI
+05-30 17:19:49.477: D/MainActivity(28320): running: null
+05-30 17:19:49.477: V/MainActivity(28320): running: pack: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:19:49.477: D/MainActivity(28320): running: null
+05-30 17:19:49.477: V/MainActivity(28320): running: pack: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:19:49.477: D/MainActivity(28320): running: null
+05-30 17:19:49.477: V/MainActivity(28320): running: pack: com.android.phone class: com.android.phone.SomcInCallScreen
+05-30 17:19:49.477: D/MainActivity(28320): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=co.tmgamer.activityinformation/.MainActivity bnds=[792,205][1044,493] }
+05-30 17:19:49.477: D/MainActivity(28320): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:19:49.477: D/MainActivity(28320): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:19:49.477: D/MainActivity(28320): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:19:49.477: D/MainActivity(28320): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.sonyericsson.album/.MainActivity bnds=[270,1173][540,1512] }
+05-30 17:19:49.477: D/MainActivity(28320): recent: com.sonyericsson.album class: com.sonyericsson.album.MainActivity
+05-30 17:19:49.477: D/MainActivity(28320): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:19:49.477: D/MainActivity(28320): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:19:49.477: D/MainActivity(28320): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:19:49.477: D/MainActivity(28320): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:19:49.477: D/MainActivity(28320): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:19:49.477: D/MainActivity(28320): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:19:49.477: D/MainActivity(28320): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:19:49.477: D/MainActivity(28320): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:19:49.477: D/MainActivity(28320): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:19:49.477: D/MainActivity(28320): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 17:19:49.497: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:19:49.507: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:19:49.507: D/libEGL(28320): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 17:19:49.507: D/libEGL(28320): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 17:19:49.507: D/libEGL(28320): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 17:19:49.517: I/Adreno-EGL(28320): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 17:19:49.517: I/Adreno-EGL(28320): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 17:19:49.517: I/Adreno-EGL(28320): Build Date: 12/01/13 Sun
+05-30 17:19:49.517: I/Adreno-EGL(28320): Local Branch: 
+05-30 17:19:49.517: I/Adreno-EGL(28320): Remote Branch: 
+05-30 17:19:49.517: I/Adreno-EGL(28320): Local Patches: 
+05-30 17:19:49.517: I/Adreno-EGL(28320): Reconstruct Branch: 
+05-30 17:19:49.577: D/OpenGLRenderer(28320): Enabling debug mode 0
+05-30 17:19:49.647: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:19:49.657: I/ActivityManager(851): Displayed co.tmgamer.activityinformation/.MainActivity: +331ms
+05-30 17:19:49.667: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:19:49.687: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:19:49.857: W/WindowManager(851): Access to extended visibility flags denied: Requires com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS permission.
+05-30 17:19:49.987: E/Sensors(851): HAL:ERR writing file /sys/bus/iio/devices/iio:device0/buffer/enable error 22
+05-30 17:19:50.157: W/qdhwcomposer(323): Excessive delay reading vsync: took 267 ms
+
+
+
+
+05-30 17:35:51.185: D/MainActivity(31968): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=co.tmgamer.activityinformation/.MainActivity }
+05-30 17:35:51.185: D/MainActivity(31968): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:35:51.185: D/MainActivity(31968): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:35:51.185: D/MainActivity(31968): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:35:51.185: D/MainActivity(31968): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:35:51.185: D/MainActivity(31968): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:35:51.185: D/MainActivity(31968): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:35:51.185: D/MainActivity(31968): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:35:51.185: D/MainActivity(31968): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:35:51.185: D/MainActivity(31968): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:35:51.185: D/MainActivity(31968): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:35:51.185: D/MainActivity(31968): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:35:51.185: D/MainActivity(31968): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:35:51.185: D/MainActivity(31968): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 17:35:51.235: D/libEGL(31968): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 17:35:51.235: D/libEGL(31968): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 17:35:51.235: D/libEGL(31968): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 17:35:51.245: I/Adreno-EGL(31968): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 17:35:51.245: I/Adreno-EGL(31968): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 17:35:51.245: I/Adreno-EGL(31968): Build Date: 12/01/13 Sun
+05-30 17:35:51.245: I/Adreno-EGL(31968): Local Branch: 
+05-30 17:35:51.245: I/Adreno-EGL(31968): Remote Branch: 
+05-30 17:35:51.245: I/Adreno-EGL(31968): Local Patches: 
+05-30 17:35:51.245: I/Adreno-EGL(31968): Reconstruct Branch: 
+05-30 17:35:51.285: D/OpenGLRenderer(31968): Enabling debug mode 0
+05-30 17:36:15.729: D/MainActivity(31968): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=co.tmgamer.activityinformation/.MainActivity }
+05-30 17:36:15.729: D/MainActivity(31968): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:36:15.729: D/MainActivity(31968): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:36:15.729: D/MainActivity(31968): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:36:15.729: D/MainActivity(31968): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:36:15.729: D/MainActivity(31968): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:36:15.739: D/MainActivity(31968): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:36:15.739: D/MainActivity(31968): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:36:15.739: D/MainActivity(31968): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:36:15.749: D/MainActivity(31968): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:36:15.749: D/MainActivity(31968): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:36:15.749: D/MainActivity(31968): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:36:15.749: D/MainActivity(31968): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:36:15.749: D/MainActivity(31968): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+
+05-30 17:37:12.434: D/MainActivity(31968): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=co.tmgamer.activityinformation/.MainActivity }
+05-30 17:37:12.434: D/MainActivity(31968): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:37:12.434: D/MainActivity(31968): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:37:12.434: D/MainActivity(31968): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:37:12.434: D/MainActivity(31968): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:37:12.434: D/MainActivity(31968): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:37:12.434: D/MainActivity(31968): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:37:12.434: D/MainActivity(31968): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:37:12.434: D/MainActivity(31968): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:37:12.444: D/MainActivity(31968): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:37:12.444: D/MainActivity(31968): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:37:12.444: D/MainActivity(31968): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:37:12.444: D/MainActivity(31968): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:37:12.444: D/MainActivity(31968): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+
+
+
+
+05-30 17:46:44.472: V/MainActivity(1497): MainActivity.onCreate
+05-30 17:46:44.532: D/MainActivity(1497): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=co.tmgamer.activityinformation/.MainActivity }
+05-30 17:46:44.532: D/MainActivity(1497): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:46:44.532: D/MainActivity(1497): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:46:44.532: D/MainActivity(1497): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:46:44.532: D/MainActivity(1497): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 17:46:44.532: D/MainActivity(1497): recent: com.whatsapp class: com.whatsapp.Conversation
+05-30 17:46:44.532: D/MainActivity(1497): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:46:44.532: D/MainActivity(1497): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:46:44.532: D/MainActivity(1497): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:46:44.532: D/MainActivity(1497): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:46:44.532: D/MainActivity(1497): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:46:44.532: D/MainActivity(1497): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:46:44.532: D/MainActivity(1497): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:46:44.532: D/MainActivity(1497): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:46:44.532: D/MainActivity(1497): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:46:44.532: D/MainActivity(1497): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 17:46:44.532: V/MainActivity(1497): MainActivity.onStart
+05-30 17:46:44.532: V/MainActivity(1497): MainActivity.onResume
+05-30 17:46:44.542: V/MainActivity(1497): MainActivity.onUserInteraction
+05-30 17:46:44.542: V/MainActivity(1497): MainActivity.onPause
+05-30 17:46:44.572: D/libEGL(1497): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 17:46:44.572: D/libEGL(1497): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 17:46:44.582: D/libEGL(1497): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 17:46:44.582: I/Adreno-EGL(1497): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 17:46:44.582: I/Adreno-EGL(1497): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 17:46:44.582: I/Adreno-EGL(1497): Build Date: 12/01/13 Sun
+05-30 17:46:44.582: I/Adreno-EGL(1497): Local Branch: 
+05-30 17:46:44.582: I/Adreno-EGL(1497): Remote Branch: 
+05-30 17:46:44.582: I/Adreno-EGL(1497): Local Patches: 
+05-30 17:46:44.582: I/Adreno-EGL(1497): Reconstruct Branch: 
+05-30 17:46:44.632: D/OpenGLRenderer(1497): Enabling debug mode 0
+05-30 17:46:44.642: V/MainActivity(1497): MainActivity.onResume
+
+05-30 17:47:25.732: V/MainActivity(1497): MainActivity.onUserInteraction
+05-30 17:47:25.833: V/MainActivity(1497): MainActivity.onUserInteraction
+05-30 17:47:25.833: V/MainActivity(1497): MainActivity.onPause
+05-30 17:47:38.345: V/MainActivity(1497): MainActivity.onStop
+05-30 17:47:46.182: V/MainActivity(1497): MainActivity.onRestart
+05-30 17:47:46.182: V/MainActivity(1497): MainActivity.onStart
+05-30 17:47:46.182: V/MainActivity(1497): MainActivity.onResume
+05-30 17:47:49.796: V/MainActivity(1497): MainActivity.onUserInteraction
+05-30 17:47:49.876: D/MainActivity(1497): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=co.tmgamer.activityinformation/.MainActivity }
+05-30 17:47:49.876: D/MainActivity(1497): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:47:49.876: D/MainActivity(1497): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:47:49.876: D/MainActivity(1497): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:47:49.876: D/MainActivity(1497): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:47:49.876: D/MainActivity(1497): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:47:49.876: D/MainActivity(1497): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 17:47:49.876: D/MainActivity(1497): recent: com.whatsapp class: com.whatsapp.Conversation
+05-30 17:47:49.876: D/MainActivity(1497): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:47:49.876: D/MainActivity(1497): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:47:49.876: D/MainActivity(1497): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:47:49.876: D/MainActivity(1497): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:47:49.876: D/MainActivity(1497): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:47:49.876: D/MainActivity(1497): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:47:49.876: D/MainActivity(1497): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:47:49.876: D/MainActivity(1497): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+
+
+
+
+
+05-30 17:51:56.226: V/MainActivity(2544): MainActivity.onCreate
+05-30 17:51:56.356: D/MainActivity(2544): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=co.tmgamer.activityinformation/.MainActivity }
+05-30 17:51:56.356: D/MainActivity(2544): recent: co.tmgamer.activityinformation class: co.tmgamer.activityinformation.MainActivity
+05-30 17:51:56.356: D/MainActivity(2544): recent: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10600000 cmp=com.sonyericsson.home/com.sonymobile.home.HomeActivity }
+05-30 17:51:56.356: D/MainActivity(2544): recent: com.sonyericsson.home class: com.sonymobile.home.HomeActivity
+05-30 17:51:56.356: D/MainActivity(2544): recent: Intent { flg=0x10800000 cmp=com.estrongs.android.pop/.app.InstallMonitorActivity }
+05-30 17:51:56.356: D/MainActivity(2544): recent: com.estrongs.android.pop class: com.estrongs.android.pop.app.InstallMonitorActivity
+05-30 17:51:56.356: D/MainActivity(2544): recent: Intent { flg=0x14000000 cmp=com.whatsapp/.Conversation }
+05-30 17:51:56.356: D/MainActivity(2544): recent: com.whatsapp class: com.whatsapp.Conversation
+05-30 17:51:56.356: D/MainActivity(2544): recent: Intent { act=com.android.systemui.recent.action.TOGGLE_RECENTS flg=0x10800000 cmp=com.android.systemui/.recent.RecentsActivity }
+05-30 17:51:56.356: D/MainActivity(2544): recent: com.android.systemui class: com.android.systemui.recent.RecentsActivity
+05-30 17:51:56.356: D/MainActivity(2544): recent: Intent { flg=0x10800000 cmp=com.sonyericsson.usbux/.dialogs.PcCompanionInstallationActivity }
+05-30 17:51:56.356: D/MainActivity(2544): recent: com.sonyericsson.usbux class: com.sonyericsson.usbux.dialogs.PcCompanionInstallationActivity
+05-30 17:51:56.356: D/MainActivity(2544): recent: Intent { flg=0x10d00000 cmp=jp.naver.line.android/.activity.pushdialog.PushDialogActivity }
+05-30 17:51:56.356: D/MainActivity(2544): recent: jp.naver.line.android class: jp.naver.line.android.activity.pushdialog.PushDialogActivity
+05-30 17:51:56.356: D/MainActivity(2544): recent: Intent { flg=0x800000 cmp=com.sonyericsson.organizer/com.sonyericsson.alarm.AlarmAlertFullScreen }
+05-30 17:51:56.356: D/MainActivity(2544): recent: com.sonyericsson.organizer class: com.sonyericsson.alarm.AlarmAlertFullScreen
+05-30 17:51:56.356: V/MainActivity(2544): MainActivity.onStart
+05-30 17:51:56.356: V/MainActivity(2544): MainActivity.onResume
+05-30 17:51:56.367: V/MainActivity(2544): MainActivity.onUserInteraction
+05-30 17:51:56.367: V/MainActivity(2544): MainActivity.onUserLeaveHint
+05-30 17:51:56.367: V/MainActivity(2544): MainActivity.onPause
+05-30 17:51:56.407: D/libEGL(2544): loaded /vendor/lib/egl/libEGL_adreno.so
+05-30 17:51:56.407: D/libEGL(2544): loaded /vendor/lib/egl/libGLESv1_CM_adreno.so
+05-30 17:51:56.407: D/libEGL(2544): loaded /vendor/lib/egl/libGLESv2_adreno.so
+05-30 17:51:56.417: I/Adreno-EGL(2544): <qeglDrvAPI_eglInitialize:316>: EGL 1.4 QUALCOMM build:  (CL4169980)
+05-30 17:51:56.417: I/Adreno-EGL(2544): OpenGL ES Shader Compiler Version: 17.01.10.SPL
+05-30 17:51:56.417: I/Adreno-EGL(2544): Build Date: 12/01/13 Sun
+05-30 17:51:56.417: I/Adreno-EGL(2544): Local Branch: 
+05-30 17:51:56.417: I/Adreno-EGL(2544): Remote Branch: 
+05-30 17:51:56.417: I/Adreno-EGL(2544): Local Patches: 
+05-30 17:51:56.417: I/Adreno-EGL(2544): Reconstruct Branch: 
+05-30 17:51:56.447: D/OpenGLRenderer(2544): Enabling debug mode 0
+05-30 17:51:56.457: V/MainActivity(2544): MainActivity.onResume

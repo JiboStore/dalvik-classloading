@@ -35,7 +35,7 @@ import java.io.OutputStream;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.HashMap;
+import java.util.Map;
 
 import dalvik.system.DexClassLoader;
 
@@ -139,8 +139,10 @@ private static final String SECONDARY_DEX_NAME = "seconddex.jar";
 
                     Class[] param = new Class[2];
                     param[0] = Context.class;
-                    param[1] = String.class;
-                    Method method = libProviderClazz.getDeclaredMethod("showAwesomeToast", param);
+                    param[1] = Activity.class;
+//                    param[1] = String.class;
+//                    Method method = libProviderClazz.getDeclaredMethod("showAwesomeToast", param);
+                    Method method = libProviderClazz.getDeclaredMethod("showLibActivity", libProviderClazz);
                     method.invoke(lib, view.getContext(), "Hello WORLD!");
                 	
                 } catch (Exception exception) {
@@ -236,7 +238,7 @@ private static final String SECONDARY_DEX_NAME = "seconddex.jar";
     		Class threadClass = mainThread.getClass();
     		Field mPackages = getField(threadClass, "mPackages");
     		 
-    		HashMap<String,?> map = (HashMap<String,?>) mPackages.get(mainThread);
+    		Map<String,?> map = (Map<String,?>) mPackages.get(mainThread);
     		WeakReference<?> ref = (WeakReference<?>) map.get(getPackageName());
     		Object apk = ref.get();
     		Class apkClass = apk.getClass();

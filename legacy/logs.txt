@@ -20,6 +20,14 @@ you need to path the directory of APKs.
 [11:40:11 AM] Aaron Santos: something like that
 [11:40:31 AM] Aaron Santos: autowrap SOURCE_DIR DEST_DIR
 
+how to use adb devices from remote (test) machines
+ssh tmg@192.168.1.246 -C -L 5037:localhost:5037
+
+To block the apps:
+adb shell am broadcast -a co.tmgamer.drmapi.BACKDOOR -d drm://OVERRIDE_BLOCK/true
+To unblock the apps:
+adb shell am broadcast -a co.tmgamer.drmapi.BACKDOOR -d drm://OVERRIDE_BLOCK/false
+
 
 05-19 12:11:36.450: W/qdhwcomposer(352): Excessive delay reading vsync: took 1051 ms
 05-19 12:11:38.462: W/qdhwcomposer(352): Excessive delay reading vsync: took 1852 ms

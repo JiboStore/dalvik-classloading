@@ -20,6 +20,401 @@ you need to path the directory of APKs.
 [11:40:11 AM] Aaron Santos: something like that
 [11:40:31 AM] Aaron Santos: autowrap SOURCE_DIR DEST_DIR
 
+Download:
+112.215.81.113:8080/entry?C=0300000001&ContentID=001810000000145433&F=112450_113518&Time=20140621142854&T=49334214&SD=0100000001&ST=3&DT=1&H=0000&SW=3&DM=0&PAT=0&UT=0&S=b60b80c6c8adb8f6fc41c880c6a56d73&hw_servicename=Woman'sDIARY&hw_iconurl=http://112.215.81.113/tpf/share/mdspfile/20140509/001810/001810000000145432/1406191205565060.png&hw_servicetype=3&hw_service=001810000000145433&hw_version=null&hw_spname=TMGamer&hw_size=0&hw_appkey=null&hw_vcode=null&hw_contentcode=001810000000145432
+
+http://112.215.81.113/tpf/i/contentDetailView.action?pageNo=2&contentCode=0000014000000202
+<?xml version="1.0" encoding="UTF-8"?>
+<contentDetailViewResp>
+    <operResultCode>0</operResultCode>
+    <operDesc>Operation succeeded.(0)</operDesc>
+    <content>
+        <contentCode>0000014000000202</contentCode>
+        <contentName>AppsBuffet</contentName>
+        <contentDesc>Enjoy Premium Apps worth $500 starting from Rp1.000! click Subscribe now!</contentDesc>
+        <avgMark>0</avgMark>
+        <rateCount>0</rateCount>
+        <defaultCashPrice></defaultCashPrice>
+        <commentCount>0</commentCount>
+        <contentProviderName></contentProviderName>
+        <iconPath>http://112.215.81.113/tpf/share/mdspfile//ServiceIcon/20140528/000001/100809/1406101119551677.jpg</iconPath>
+        <service>
+		  <netOrder>0</netOrder>
+          <product>
+          <productID>1000016870</productID>
+          <productName>AppSeru Harian, Rp1rb</productName>
+          <productDesc>AppSeru Harian, Rp1rb</productDesc>
+          <isLoyalty>false</isLoyalty>
+          <loyaltyCount></loyaltyCount>
+          <isSubscribe>1</isSubscribe>
+          <parentID>0000014000000202</parentID>
+          <parentType>4</parentType>
+          <fee>1000.00</fee>
+          <chargeMode>18</chargeMode>
+          <chargeModeUnit>-1</chargeModeUnit>
+          <cycleLength>1</cycleLength>
+          <totalAmount></totalAmount>
+          <remainAmount></remainAmount>
+          </product>
+          <product>
+          <productID>1000016872</productID>
+          <productName>AppSeru Mingguan, Rp5rb</productName>
+          <productDesc>AppSeru Mingguan, Rp5rb</productDesc>
+          <isLoyalty>false</isLoyalty>
+          <loyaltyCount></loyaltyCount>
+          <isSubscribe>1</isSubscribe>
+          <parentID>0000014000000202</parentID>
+          <parentType>4</parentType>
+          <fee>5000.00</fee>
+          <chargeMode>10</chargeMode>
+          <chargeModeUnit>-1</chargeModeUnit>
+          <cycleLength>7</cycleLength>
+          <totalAmount></totalAmount>
+          <remainAmount></remainAmount>
+          </product>
+          <product>
+          <productID>1000016891</productID>
+          <productName>AppSeru Bulanan, Rp10rb</productName>
+          <productDesc>AppSeru Bulanan, Rp10rb</productDesc>
+          <isLoyalty>false</isLoyalty>
+          <loyaltyCount></loyaltyCount>
+          <isSubscribe>1</isSubscribe>
+          <parentID>0000014000000202</parentID>
+          <parentType>4</parentType>
+          <fee>10000.00</fee>
+          <chargeMode>10</chargeMode>
+          <chargeModeUnit>-1</chargeModeUnit>
+          <cycleLength>30</cycleLength>
+          <totalAmount></totalAmount>
+          <remainAmount></remainAmount>
+          </product>
+          </service>
+	    <onlinePreview>false</onlinePreview>
+         <subContentList>
+	         <item>
+	                <contentCode>001810000000145432</contentCode>
+	                <contentName>Woman&apos;s DIARY</contentName>
+	                <contentDesc>“Woman&apos;s DIARY” is a very useful tool for tracking your menstrual cycle and predicting your most fertile period. It also provides a variety of information and tips including how to stay in optimum health during menstruation.
+?…????Main Features?…????
+1. Predicts the timing of your period
+ ·Track your period to predict ovulation day and start date of your next period.
+ ·Explanation of female cycle.
+ ·Tips to stay in optimum health during menstruation.
+2. Calendar
+ ·Track your period with memos.
+ ·Able to choose a variety of calendar.
+ ·Shows previous periods and likely start date of your next period.
+3. Basal Temp Record
+ ·Record your basal temperature every day.
+ ·Shows basal temperature in a line graph.  
+4. Weight Record
+ ·Record your weight every day.
+ ·Shows weight gain &amp; loss on a line graph.
+5. Post on Twitter
+ ·Sends registered schedule and memo to Twitter.
+6. Backup Service
+ ·Saves registered data on the app to the SD card.
+ ·Able to change a phone without worries as your data is restored.
+7. Password lock
+ ·Allows you to set a password when first opened.</contentDesc>
+	                <avgMark>0</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140509/001810/001810000000145432/1406191205567957.png</iconPath>
+	                <defaultCashPrice>66000.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000146477</contentCode>
+	                <contentName>Battery Doctor</contentName>
+	                <contentDesc>Over ***150 million*** downloads over Android and iOS worldwide.Battery Doctor,the professional power manager,is the best free battery saving app which is capable of extending your battery life.
+FEATURES:
+•Accurately estimates battery remaining time
+•Task Killer that stops apps that drain power while not in use 
+•Unique three-charge cycle that boosts battery life
+•Widgets that improve battery performance
+•Accelerates the speed of your device
+•Indicates how much battery power will be extended if you shut down Bluetooth/Wi-Fi/etc
+•Gives device software and hardware information</contentDesc>
+	                <avgMark>0</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140519/001810/001810000000146477/1406191207563352.png</iconPath>
+	                <defaultCashPrice>11000.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000146397</contentCode>
+	                <contentName>Sticker Shop</contentName>
+	                <contentDesc>????? Thousands of stickers for LINE, Wechat, Facebook available with no usage limit ????
+It&apos;s finally here! Sticker shop is the ultimate sticker app.
+It offers specialized stickers for popular chat apps such as LINE, Kakao, and LOUNGE.
+-Thousands of stickers in the early stage (one of the world&apos;s largest)
+-Publish new stickers everyday
+-Many kinds of stickers such as weirdly-cute, pretty, and convenient
+-Decoration mails, chat backgrounds, profile icons available!
+Easy to use. Once you download favorite stickers, you can send them directly from apps!
+Download new stickers daily; it&apos;s free for anybody!
+If you register as a premium member for 1.99$, you can download all stickers including special contents stickers and more! ???
+????????????????????????
+?????? Available for these apps ??????
+·LINE
+·Kakao Talk
+·Twitter
+·facebook
+·comm
+·WeChat
+·LOUNGE
+·Cubie Messanger
+* Stickers will not be displayed in the same way as ones sold on each app.
+* For LOUNGE, stickers will be displayed in an optimized form.
+????????????????????????</contentDesc>
+	                <avgMark>0</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140516/001810/001810000000146397/1406191210569590.png</iconPath>
+	                <defaultCashPrice>18700.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000145943</contentCode>
+	                <contentName>CunPic</contentName>
+	                <contentDesc>??The best app for selfies?? 
+Use facial beauty and charm-enhancing filters to make your pics super cute? And super sweet? 
+Be the radiant girl as a grown up cutie or sweet princess, it&apos;s all up to you?(*´?`*)?
+Cun (kjún) is the onomatopoeia that expresses the sound when you feel your heart throb and beat with excitement.
+
+??Make your selfie superb in a snap 
+Use super-sweet features to make your selfie superb in a snap! 
+There are over 20 different super-sweet filters -- let&apos;s find your very own!
+
+??Bright, soft, and supple skin 
+Use the facial beauty enhancer to make your skin look soft and smooth. 
+Then use the skin whitening enhancer to give your skin a healthy, pink-ochre look! 
+Together, you&apos;ll be as sweet and soft as a newborn baby.
+
+??Brighten your charm with super cute filters 
+Much more than classics like sepia and retro effects! 
+Over 30 super cute filters will give you the look you want!
+
+??Adjust brightness and contrast freely 
+Lighten up dark pics by easily adjusting brightness and contrast and make them look nice!
+
+??Share your selfie with friends 
+Send your pic directly over Facebook?Twitter?Instagram?WhatsApp!</contentDesc>
+	                <avgMark>0</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140514/001810/001810000000145943/1406191213278451.png</iconPath>
+	                <defaultCashPrice>23100.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000145006</contentCode>
+	                <contentName>Cute CocoPPa</contentName>
+	                <contentDesc>&quot;CocoPPa is a &quot;&quot;smartphone decoration community&quot;&quot; that allows smartphone users to customize their smartphones to their liking using their own illustrations or those contributed by other users.
+Users are free to contribute materials they have created, which other users can then use as they like to make their smartphones more fun to look at.&quot;</contentDesc>
+	                <avgMark>5</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140430/001810/001810000000145006/1406191216298024.png</iconPath>
+	                <defaultCashPrice>46200.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000145149</contentCode>
+	                <contentName>Plus Home Launcher</contentName>
+	                <contentDesc>[+]HOME (Plus Home) is a Home application that allows you to change your Android’s wallpaper, application icons, 
+clock designs and more!
+
+? Various designs are available! You can find cute, pink, beautiful, and cool themes!
+? No need to worry about difficult setups. Change the design of your whole screen with just the touch of a button!
+? Convenient Menu Page containing the apps that you use frequently.
+
+?What You Can Change?
+With [+]HOME you can choose designs for the following:
+- Wallpaper
+- Drawer (All apps) screen
+- Menu screen (Screen that appears when Menu is pressed. Contains frequently used apps.)
+- Main application icons (Mail, Browser, YouTube, Map, Calculator, Phone, Camera, etc.)
+- Clock widget, Search widget
+
+?How To Setup?
+[1] Download [+]HOME ? Install it. Device screen will change.
+[2] Using one of the methods above, find and download a Theme that you like.
+[3] In the bottom-right of the Home screen, select [Theme] ? [My Theme]. Then choose the Theme to use to finish the setup.</contentDesc>
+	                <avgMark>5</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140502/001810/001810000000145149/1406191216568786.png</iconPath>
+	                <defaultCashPrice>93500.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000145939</contentCode>
+	                <contentName>DECOPIC</contentName>
+	                <contentDesc>This ultra-popular camera app makes it easy to do cute and stylish photo editing ?
+
+? Cute decorations ?
+We’ve even been featured in popular Japanese fashion magazines ?
+You’ll be able to make cute pictures on your smartphone ?
+
+? Available decoration tools ?
+Filters, frames, stamps, lettering, pen, eraser, and more...
+With this app, you can edit images however you like ?
+
+? Decorating is easy ?
+Even smartphone beginners can easily edit like advanced users ?
+Great templates let you make cute photos instantly with a single touch ?
+Add decorations right after taking a picture with the camera ?
+
+? Tons of different filters too ?
+Outfits, selfies, fashion, nails, lunch, pets, and more...
+You can edit photos based on the situation ?
+Try LOMO or Retro to make your photo look like it was taken with a toy camera!
+
+? You can draw whatever you want with the pen ?
+Neon, pastels, vivid colors, patterns, spray paint, etc.
+You can choose various pens and adjust the thickness like in a photo booth ?
+Lots of colors are available too ? 
+
+? You can easily upload photos to social networking services ?
+Decorate photos taken with the camera and then upload them to Facebook and Twitter ?</contentDesc>
+	                <avgMark>0</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140514/001810/001810000000145939/1406191217271608.png</iconPath>
+	                <defaultCashPrice>110000.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000145398</contentCode>
+	                <contentName>Clean Master</contentName>
+	                <contentDesc>Simple, Thorough and Safe, Clean Master is the world’s most downloaded Android optimizer, memory &amp; speed booster, and security/antivirus suite brought to you by Cheetah Mobile (formerly known as KS Mobile).
+
+It is unmatched at improving device performance, removing junk and spam files and protecting against malware, trojans and viruses.
+Join over 200,000,000 people who have already installed this complete optimization manager, Clean Master! We are here to fix all your device problems, whether it’s lagging, running low on space, or infected with malware.
+
+Highlights of Clean Master - Optimization &amp; Antivirus
+? Thorough: The junk-creating behavior of millions of apps has been analyzed so that Clean Master can efficiently hone in on its targets (cache and residual files) with perfect accuracy.
+? Fast &amp; Intuitive: Simple to use, super-fast and smooth UI, plus cool transition effects
+?Ranked #1 by AV-TEST, providing professional security protection. Scanning takes only 5 seconds, 500% faster than other paid antivirus apps.</contentDesc>
+	                <avgMark>5</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140509/001810/001810000000145398/1406191217561986.png</iconPath>
+	                <defaultCashPrice>11000.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000145396</contentCode>
+	                <contentName>Akinator the Genie</contentName>
+	                <contentDesc>Akinator can read your mind and tell you what character you are thinking about, just by asking a few questions. Think of a real or fictional character and Akinator will try to guess who it is. Will you dare challenge the Genie?
+
+Discover the brand new Akinometer, share your results and turn on the child filter to let your children play safely.
+
+Please note:
+-Akinator requires an Internet connection to use his magic lamp. Turn on Wifi or be sure to have a data plan.
+-Available in several languages (French, English, Spanish, Portuguese, German, Japanese, Arabic, Russian, Italian, Chinese, Turkish, Korean, Hebrew, and Dutch)
+-To select your language, don&apos;t forget to scroll down the list to find it.</contentDesc>
+	                <avgMark>0</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140508/001810/001810000000145396/1406191218563012.png</iconPath>
+	                <defaultCashPrice>23100.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        <item>
+	                <contentCode>001810000000146496</contentCode>
+	                <contentName>Cochi</contentName>
+	                <contentDesc>Very fun and unique concept of casual game.
+Get fatter and fatter.</contentDesc>
+	                <avgMark>5</avgMark>
+	                <contentProviderName>TMGamer</contentProviderName>
+	                <iconPath>http://112.215.81.113/tpf/share/mdspfile/20140519/001810/001810000000146496/1406190956293821.png</iconPath>
+	                <defaultCashPrice>11000.00</defaultCashPrice>
+	                <isLoyalty>0</isLoyalty>
+	                <loyaltyCount>0</loyaltyCount>
+	                <rssInformationProperty>
+	                   </rssInformationProperty>
+	                <contentType>102</contentType>
+                    <isThirdContent>0</isThirdContent>
+	                <anonymousDownload>true</anonymousDownload>
+	            </item>
+	        </subContentList>
+        <contentType>99999999</contentType>
+        <categoryID></categoryID>
+        <categoryName></categoryName>
+        <subCategoryID></subCategoryID>
+        <subCategoryName></subCategoryName>
+        <anonymousDownload>false</anonymousDownload>
+        <glaringIconPath>http://112.215.81.113/tpf/share/mdspfile//ServiceIcon/20140528/000001/100809/1406101119551677.jpg</glaringIconPath>
+        <isSupportComment>1</isSupportComment>
+        <isThirdContent>0</isThirdContent>
+        <wapURL>http://www.gudangapp.com/store/wap/portalone/d?mid=0000014000000202</wapURL>
+        <fiveScores></fiveScores>
+        <fourScores></fourScores>
+        <threeScores></threeScores>
+        <twoScores></twoScores>
+        <oneScores></oneScores>
+        <spName>sysadmin</spName>
+        <size></size>
+        </content>
+    <isFavorited>0</isFavorited>
+    <isRated>0</isRated>
+    <isSubscribed>0</isSubscribed>
+    <isOnDemondBundle>0</isOnDemondBundle>
+    <freezoneCode></freezoneCode>
+    <isOnDemonded>0</isOnDemonded>
+    <isBuffetZone>1</isBuffetZone>
+    </contentDetailViewResp>
+
+
 how to use adb devices from remote (test) machines
 ssh tmg@192.168.1.246 -C -L 5037:localhost:5037
 
